@@ -212,6 +212,19 @@
             flex-wrap: wrap;
             gap: 0.75rem 1.25rem;
         }
+        .form-status {
+            min-height: 1.25rem;
+        }
+        .form-status.is-success {
+            color: rgba(243, 233, 220, 0.82);
+        }
+        .form-status.is-error {
+            color: #f1c5c0;
+        }
+        .submit-button[disabled] {
+            cursor: wait;
+            opacity: 0.8;
+        }
     </style>
 
   <style type="text/css">
@@ -2304,22 +2317,22 @@ video {
 
                 
                 <div class="fade-up" vid="310">
-                    <form class="glass-dark p-8 md:p-12 rounded-3xl relative overflow-hidden group" id="contact-form" vid="311">
+                    <form class="glass-dark p-8 md:p-12 rounded-3xl relative overflow-hidden group" id="contact-form" novalidate="" vid="311">
                         
                         <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px] opacity-20 pointer-events-none" vid="312"></div>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 relative z-10" vid="313">
                             <div class="mb-6 col-span-1 md:col-span-2" vid="314">
-                                <input type="text" id="operator-name" name="operatorName" placeholder="OPERATOR NAME" required="" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30" vid="315">
+                                <input type="text" id="operator-name" name="operator_name" placeholder="OPERATOR NAME" required="" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30" vid="315">
                             </div>
                             <div class="mb-6 col-span-1" vid="316">
-                                <input type="text" id="organization" name="organization" placeholder="ORGANIZATION" required="" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30" vid="317">
+                                <input type="text" id="organization" name="organization" placeholder="ORGANIZATION" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30" vid="317">
                             </div>
                             <div class="mb-6 col-span-1" vid="318">
                                 <input type="email" id="comms-link" name="email" placeholder="COMMS LINK (EMAIL)" required="" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30" vid="319">
                             </div>
                             <div class="mb-6 col-span-1" vid="320">
-                                <select id="project-vector" name="projectVector" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream/30 py-4 text-sm font-mono tracking-wider focus:border-brand-gold focus:text-brand-cream appearance-none rounded-none" vid="321">
+                                <select id="project-vector" name="project_vector" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream/30 py-4 text-sm font-mono tracking-wider focus:border-brand-gold focus:text-brand-cream appearance-none rounded-none" vid="321">
                                     <option value="" disabled="" selected="" vid="322">PROJECT VECTOR</option>
                                     <option value="campaign" class="bg-brand-charcoal text-brand-cream" vid="323">Integrated Campaign</option>
                                     <option value="media" class="bg-brand-charcoal text-brand-cream" vid="324">Media Relations</option>
@@ -2327,18 +2340,20 @@ video {
                                 </select>
                             </div>
                             <div class="mb-6 col-span-1" vid="326">
-                                <input type="text" id="resource-allocation" name="resourceAllocation" placeholder="RESOURCE ALLOCATION" required="" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30" vid="327">
+                                <input type="text" id="resource-allocation" name="resource_allocation" placeholder="RESOURCE ALLOCATION" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30" vid="327">
                             </div>
                             <div class="mb-8 col-span-1 md:col-span-2" vid="328">
-                                <textarea rows="3" id="transmission-details" name="transmissionDetails" placeholder="TRANSMISSION DETAILS" required="" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30 resize-none" vid="329"></textarea>
+                                <textarea rows="3" id="transmission-details" name="transmission_details" placeholder="TRANSMISSION DETAILS" required="" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30 resize-none" vid="329"></textarea>
                             </div>
+                            <input type="hidden" id="service-interest" name="service_interest" value="">
                             
                             <div class="col-span-1 md:col-span-2" vid="330">
-                                <button type="submit" class="w-full py-5 rounded-full border border-brand-gold text-brand-cream bg-brand-gold/10 hover:bg-brand-gold hover:text-brand-charcoal transition-all duration-300 font-bold uppercase tracking-widest text-xs flex items-center justify-center gap-3" vid="331">
-                                    Transmit Data
+                                <button type="submit" class="submit-button w-full py-5 rounded-full border border-brand-gold text-brand-cream bg-brand-gold/10 hover:bg-brand-gold hover:text-brand-charcoal transition-all duration-300 font-bold uppercase tracking-widest text-xs flex items-center justify-center gap-3" vid="331">
+                                    <span class="submit-button-label">Transmit Data</span>
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" vid="332"><path d="M5 12h14M12 5l7 7-7 7" vid="333"></path></svg>
                                 </button>
                             </div>
+                            <p id="form-status" class="form-status col-span-1 md:col-span-2 font-mono text-[10px] uppercase tracking-widest text-brand-cream/50" aria-live="polite"></p>
                         </div>
                     </form>
                 </div>
@@ -2382,6 +2397,8 @@ video {
     
     <script vid="347">
         
+        const GOOGLE_APPS_SCRIPT_URL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+
         gsap.registerPlugin(ScrollTrigger);
 
         
@@ -2545,10 +2562,16 @@ video {
         };
 
         const serviceCards = document.querySelectorAll('.service-card');
+        const contactForm = document.getElementById('contact-form');
         const contactSection = document.getElementById('contact');
         const projectVectorField = document.getElementById('project-vector');
         const resourceAllocationField = document.getElementById('resource-allocation');
         const transmissionDetailsField = document.getElementById('transmission-details');
+        const serviceInterestField = document.getElementById('service-interest');
+        const submitButton = contactForm?.querySelector('.submit-button');
+        const submitButtonLabel = contactForm?.querySelector('.submit-button-label');
+        const formStatus = document.getElementById('form-status');
+        const defaultSubmitLabel = submitButtonLabel?.textContent || 'Transmit Data';
 
         [resourceAllocationField, transmissionDetailsField].forEach((field) => {
             if (!field) return;
@@ -2560,6 +2583,10 @@ video {
         const applyServicePrefill = (serviceKey) => {
             const config = servicePrefills[serviceKey];
             if (!config) return;
+
+            if (serviceInterestField) {
+                serviceInterestField.value = serviceKey;
+            }
 
             if (projectVectorField) {
                 projectVectorField.value = config.projectVector;
@@ -2600,6 +2627,114 @@ video {
                 }, 500);
             });
         });
+
+        const setFormStatus = (message, state) => {
+            if (!formStatus) return;
+            formStatus.textContent = message;
+            formStatus.classList.remove('is-success', 'is-error');
+            if (state) {
+                formStatus.classList.add(state === 'success' ? 'is-success' : 'is-error');
+            }
+        };
+
+        const setSubmittingState = (isSubmitting) => {
+            if (!submitButton || !submitButtonLabel) return;
+            submitButton.disabled = isSubmitting;
+            submitButton.setAttribute('aria-busy', isSubmitting ? 'true' : 'false');
+            submitButtonLabel.textContent = isSubmitting ? 'Transmitting...' : defaultSubmitLabel;
+        };
+
+        const buildSubmissionId = () => {
+            if (window.crypto?.randomUUID) {
+                return window.crypto.randomUUID();
+            }
+            return `aerial-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+        };
+
+        const buildPayload = (form) => {
+            const formData = new FormData(form);
+            return {
+                operator_name: (formData.get('operator_name') || '').toString().trim(),
+                organization: (formData.get('organization') || '').toString().trim(),
+                email: (formData.get('email') || '').toString().trim(),
+                project_vector: (formData.get('project_vector') || '').toString().trim(),
+                resource_allocation: (formData.get('resource_allocation') || '').toString().trim(),
+                transmission_details: (formData.get('transmission_details') || '').toString().trim(),
+                timestamp: new Date().toISOString(),
+                submission_id: buildSubmissionId(),
+                service_interest: (formData.get('service_interest') || '').toString().trim(),
+                source_page: window.location.href,
+                referrer: document.referrer || '',
+                user_agent: navigator.userAgent
+            };
+        };
+
+        const validatePayload = (payload) => {
+            if (!payload.operator_name) return 'Operator name is required.';
+            if (!payload.email) return 'Email is required.';
+            if (!payload.transmission_details) return 'Transmission details are required.';
+            return '';
+        };
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                const payload = buildPayload(contactForm);
+                const validationMessage = validatePayload(payload);
+
+                if (validationMessage) {
+                    setFormStatus(validationMessage, 'error');
+                    return;
+                }
+
+                if (!GOOGLE_APPS_SCRIPT_URL || GOOGLE_APPS_SCRIPT_URL.includes('https://script.google.com/macros/s/AKfycbw4gEP297OQQLVrXZcbnm5rhTc3fiX2NY2TYGI0P0X_CwzAjm46LTe07nklpsK9WIhThw/exec')) {
+                    setFormStatus('Add the Google Apps Script deployment URL before submitting.', 'error');
+                    return;
+                }
+
+                setFormStatus('', '');
+                setSubmittingState(true);
+
+                try {
+                    const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'text/plain;charset=utf-8'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const rawResponse = await response.text();
+                    let result = {};
+
+                    try {
+                        result = rawResponse ? JSON.parse(rawResponse) : {};
+                    } catch (parseError) {
+                        result = {};
+                    }
+
+                    if (!response.ok || !result.success) {
+                        throw new Error(result.error || 'Transmission failed. Please try again.');
+                    }
+
+                    setFormStatus('Transmission received. We will respond within 24 hours.', 'success');
+                    contactForm.reset();
+                    serviceInterestField.value = '';
+                    projectVectorField.classList.remove('text-brand-cream');
+                    resourceAllocationField.placeholder = 'RESOURCE ALLOCATION';
+                    [resourceAllocationField, transmissionDetailsField].forEach((field) => {
+                        if (field) {
+                            delete field.dataset.userEdited;
+                        }
+                    });
+                } catch (error) {
+                    setFormStatus(error.message || 'Unable to transmit right now. Please try again shortly.', 'error');
+                } finally {
+                    setSubmittingState(false);
+                }
+            });
+        }
 
         
         const navbar = document.getElementById('navbar');
