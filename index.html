@@ -20,9 +20,15 @@
     
 
     <style vid="13">
+        :root {
+            --brand-brown: #2B2420;
+            --brand-brown-soft: #3A2F2A;
+            --brand-brown-deep: #231C18;
+        }
+
         body {
             background-color: #F3E9DC;
-            color: #1F1F1F;
+            color: var(--brand-brown);
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
@@ -45,11 +51,11 @@
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(201, 168, 106, 0.3);
-            box-shadow: 0 8px 32px 0 rgba(31, 31, 31, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(43, 36, 32, 0.05);
         }
 
         .glass-dark {
-            background: rgba(31, 31, 31, 0.85);
+            background: rgba(35, 28, 24, 0.88);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(201, 168, 106, 0.2);
@@ -80,7 +86,7 @@
             height: 300%;
         }
         .btn-circular-hover:hover {
-            color: #1F1F1F !important;
+            color: var(--brand-brown) !important;
             border-color: #C9A86A;
         }
 
@@ -125,7 +131,7 @@
             background: transparent;
             border: none;
             border-bottom: 1px solid rgba(201, 168, 106, 0.4);
-            color: #1F1F1F;
+            color: var(--brand-brown);
             border-radius: 0;
             transition: all 0.3s;
         }
@@ -135,7 +141,76 @@
             box-shadow: 0 1px 0 0 #C9A86A;
         }
         ::placeholder {
-            color: rgba(31, 31, 31, 0.4);
+            color: rgba(58, 47, 42, 0.4);
+        }
+
+        .service-card {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            text-align: left;
+            cursor: pointer;
+            font: inherit;
+            color: inherit;
+            background: transparent;
+        }
+        .service-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--brand-brown-deep);
+            transform: translateY(100%);
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 0;
+        }
+        .service-card:hover::before,
+        .service-card:focus-visible::before,
+        .service-card[aria-expanded="true"]::before {
+            transform: translateY(0);
+        }
+        .service-card:focus-visible {
+            outline: 1px solid rgba(201, 168, 106, 0.85);
+            outline-offset: -1px;
+        }
+        .service-card-content {
+            position: relative;
+            z-index: 1;
+        }
+        .service-card-reveal {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transform: translateY(12px);
+            transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), margin 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .service-card:hover .service-card-reveal,
+        .service-card:focus-visible .service-card-reveal,
+        .service-card[aria-expanded="true"] .service-card-reveal {
+            max-height: 80px;
+            opacity: 1;
+            margin-top: 1.5rem;
+            transform: translateY(0);
+        }
+        .service-card:hover .service-card-heading,
+        .service-card:focus-visible .service-card-heading,
+        .service-card[aria-expanded="true"] .service-card-heading {
+            color: #F3E9DC;
+        }
+        .service-card:hover .service-card-divider,
+        .service-card:focus-visible .service-card-divider,
+        .service-card[aria-expanded="true"] .service-card-divider {
+            border-color: rgba(201, 168, 106, 0.3);
+        }
+        .profile-link,
+        .footer-social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+        }
+        .team-link-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.25rem;
         }
     </style>
 
@@ -1035,16 +1110,16 @@ video {
 }
 .border-brand-charcoal {
   --tw-border-opacity: 1;
-  border-color: rgb(31 31 31 / var(--tw-border-opacity, 1));
+  border-color: rgb(58 47 42 / var(--tw-border-opacity, 1));
 }
 .border-brand-charcoal\/10 {
-  border-color: rgb(31 31 31 / 0.1);
+  border-color: rgb(58 47 42 / 0.1);
 }
 .border-brand-charcoal\/20 {
-  border-color: rgb(31 31 31 / 0.2);
+  border-color: rgb(58 47 42 / 0.2);
 }
 .border-brand-charcoal\/30 {
-  border-color: rgb(31 31 31 / 0.3);
+  border-color: rgb(58 47 42 / 0.3);
 }
 .border-brand-cream\/10 {
   border-color: rgb(243 233 220 / 0.1);
@@ -1067,13 +1142,13 @@ video {
 }
 .bg-brand-charcoal {
   --tw-bg-opacity: 1;
-  background-color: rgb(31 31 31 / var(--tw-bg-opacity, 1));
+  background-color: rgb(35 28 24 / var(--tw-bg-opacity, 1));
 }
 .bg-brand-charcoal\/10 {
-  background-color: rgb(31 31 31 / 0.1);
+  background-color: rgb(58 47 42 / 0.1);
 }
 .bg-brand-charcoal\/5 {
-  background-color: rgb(31 31 31 / 0.05);
+  background-color: rgb(58 47 42 / 0.05);
 }
 .bg-brand-cream {
   --tw-bg-opacity: 1;
@@ -1109,13 +1184,13 @@ video {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
 .from-brand-charcoal {
-  --tw-gradient-from: #1F1F1F var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(31 31 31 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-from: #231C18 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(35 28 24 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 .from-brand-charcoal\/90 {
-  --tw-gradient-from: rgb(31 31 31 / 0.9) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(31 31 31 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-from: rgb(35 28 24 / 0.9) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(35 28 24 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 .from-brand-lavender\/20 {
@@ -1124,8 +1199,8 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 .via-brand-charcoal\/80 {
-  --tw-gradient-to: rgb(31 31 31 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), rgb(31 31 31 / 0.8) var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-to: rgb(35 28 24 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), rgb(35 28 24 / 0.8) var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 .via-brand-cream {
   --tw-gradient-to: rgb(243 233 220 / 0)  var(--tw-gradient-to-position);
@@ -1135,7 +1210,7 @@ video {
   --tw-gradient-to: rgb(232 209 214 / 0.2) var(--tw-gradient-to-position);
 }
 .to-brand-charcoal\/90 {
-  --tw-gradient-to: rgb(31 31 31 / 0.9) var(--tw-gradient-to-position);
+  --tw-gradient-to: rgb(35 28 24 / 0.9) var(--tw-gradient-to-position);
 }
 .to-transparent {
   --tw-gradient-to: transparent var(--tw-gradient-to-position);
@@ -1296,19 +1371,19 @@ video {
 }
 .text-brand-charcoal {
   --tw-text-opacity: 1;
-  color: rgb(31 31 31 / var(--tw-text-opacity, 1));
+  color: rgb(43 36 32 / var(--tw-text-opacity, 1));
 }
 .text-brand-charcoal\/50 {
-  color: rgb(31 31 31 / 0.5);
+  color: rgb(58 47 42 / 0.5);
 }
 .text-brand-charcoal\/60 {
-  color: rgb(31 31 31 / 0.6);
+  color: rgb(58 47 42 / 0.6);
 }
 .text-brand-charcoal\/70 {
-  color: rgb(31 31 31 / 0.7);
+  color: rgb(58 47 42 / 0.7);
 }
 .text-brand-charcoal\/80 {
-  color: rgb(31 31 31 / 0.8);
+  color: rgb(43 36 32 / 0.8);
 }
 .text-brand-cream {
   --tw-text-opacity: 1;
@@ -1461,7 +1536,7 @@ video {
 }
 .hover\:bg-brand-charcoal:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(31 31 31 / var(--tw-bg-opacity, 1));
+  background-color: rgb(35 28 24 / var(--tw-bg-opacity, 1));
 }
 .hover\:bg-brand-cream:hover {
   --tw-bg-opacity: 1;
@@ -1476,7 +1551,7 @@ video {
 }
 .hover\:text-brand-charcoal:hover {
   --tw-text-opacity: 1;
-  color: rgb(31 31 31 / var(--tw-text-opacity, 1));
+  color: rgb(43 36 32 / var(--tw-text-opacity, 1));
 }
 .hover\:text-brand-cream:hover {
   --tw-text-opacity: 1;
@@ -1723,9 +1798,9 @@ video {
         <div class="absolute inset-0 z-10 flex items-center justify-center pointer-events-none opacity-40" vid="40">
             <svg viewBox="0 0 1000 1000" class="w-[150vw] h-[150vw] md:w-[80vw] md:h-[80vw] max-w-none spin-slow" vid="41">
                 <circle cx="500" cy="500" r="300" fill="none" stroke="#C9A86A" stroke-width="1" stroke-dasharray="4 12" vid="42"></circle>
-                <circle cx="500" cy="500" r="450" fill="none" stroke="#1F1F1F" stroke-width="0.5" vid="43"></circle>
+                <circle cx="500" cy="500" r="450" fill="none" stroke="#3A2F2A" stroke-width="0.5" vid="43"></circle>
                 <circle cx="500" cy="500" r="200" fill="none" stroke="#C9A86A" stroke-width="0.5" stroke-dasharray="2 4" vid="44"></circle>
-                <path d="M500 50 L500 950 M50 500 L950 500" stroke="#1F1F1F" stroke-width="0.5" stroke-dasharray="10 10" opacity="0.3" vid="45"></path>
+                <path d="M500 50 L500 950 M50 500 L950 500" stroke="#3A2F2A" stroke-width="0.5" stroke-dasharray="10 10" opacity="0.3" vid="45"></path>
             </svg>
             <svg viewBox="0 0 1000 1000" class="absolute w-[120vw] h-[120vw] md:w-[60vw] md:h-[60vw] max-w-none spin-slow-reverse opacity-50" vid="46">
                 <circle cx="500" cy="500" r="400" fill="none" stroke="#BFA7CF" stroke-width="2" stroke-dasharray="100 20 10 20" vid="47"></circle>
@@ -1801,7 +1876,7 @@ video {
                     
                     <div class="glass-panel rounded-3xl p-10 relative overflow-hidden group fade-up" vid="80">
                         
-                        <svg class="absolute -bottom-10 -right-10 w-48 h-48 opacity-10 group-hover:scale-110 transition-transform duration-700" viewBox="0 0 100 100" fill="none" stroke="#1F1F1F" stroke-width="1" vid="81">
+                        <svg class="absolute -bottom-10 -right-10 w-48 h-48 opacity-10 group-hover:scale-110 transition-transform duration-700" viewBox="0 0 100 100" fill="none" stroke="#3A2F2A" stroke-width="1" vid="81">
                             <circle cx="50" cy="50" r="40" vid="82"></circle>
                             <circle cx="50" cy="50" r="30" stroke-dasharray="2 4" vid="83"></circle>
                             <circle cx="50" cy="50" r="20" vid="84"></circle>
@@ -1813,7 +1888,7 @@ video {
 
                     
                     <div class="glass-panel rounded-3xl p-10 relative overflow-hidden group fade-up" style="transition-delay: 100ms;" vid="88">
-                        <svg class="absolute -top-10 -left-10 w-48 h-48 opacity-10 group-hover:rotate-45 transition-transform duration-700" viewBox="0 0 100 100" fill="none" stroke="#1F1F1F" stroke-width="1" vid="89">
+                        <svg class="absolute -top-10 -left-10 w-48 h-48 opacity-10 group-hover:rotate-45 transition-transform duration-700" viewBox="0 0 100 100" fill="none" stroke="#3A2F2A" stroke-width="1" vid="89">
                             <circle cx="50" cy="50" r="45" stroke-dasharray="10 5" vid="90"></circle>
                             <circle cx="50" cy="50" r="25" vid="91"></circle>
                             <line x1="50" y1="5" x2="50" y2="95" vid="92"></line>
@@ -1825,7 +1900,7 @@ video {
 
                     
                     <div class="glass-panel rounded-3xl p-10 relative overflow-hidden group fade-up" style="transition-delay: 200ms;" vid="96">
-                        <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 opacity-5 group-hover:scale-90 transition-transform duration-700" viewBox="0 0 100 100" fill="none" stroke="#1F1F1F" stroke-width="0.5" vid="97">
+                        <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 opacity-5 group-hover:scale-90 transition-transform duration-700" viewBox="0 0 100 100" fill="none" stroke="#3A2F2A" stroke-width="0.5" vid="97">
                             <circle cx="50" cy="50" r="10" vid="98"></circle><circle cx="50" cy="50" r="20" vid="99"></circle><circle cx="50" cy="50" r="30" vid="100"></circle><circle cx="50" cy="50" r="40" vid="101"></circle>
                         </svg>
                         <span class="font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/60 block mb-4" vid="102">Domain Traffic</span>
@@ -1942,115 +2017,119 @@ video {
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-charcoal/10 border border-brand-charcoal/10" vid="155">
-                    
-                    
-                    <div class="glass-panel rounded-none border-none p-10 flex flex-col justify-between min-h-[320px] group hover:bg-brand-cream transition-colors duration-500 fade-up" vid="156">
-                        <div vid="157">
-                            <div class="flex items-center gap-4 mb-6" vid="158">
-                                <div class="relative w-12 h-12 flex items-center justify-center" vid="159">
-                                    <svg class="absolute inset-0 w-full h-full opacity-30 group-hover:opacity-100 transition-opacity spin-slow" viewBox="0 0 50 50" vid="160">
-                                        <circle cx="25" cy="25" r="24" fill="none" stroke="#C9A86A" stroke-width="1" stroke-dasharray="4 4" vid="161"></circle>
-                                    </svg>
-                                    <span class="font-mono text-xs font-bold text-brand-charcoal relative z-10" vid="162">01</span>
-                                </div>
-                                <span class="font-mono text-[9px] tracking-widest uppercase text-brand-charcoal/50" vid="163">Architecture</span>
-                            </div>
-                            <h3 class="text-2xl font-bold tracking-tight mb-4" vid="164">Message Architecture &amp; Campaign Narrative</h3>
-                            <p class="text-sm font-light text-brand-charcoal/70 leading-relaxed" vid="165">Defining the core story that drives policy change and public perception across all vectors.</p>
-                        </div>
-                        <div class="mt-8 pt-6 border-t border-brand-charcoal/10 flex justify-between items-center" vid="166">
-                            <span class="font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/50" vid="167">Baseline</span>
-                            <span class="font-mono text-xs font-bold bg-brand-charcoal/5 px-3 py-1 rounded-full" vid="168">FROM $4,500</span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="glass-panel rounded-none border-none p-10 flex flex-col justify-between min-h-[320px] group hover:bg-brand-cream transition-colors duration-500 fade-up" vid="169">
-                        <div vid="170">
-                            <div class="flex items-center gap-4 mb-6" vid="171">
-                                <div class="relative w-12 h-12 flex items-center justify-center" vid="172">
-                                    <svg class="absolute inset-0 w-full h-full opacity-30 group-hover:opacity-100 transition-opacity spin-slow" viewBox="0 0 50 50" vid="173">
-                                        <circle cx="25" cy="25" r="24" fill="none" stroke="#C9A86A" stroke-width="1" stroke-dasharray="4 4" vid="174"></circle>
-                                    </svg>
-                                    <span class="font-mono text-xs font-bold text-brand-charcoal relative z-10" vid="175">02</span>
-                                </div>
-                                <span class="font-mono text-[9px] tracking-widest uppercase text-brand-charcoal/50" vid="176">Editorial</span>
-                            </div>
-                            <h3 class="text-2xl font-bold tracking-tight mb-4" vid="177">Content Creation &amp; Editorial Systems</h3>
-                            <p class="text-sm font-light text-brand-charcoal/70 leading-relaxed" vid="178">High-impact storytelling across reports, op-eds, and white papers to establish domain authority.</p>
-                        </div>
-                        <div class="mt-8 pt-6 border-t border-brand-charcoal/10 flex justify-between items-center" vid="179">
-                            <span class="font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/50" vid="180">Baseline</span>
-                            <span class="font-mono text-xs font-bold bg-brand-charcoal/5 px-3 py-1 rounded-full" vid="181">FROM $5,000</span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="glass-panel rounded-none border-none p-10 flex flex-col justify-between min-h-[320px] group hover:bg-brand-cream transition-colors duration-500 fade-up" vid="182">
-                        <div vid="183">
-                            <div class="flex items-center gap-4 mb-6" vid="184">
-                                <div class="relative w-12 h-12 flex items-center justify-center" vid="185">
-                                    <svg class="absolute inset-0 w-full h-full opacity-30 group-hover:opacity-100 transition-opacity spin-slow" viewBox="0 0 50 50" vid="186">
-                                        <circle cx="25" cy="25" r="24" fill="none" stroke="#C9A86A" stroke-width="1" stroke-dasharray="4 4" vid="187"></circle>
-                                    </svg>
-                                    <span class="font-mono text-xs font-bold text-brand-charcoal relative z-10" vid="188">03</span>
-                                </div>
-                                <span class="font-mono text-[9px] tracking-widest uppercase text-brand-charcoal/50" vid="189">External PR</span>
-                            </div>
-                            <h3 class="text-2xl font-bold tracking-tight mb-4" vid="190">Media Relations &amp; Amplification</h3>
-                            <p class="text-sm font-light text-brand-charcoal/70 leading-relaxed" vid="191">Direct placement into top-tier climate, energy, and financial news outlets via established channels.</p>
-                        </div>
-                        <div class="mt-8 pt-6 border-t border-brand-charcoal/10 flex justify-between items-center" vid="192">
-                            <span class="font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/50" vid="193">Baseline</span>
-                            <span class="font-mono text-xs font-bold bg-brand-charcoal/5 px-3 py-1 rounded-full" vid="194">FROM $6,000</span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="glass-panel rounded-none border-none p-10 flex flex-col justify-between min-h-[320px] group hover:bg-brand-cream transition-colors duration-500 fade-up" vid="195">
-                        <div vid="196">
-                            <div class="flex items-center gap-4 mb-6" vid="197">
-                                <div class="relative w-12 h-12 flex items-center justify-center" vid="198">
-                                    <svg class="absolute inset-0 w-full h-full opacity-30 group-hover:opacity-100 transition-opacity spin-slow" viewBox="0 0 50 50" vid="199">
-                                        <circle cx="25" cy="25" r="24" fill="none" stroke="#C9A86A" stroke-width="1" stroke-dasharray="4 4" vid="200"></circle>
-                                    </svg>
-                                    <span class="font-mono text-xs font-bold text-brand-charcoal relative z-10" vid="201">04</span>
-                                </div>
-                                <span class="font-mono text-[9px] tracking-widest uppercase text-brand-charcoal/50" vid="202">Distribution</span>
-                            </div>
-                            <h3 class="text-2xl font-bold tracking-tight mb-4" vid="203">Digital Distribution Infrastructure</h3>
-                            <p class="text-sm font-light text-brand-charcoal/70 leading-relaxed" vid="204">Building the technical stack, email systems, and social conduits that ensure message durability.</p>
-                        </div>
-                        <div class="mt-8 pt-6 border-t border-brand-charcoal/10 flex justify-between items-center" vid="205">
-                            <span class="font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/50" vid="206">Baseline</span>
-                            <span class="font-mono text-xs font-bold bg-brand-charcoal/5 px-3 py-1 rounded-full" vid="207">FROM $5,500</span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="glass-panel rounded-none border-none p-10 flex flex-col justify-between min-h-[200px] md:col-span-2 group hover:bg-brand-charcoal hover:text-brand-cream transition-colors duration-500 fade-up relative overflow-hidden" vid="208">
-                        
-                        <div class="absolute inset-0 bg-brand-charcoal translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-out z-0" vid="209"></div>
-                        <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8" vid="210">
-                            <div class="flex-1" vid="211">
-                                <div class="flex items-center gap-4 mb-4" vid="212">
-                                    <div class="relative w-12 h-12 flex items-center justify-center" vid="213">
-                                        <svg class="absolute inset-0 w-full h-full opacity-30 group-hover:stroke-brand-gold transition-colors spin-slow" viewBox="0 0 50 50" vid="214">
-                                            <circle cx="25" cy="25" r="24" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" vid="215"></circle>
+                    <button type="button" class="service-card glass-panel rounded-none border-none p-10 flex flex-col justify-between min-h-[320px] group transition-colors duration-500 fade-up" data-service="message-architecture" aria-expanded="false" vid="156">
+                        <div class="service-card-content flex h-full flex-col justify-between">
+                            <div vid="157">
+                                <div class="flex items-center gap-4 mb-6" vid="158">
+                                    <div class="relative w-12 h-12 flex items-center justify-center" vid="159">
+                                        <svg class="absolute inset-0 w-full h-full opacity-30 group-hover:opacity-100 transition-opacity spin-slow" viewBox="0 0 50 50" vid="160">
+                                            <circle cx="25" cy="25" r="24" fill="none" stroke="#C9A86A" stroke-width="1" stroke-dasharray="4 4" vid="161"></circle>
                                         </svg>
-                                        <span class="font-mono text-xs font-bold relative z-10 group-hover:text-brand-gold transition-colors" vid="216">05</span>
+                                        <span class="font-mono text-xs font-bold text-brand-charcoal relative z-10 group-hover:text-brand-gold transition-colors" vid="162">01</span>
                                     </div>
-                                    <span class="font-mono text-[9px] tracking-widest uppercase text-brand-charcoal/50 group-hover:text-brand-cream/50 transition-colors" vid="217">Sustained Operations</span>
+                                    <span class="font-mono text-[9px] tracking-widest uppercase text-brand-charcoal/50 group-hover:text-brand-cream/50 transition-colors" vid="163">Architecture</span>
                                 </div>
-                                <h3 class="text-2xl md:text-3xl font-bold tracking-tight" vid="218">Ongoing Communications Retainer</h3>
+                                <h3 class="service-card-heading text-2xl font-bold tracking-tight mb-4 transition-colors" vid="164">Message Architecture &amp; Campaign Narrative</h3>
+                                <p class="text-sm font-light text-brand-charcoal/70 leading-relaxed group-hover:text-brand-cream/80 transition-colors" vid="165">Defining the core story that drives policy change and public perception across all vectors.</p>
+                                <p class="service-card-reveal font-mono text-[10px] uppercase tracking-widest text-brand-gold" vid="166">Messaging framework, campaign narrative, positioning guidance. Click to inquire.</p>
                             </div>
-                            <div class="flex-1 md:text-right" vid="219">
-                                <p class="text-sm font-light leading-relaxed mb-6 group-hover:text-brand-cream/80 transition-colors" vid="220">Full-spectrum support integrating all modules for long-term climate advocacy partners. Continuous monitoring and deployment.</p>
-                                <span class="font-mono text-xs font-bold border border-current px-4 py-2 rounded-full inline-block group-hover:border-brand-gold group-hover:text-brand-gold transition-colors" vid="221">FROM $8,000/MO</span>
+                            <div class="service-card-divider mt-8 pt-6 border-t border-brand-charcoal/10 flex justify-between items-center transition-colors" vid="167">
+                                <span class="font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/50 group-hover:text-brand-cream/50 transition-colors" vid="168">Baseline</span>
+                                <span class="font-mono text-xs font-bold bg-brand-charcoal/5 px-3 py-1 rounded-full group-hover:border-brand-gold group-hover:text-brand-gold border border-transparent transition-colors" vid="169">FROM $4,500</span>
                             </div>
                         </div>
-                    </div>
+                    </button>
 
+                    <button type="button" class="service-card glass-panel rounded-none border-none p-10 flex flex-col justify-between min-h-[320px] group transition-colors duration-500 fade-up" data-service="content-creation" aria-expanded="false" vid="170">
+                        <div class="service-card-content flex h-full flex-col justify-between">
+                            <div vid="171">
+                                <div class="flex items-center gap-4 mb-6" vid="172">
+                                    <div class="relative w-12 h-12 flex items-center justify-center" vid="173">
+                                        <svg class="absolute inset-0 w-full h-full opacity-30 group-hover:opacity-100 transition-opacity spin-slow" viewBox="0 0 50 50" vid="174">
+                                            <circle cx="25" cy="25" r="24" fill="none" stroke="#C9A86A" stroke-width="1" stroke-dasharray="4 4" vid="175"></circle>
+                                        </svg>
+                                        <span class="font-mono text-xs font-bold text-brand-charcoal relative z-10 group-hover:text-brand-gold transition-colors" vid="176">02</span>
+                                    </div>
+                                    <span class="font-mono text-[9px] tracking-widest uppercase text-brand-charcoal/50 group-hover:text-brand-cream/50 transition-colors" vid="177">Editorial</span>
+                                </div>
+                                <h3 class="service-card-heading text-2xl font-bold tracking-tight mb-4 transition-colors" vid="178">Content Creation &amp; Editorial Systems</h3>
+                                <p class="text-sm font-light text-brand-charcoal/70 leading-relaxed group-hover:text-brand-cream/80 transition-colors" vid="179">High-impact storytelling across reports, op-eds, and white papers to establish domain authority.</p>
+                                <p class="service-card-reveal font-mono text-[10px] uppercase tracking-widest text-brand-gold" vid="180">Articles, op-eds, newsletters, editorial planning. Click to inquire.</p>
+                            </div>
+                            <div class="service-card-divider mt-8 pt-6 border-t border-brand-charcoal/10 flex justify-between items-center transition-colors" vid="181">
+                                <span class="font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/50 group-hover:text-brand-cream/50 transition-colors" vid="182">Baseline</span>
+                                <span class="font-mono text-xs font-bold bg-brand-charcoal/5 px-3 py-1 rounded-full group-hover:border-brand-gold group-hover:text-brand-gold border border-transparent transition-colors" vid="183">FROM $5,000</span>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button type="button" class="service-card glass-panel rounded-none border-none p-10 flex flex-col justify-between min-h-[320px] group transition-colors duration-500 fade-up" data-service="media-relations" aria-expanded="false" vid="184">
+                        <div class="service-card-content flex h-full flex-col justify-between">
+                            <div vid="185">
+                                <div class="flex items-center gap-4 mb-6" vid="186">
+                                    <div class="relative w-12 h-12 flex items-center justify-center" vid="187">
+                                        <svg class="absolute inset-0 w-full h-full opacity-30 group-hover:opacity-100 transition-opacity spin-slow" viewBox="0 0 50 50" vid="188">
+                                            <circle cx="25" cy="25" r="24" fill="none" stroke="#C9A86A" stroke-width="1" stroke-dasharray="4 4" vid="189"></circle>
+                                        </svg>
+                                        <span class="font-mono text-xs font-bold text-brand-charcoal relative z-10 group-hover:text-brand-gold transition-colors" vid="190">03</span>
+                                    </div>
+                                    <span class="font-mono text-[9px] tracking-widest uppercase text-brand-charcoal/50 group-hover:text-brand-cream/50 transition-colors" vid="191">External PR</span>
+                                </div>
+                                <h3 class="service-card-heading text-2xl font-bold tracking-tight mb-4 transition-colors" vid="192">Media Relations &amp; Amplification</h3>
+                                <p class="text-sm font-light text-brand-charcoal/70 leading-relaxed group-hover:text-brand-cream/80 transition-colors" vid="193">Direct placement into top-tier climate, energy, and financial news outlets via established channels.</p>
+                                <p class="service-card-reveal font-mono text-[10px] uppercase tracking-widest text-brand-gold" vid="194">Press releases, media outreach, reporter pitching, amplification. Click to inquire.</p>
+                            </div>
+                            <div class="service-card-divider mt-8 pt-6 border-t border-brand-charcoal/10 flex justify-between items-center transition-colors" vid="195">
+                                <span class="font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/50 group-hover:text-brand-cream/50 transition-colors" vid="196">Baseline</span>
+                                <span class="font-mono text-xs font-bold bg-brand-charcoal/5 px-3 py-1 rounded-full group-hover:border-brand-gold group-hover:text-brand-gold border border-transparent transition-colors" vid="197">FROM $6,000</span>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button type="button" class="service-card glass-panel rounded-none border-none p-10 flex flex-col justify-between min-h-[320px] group transition-colors duration-500 fade-up" data-service="digital-distribution" aria-expanded="false" vid="198">
+                        <div class="service-card-content flex h-full flex-col justify-between">
+                            <div vid="199">
+                                <div class="flex items-center gap-4 mb-6" vid="200">
+                                    <div class="relative w-12 h-12 flex items-center justify-center" vid="201">
+                                        <svg class="absolute inset-0 w-full h-full opacity-30 group-hover:opacity-100 transition-opacity spin-slow" viewBox="0 0 50 50" vid="202">
+                                            <circle cx="25" cy="25" r="24" fill="none" stroke="#C9A86A" stroke-width="1" stroke-dasharray="4 4" vid="203"></circle>
+                                        </svg>
+                                        <span class="font-mono text-xs font-bold text-brand-charcoal relative z-10 group-hover:text-brand-gold transition-colors" vid="204">04</span>
+                                    </div>
+                                    <span class="font-mono text-[9px] tracking-widest uppercase text-brand-charcoal/50 group-hover:text-brand-cream/50 transition-colors" vid="205">Distribution</span>
+                                </div>
+                                <h3 class="service-card-heading text-2xl font-bold tracking-tight mb-4 transition-colors" vid="206">Digital Distribution Infrastructure</h3>
+                                <p class="text-sm font-light text-brand-charcoal/70 leading-relaxed group-hover:text-brand-cream/80 transition-colors" vid="207">Building the technical stack, email systems, and social conduits that ensure message durability.</p>
+                                <p class="service-card-reveal font-mono text-[10px] uppercase tracking-widest text-brand-gold" vid="208">Email systems, channel planning, distribution workflows. Click to inquire.</p>
+                            </div>
+                            <div class="service-card-divider mt-8 pt-6 border-t border-brand-charcoal/10 flex justify-between items-center transition-colors" vid="209">
+                                <span class="font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/50 group-hover:text-brand-cream/50 transition-colors" vid="210">Baseline</span>
+                                <span class="font-mono text-xs font-bold bg-brand-charcoal/5 px-3 py-1 rounded-full group-hover:border-brand-gold group-hover:text-brand-gold border border-transparent transition-colors" vid="211">FROM $5,500</span>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button type="button" class="service-card glass-panel rounded-none border-none p-10 flex flex-col justify-between min-h-[200px] md:col-span-2 group transition-colors duration-500 fade-up relative" data-service="ongoing-retainer" aria-expanded="false" vid="212">
+                        <div class="service-card-content flex flex-col md:flex-row md:items-center justify-between gap-8" vid="213">
+                            <div class="flex-1" vid="214">
+                                <div class="flex items-center gap-4 mb-4" vid="215">
+                                    <div class="relative w-12 h-12 flex items-center justify-center" vid="216">
+                                        <svg class="absolute inset-0 w-full h-full opacity-30 group-hover:stroke-brand-gold transition-colors spin-slow" viewBox="0 0 50 50" vid="217">
+                                            <circle cx="25" cy="25" r="24" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" vid="218"></circle>
+                                        </svg>
+                                        <span class="font-mono text-xs font-bold relative z-10 group-hover:text-brand-gold transition-colors" vid="219">05</span>
+                                    </div>
+                                    <span class="font-mono text-[9px] tracking-widest uppercase text-brand-charcoal/50 group-hover:text-brand-cream/50 transition-colors" vid="220">Sustained Operations</span>
+                                </div>
+                                <h3 class="service-card-heading text-2xl md:text-3xl font-bold tracking-tight transition-colors" vid="221">Ongoing Communications Retainer</h3>
+                            </div>
+                            <div class="flex-1 md:text-right" vid="222">
+                                <p class="text-sm font-light leading-relaxed mb-6 text-brand-charcoal/80 group-hover:text-brand-cream/80 transition-colors" vid="223">Full-spectrum support integrating all modules for long-term climate advocacy partners. Continuous monitoring and deployment.</p>
+                                <p class="service-card-reveal font-mono text-[10px] uppercase tracking-widest text-brand-gold md:ml-auto" vid="224">Integrated monthly support across strategy, media, content, and systems. Click to inquire.</p>
+                                <span class="font-mono text-xs font-bold border border-current px-4 py-2 rounded-full inline-block group-hover:border-brand-gold group-hover:text-brand-gold transition-colors" vid="225">FROM $8,000/MO</span>
+                            </div>
+                        </div>
+                    </button>
                 </div>
             </div>
         </div>
@@ -2062,7 +2141,7 @@ video {
         
         <div class="absolute top-0 right-0 translate-x-1/3 -translate-y-1/3 w-[800px] h-[800px] opacity-5 pointer-events-none" vid="223">
             <svg viewBox="0 0 100 100" class="w-full h-full spin-slow" vid="224">
-                <circle cx="50" cy="50" r="10" fill="none" stroke="#1F1F1F" stroke-width="0.2" vid="225"></circle><circle cx="50" cy="50" r="20" fill="none" stroke="#1F1F1F" stroke-width="0.2" vid="226"></circle><circle cx="50" cy="50" r="30" fill="none" stroke="#1F1F1F" stroke-width="0.2" vid="227"></circle><circle cx="50" cy="50" r="40" fill="none" stroke="#1F1F1F" stroke-width="0.2" vid="228"></circle><circle cx="50" cy="50" r="50" fill="none" stroke="#1F1F1F" stroke-width="0.2" vid="229"></circle>
+                <circle cx="50" cy="50" r="10" fill="none" stroke="#3A2F2A" stroke-width="0.2" vid="225"></circle><circle cx="50" cy="50" r="20" fill="none" stroke="#3A2F2A" stroke-width="0.2" vid="226"></circle><circle cx="50" cy="50" r="30" fill="none" stroke="#3A2F2A" stroke-width="0.2" vid="227"></circle><circle cx="50" cy="50" r="40" fill="none" stroke="#3A2F2A" stroke-width="0.2" vid="228"></circle><circle cx="50" cy="50" r="50" fill="none" stroke="#3A2F2A" stroke-width="0.2" vid="229"></circle>
             </svg>
         </div>
 
@@ -2085,10 +2164,12 @@ video {
                             <span class="font-mono text-[9px] uppercase tracking-widest text-brand-charcoal/50 mb-1 block" vid="240">External Affairs</span>
                             <h3 class="text-2xl font-bold tracking-tight mb-2" vid="241">Alyssa Cortes</h3>
                             <p class="text-sm font-light text-brand-charcoal/80 mb-4 leading-relaxed" vid="242">Media relations, narrative strategy, and crisis communications. Operates a mapped network of 450+ high-tier reporter contacts across climate and policy sectors.</p>
-                            <a href="#" class="inline-flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-widest hover:text-brand-gold transition-colors" vid="243">
-                                Verify Link / IN
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" vid="244"><path d="M5 12h14M12 5l7 7-7 7" vid="245"></path></svg>
-                            </a>
+                            <div class="team-link-stack" vid="243">
+                                <a href="#" class="profile-link font-mono text-[10px] font-bold uppercase tracking-widest hover:text-brand-gold transition-colors" aria-label="Alyssa Cortes LinkedIn" vid="244">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" vid="245"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 0 0 3.25 5c0 1.1.88 2 1.97 2h.03c1.13 0 2-.9 2-2A1.98 1.98 0 0 0 5.25 3ZM20.75 13.04c0-3.47-1.85-5.08-4.33-5.08-2 0-2.89 1.1-3.39 1.87V8.5H9.66c.04.88 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.9-1.38 1.95-1.38 1.38 0 1.93 1.04 1.93 2.57V20h3.37v-6.96Z" vid="246"></path></svg>
+                                    <span vid="247">LinkedIn</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -2102,10 +2183,16 @@ video {
                             <span class="font-mono text-[9px] uppercase tracking-widest text-brand-charcoal/50 mb-1 block" vid="251">Digital Systems</span>
                             <h3 class="text-2xl font-bold tracking-tight mb-2" vid="252">Cassandre Arkema</h3>
                             <p class="text-sm font-light text-brand-charcoal/80 mb-4 leading-relaxed" vid="253">Digital strategy, content systems, email infrastructure, and algorithm wizardry. Architects the unseen frameworks that drive measurable engagement.</p>
-                            <a href="#" class="inline-flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-widest hover:text-brand-gold transition-colors" vid="254">
-                                Verify Link / IN
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" vid="255"><path d="M5 12h14M12 5l7 7-7 7" vid="256"></path></svg>
-                            </a>
+                            <div class="team-link-stack" vid="254">
+                                <a href="#" class="profile-link font-mono text-[10px] font-bold uppercase tracking-widest hover:text-brand-gold transition-colors" aria-label="Cassandre Arkema LinkedIn" vid="255">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" vid="256"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 0 0 3.25 5c0 1.1.88 2 1.97 2h.03c1.13 0 2-.9 2-2A1.98 1.98 0 0 0 5.25 3ZM20.75 13.04c0-3.47-1.85-5.08-4.33-5.08-2 0-2.89 1.1-3.39 1.87V8.5H9.66c.04.88 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.9-1.38 1.95-1.38 1.38 0 1.93 1.04 1.93 2.57V20h3.37v-6.96Z"></path></svg>
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="#" class="profile-link font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/70 hover:text-brand-gold transition-colors" aria-label="Visit Cassandre Arkema website">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm6.9 9h-3.02a15.6 15.6 0 0 0-1.32-5.02A8.03 8.03 0 0 1 18.9 11ZM12 4.04c1.16 1.4 2.04 3.86 2.22 6.96H9.78C9.96 7.9 10.84 5.44 12 4.04ZM9.44 5.98A15.6 15.6 0 0 0 8.12 11H5.1a8.03 8.03 0 0 1 4.34-5.02ZM4.58 13h3.54a15.7 15.7 0 0 0 1.3 5.08A8.04 8.04 0 0 1 4.58 13Zm7.42 6.96c-1.16-1.4-2.04-3.86-2.22-6.96h4.44c-.18 3.1-1.06 5.56-2.22 6.96Zm2.56-1.88A15.7 15.7 0 0 0 15.88 13h3.54a8.04 8.04 0 0 1-4.86 5.08Z"></path></svg>
+                                    <span>Visit Website</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2217,22 +2304,22 @@ video {
 
                 
                 <div class="fade-up" vid="310">
-                    <form class="glass-dark p-8 md:p-12 rounded-3xl relative overflow-hidden group" vid="311">
+                    <form class="glass-dark p-8 md:p-12 rounded-3xl relative overflow-hidden group" id="contact-form" vid="311">
                         
                         <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px] opacity-20 pointer-events-none" vid="312"></div>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 relative z-10" vid="313">
                             <div class="mb-6 col-span-1 md:col-span-2" vid="314">
-                                <input type="text" placeholder="OPERATOR NAME" required="" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30" vid="315">
+                                <input type="text" id="operator-name" name="operatorName" placeholder="OPERATOR NAME" required="" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30" vid="315">
                             </div>
                             <div class="mb-6 col-span-1" vid="316">
-                                <input type="text" placeholder="ORGANIZATION" required="" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30" vid="317">
+                                <input type="text" id="organization" name="organization" placeholder="ORGANIZATION" required="" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30" vid="317">
                             </div>
                             <div class="mb-6 col-span-1" vid="318">
-                                <input type="email" placeholder="COMMS LINK (EMAIL)" required="" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30" vid="319">
+                                <input type="email" id="comms-link" name="email" placeholder="COMMS LINK (EMAIL)" required="" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30" vid="319">
                             </div>
                             <div class="mb-6 col-span-1" vid="320">
-                                <select class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream/30 py-4 text-sm font-mono tracking-wider focus:border-brand-gold focus:text-brand-cream appearance-none rounded-none" vid="321">
+                                <select id="project-vector" name="projectVector" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream/30 py-4 text-sm font-mono tracking-wider focus:border-brand-gold focus:text-brand-cream appearance-none rounded-none" vid="321">
                                     <option value="" disabled="" selected="" vid="322">PROJECT VECTOR</option>
                                     <option value="campaign" class="bg-brand-charcoal text-brand-cream" vid="323">Integrated Campaign</option>
                                     <option value="media" class="bg-brand-charcoal text-brand-cream" vid="324">Media Relations</option>
@@ -2240,10 +2327,10 @@ video {
                                 </select>
                             </div>
                             <div class="mb-6 col-span-1" vid="326">
-                                <input type="text" placeholder="RESOURCE ALLOCATION" required="" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30" vid="327">
+                                <input type="text" id="resource-allocation" name="resourceAllocation" placeholder="RESOURCE ALLOCATION" required="" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30" vid="327">
                             </div>
                             <div class="mb-8 col-span-1 md:col-span-2" vid="328">
-                                <textarea rows="3" placeholder="TRANSMISSION DETAILS" required="" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30 resize-none" vid="329"></textarea>
+                                <textarea rows="3" id="transmission-details" name="transmissionDetails" placeholder="TRANSMISSION DETAILS" required="" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30 resize-none" vid="329"></textarea>
                             </div>
                             
                             <div class="col-span-1 md:col-span-2" vid="330">
@@ -2267,10 +2354,20 @@ video {
                         <span class="font-black tracking-tighter uppercase" vid="339">Aerial Communications</span>
                     </div>
                     
-                    <div class="flex gap-8" vid="340">
-                        <a href="#" class="font-mono text-[10px] uppercase tracking-widest text-brand-cream/50 hover:text-brand-gold transition-colors" vid="341">Alyssa / IN</a>
-                        <a href="#" class="font-mono text-[10px] uppercase tracking-widest text-brand-cream/50 hover:text-brand-gold transition-colors" vid="342">Cassandre / IN</a>
-                        <a href="#" class="font-mono text-[10px] uppercase tracking-widest text-brand-gold hover:text-brand-cream transition-colors" vid="343">Email Uplink</a>
+                    <div class="flex flex-wrap justify-center gap-6 md:gap-8" vid="340">
+                        <a href="#" class="footer-social-link font-mono text-[10px] uppercase tracking-widest text-brand-cream/50 hover:text-brand-gold transition-colors" aria-label="Alyssa Cortes LinkedIn" vid="341">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" vid="342"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 0 0 3.25 5c0 1.1.88 2 1.97 2h.03c1.13 0 2-.9 2-2A1.98 1.98 0 0 0 5.25 3ZM20.75 13.04c0-3.47-1.85-5.08-4.33-5.08-2 0-2.89 1.1-3.39 1.87V8.5H9.66c.04.88 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.9-1.38 1.95-1.38 1.38 0 1.93 1.04 1.93 2.57V20h3.37v-6.96Z" vid="343"></path></svg>
+                            <span vid="344">Alyssa LinkedIn</span>
+                        </a>
+                        <a href="#" class="footer-social-link font-mono text-[10px] uppercase tracking-widest text-brand-cream/50 hover:text-brand-gold transition-colors" aria-label="Cassandre Arkema LinkedIn">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 0 0 3.25 5c0 1.1.88 2 1.97 2h.03c1.13 0 2-.9 2-2A1.98 1.98 0 0 0 5.25 3ZM20.75 13.04c0-3.47-1.85-5.08-4.33-5.08-2 0-2.89 1.1-3.39 1.87V8.5H9.66c.04.88 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.9-1.38 1.95-1.38 1.38 0 1.93 1.04 1.93 2.57V20h3.37v-6.96Z"></path></svg>
+                            <span>Cassandre LinkedIn</span>
+                        </a>
+                        <a href="#" class="footer-social-link font-mono text-[10px] uppercase tracking-widest text-brand-cream/50 hover:text-brand-gold transition-colors" aria-label="Cassandre Arkema website">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm6.9 9h-3.02a15.6 15.6 0 0 0-1.32-5.02A8.03 8.03 0 0 1 18.9 11ZM12 4.04c1.16 1.4 2.04 3.86 2.22 6.96H9.78C9.96 7.9 10.84 5.44 12 4.04ZM9.44 5.98A15.6 15.6 0 0 0 8.12 11H5.1a8.03 8.03 0 0 1 4.34-5.02ZM4.58 13h3.54a15.7 15.7 0 0 0 1.3 5.08A8.04 8.04 0 0 1 4.58 13Zm7.42 6.96c-1.16-1.4-2.04-3.86-2.22-6.96h4.44c-.18 3.1-1.06 5.56-2.22 6.96Zm2.56-1.88A15.7 15.7 0 0 0 15.88 13h3.54a8.04 8.04 0 0 1-4.86 5.08Z"></path></svg>
+                            <span>Cassandre Website</span>
+                        </a>
+                        <a href="#" class="font-mono text-[10px] uppercase tracking-widest text-brand-gold hover:text-brand-cream transition-colors" vid="345">Email Uplink</a>
                     </div>
                     
                     <div class="font-mono text-[9px] uppercase tracking-widest text-brand-cream/30 text-center md:text-right flex flex-col items-center md:items-end" vid="344">
@@ -2418,6 +2515,91 @@ video {
                 el.style.clipPath = 'circle(150% at 50% 50%)';
             });
         }
+
+        const servicePrefills = {
+            "message-architecture": {
+                projectVector: "campaign",
+                transmissionDetails: "I’m interested in Message Architecture & Campaign Narrative. I’d like support clarifying core messaging, campaign narrative, and strategic positioning.",
+                resourceAllocation: "Suggested starting scope: message architecture intensive"
+            },
+            "content-creation": {
+                projectVector: "campaign",
+                transmissionDetails: "I’m interested in Content Creation & Editorial Systems. I’d like support with content development, editorial planning, and communications assets.",
+                resourceAllocation: "Suggested starting scope: editorial development package"
+            },
+            "media-relations": {
+                projectVector: "media",
+                transmissionDetails: "I’m interested in Media Relations & Amplification. I’d like support with press strategy, outreach, press releases, and media visibility.",
+                resourceAllocation: "Suggested starting scope: media launch sprint"
+            },
+            "digital-distribution": {
+                projectVector: "digital",
+                transmissionDetails: "I’m interested in Digital Distribution Infrastructure. I’d like support with email systems, digital channels, distribution planning, and communications infrastructure.",
+                resourceAllocation: "Suggested starting scope: infrastructure setup"
+            },
+            "ongoing-retainer": {
+                projectVector: "campaign",
+                transmissionDetails: "I’m interested in the Ongoing Communications Retainer. I’d like integrated support across messaging, media, content, and digital systems.",
+                resourceAllocation: "Suggested starting scope: monthly retainer"
+            }
+        };
+
+        const serviceCards = document.querySelectorAll('.service-card');
+        const contactSection = document.getElementById('contact');
+        const projectVectorField = document.getElementById('project-vector');
+        const resourceAllocationField = document.getElementById('resource-allocation');
+        const transmissionDetailsField = document.getElementById('transmission-details');
+
+        [resourceAllocationField, transmissionDetailsField].forEach((field) => {
+            if (!field) return;
+            field.addEventListener('input', () => {
+                field.dataset.userEdited = 'true';
+            });
+        });
+
+        const applyServicePrefill = (serviceKey) => {
+            const config = servicePrefills[serviceKey];
+            if (!config) return;
+
+            if (projectVectorField) {
+                projectVectorField.value = config.projectVector;
+                projectVectorField.classList.add('text-brand-cream');
+            }
+
+            if (transmissionDetailsField && transmissionDetailsField.dataset.userEdited !== 'true') {
+                transmissionDetailsField.value = config.transmissionDetails;
+            }
+
+            if (resourceAllocationField && resourceAllocationField.dataset.userEdited !== 'true' && !resourceAllocationField.value.trim()) {
+                resourceAllocationField.placeholder = config.resourceAllocation;
+            }
+        };
+
+        serviceCards.forEach((card) => {
+            const collapseCard = () => card.setAttribute('aria-expanded', 'false');
+            const expandCard = () => card.setAttribute('aria-expanded', 'true');
+
+            card.addEventListener('mouseenter', expandCard);
+            card.addEventListener('mouseleave', collapseCard);
+            card.addEventListener('focus', expandCard);
+            card.addEventListener('blur', collapseCard);
+
+            card.addEventListener('click', () => {
+                if (window.getSelection && window.getSelection().toString()) return;
+
+                expandCard();
+                applyServicePrefill(card.dataset.service);
+
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+
+                window.setTimeout(() => {
+                    applyServicePrefill(card.dataset.service);
+                    transmissionDetailsField?.focus({ preventScroll: true });
+                }, 500);
+            });
+        });
 
         
         const navbar = document.getElementById('navbar');
