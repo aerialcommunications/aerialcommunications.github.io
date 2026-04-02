@@ -57,7 +57,6 @@
         h2,
         h3,
         h4,
-        .brand-heading,
         .service-card-heading,
         .qa-question h3 {
             font-family: 'Fraunces', serif;
@@ -87,6 +86,20 @@
         .desert-kicker {
             color: rgba(58, 47, 42, 0.72);
             letter-spacing: 0.16em;
+        }
+
+        .brand-heading {
+            font-family: 'Fraunces', serif;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+        }
+
+        .brand-mark {
+            font-family: 'Ranchers', cursive;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            line-height: 0.95;
+            display: inline-block;
         }
 
         
@@ -336,6 +349,7 @@
 
         .contact-form-shell {
             scroll-margin-top: calc(var(--header-offset) + 1rem);
+            margin-bottom: 1.25rem;
         }
 
         .intake-field {
@@ -452,6 +466,16 @@
 
         .summary-card dd:last-child {
             margin-bottom: 0;
+        }
+
+        .contact-submit-wrap {
+            padding-top: 0.75rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .contact-footer {
+            position: relative;
+            z-index: 10;
         }
 
         @media (max-width: 767px) {
@@ -591,6 +615,8 @@
             .contact-form-shell {
                 padding: 1.5rem;
                 border-radius: 1.5rem;
+                margin-bottom: 0;
+                padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
             }
             .intake-input,
             .intake-select,
@@ -598,14 +624,39 @@
                 font-size: 16px;
                 padding: 0.95rem 0.95rem 0.9rem;
             }
+            .intake-field {
+                margin-bottom: 1.2rem;
+            }
+            .summary-card {
+                padding: 1.1rem;
+                margin-top: 0.35rem;
+            }
             .service-option {
                 padding: 0.95rem;
+            }
+            .contact-submit-wrap {
+                padding-top: 1.15rem;
+                padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+            }
+            .form-status {
+                padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
             }
             #contact .submit-button {
                 width: 100%;
             }
-            footer .max-w-screen-2xl {
+            .contact-footer .max-w-screen-2xl {
                 text-align: center;
+            }
+            .contact-footer .flex.flex-wrap {
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            .contact-footer .footer-social-link,
+            .contact-footer .text-\[11px\] {
+                font-size: 0.78rem;
+                line-height: 1.35;
             }
         }
     </style>
@@ -2167,7 +2218,7 @@ video {
                 <line x1="50" y1="0" x2="50" y2="100" stroke-opacity="0.3" vid="27"></line>
                 <line x1="0" y1="50" x2="100" y2="50" stroke-opacity="0.3" vid="28"></line>
             </svg>
-            <span class="brand-heading text-xl text-brand-charcoal" vid="29">Aerial</span>
+            <span class="brand-mark text-[1.45rem] md:text-[1.6rem] text-brand-charcoal" vid="29">Aerial</span>
         </a>
         <div class="hidden md:flex gap-8" vid="30">
             <a href="#impact" class="text-xs font-bold uppercase tracking-widest text-brand-charcoal hover:text-brand-gold transition-colors" vid="31">Impact</a>
@@ -2554,14 +2605,14 @@ video {
                         
                         <div class="relative w-32 h-32 shrink-0 rounded-full overflow-hidden p-1 border border-brand-charcoal/20 group-hover:border-brand-gold transition-colors" vid="236">
                             <div class="absolute inset-0 border-[0.5px] border-brand-charcoal/30 border-dashed rounded-full spin-slow group-hover:border-brand-gold" vid="237"></div>
-                            <img src="../assets/alyssa.png" alt="Alyssa Cortes" class="w-full h-full object-cover rounded-full filter grayscale contrast-125" loading="lazy" decoding="async" vid="238">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&amp;w=400&amp;auto=format&amp;fit=crop" alt="Alyssa Cortes" class="w-full h-full object-cover rounded-full filter grayscale contrast-125" loading="lazy" decoding="async" vid="238">
                         </div>
                         <div vid="239">
                             <span class="font-mono text-[9px] uppercase tracking-widest text-brand-charcoal/50 mb-1 block" vid="240">External Affairs</span>
                             <h3 class="text-2xl font-bold tracking-tight mb-2" vid="241">Alyssa Cortes</h3>
                             <p class="text-sm font-light text-brand-charcoal/80 mb-4 leading-relaxed" vid="242">Media relations, narrative strategy, and crisis communications. Operates a mapped network of 450+ high-tier reporter contacts across climate and policy sectors.</p>
                             <div class="team-link-stack" vid="243">
-                                <a href="https://www.linkedin.com/in/alyssa-cortes/" class="profile-link text-[11px] uppercase tracking-widest hover:text-brand-gold transition-colors" aria-label="Alyssa Cortes LinkedIn" vid="244">
+                                <a href="#" class="profile-link text-[11px] uppercase tracking-widest hover:text-brand-gold transition-colors" aria-label="Alyssa Cortes LinkedIn" vid="244">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" vid="245"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 0 0 3.25 5c0 1.1.88 2 1.97 2h.03c1.13 0 2-.9 2-2A1.98 1.98 0 0 0 5.25 3ZM20.75 13.04c0-3.47-1.85-5.08-4.33-5.08-2 0-2.89 1.1-3.39 1.87V8.5H9.66c.04.88 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.9-1.38 1.95-1.38 1.38 0 1.93 1.04 1.93 2.57V20h3.37v-6.96Z" vid="246"></path></svg>
                                     <span vid="247">LinkedIn</span>
                                 </a>
@@ -2573,18 +2624,18 @@ video {
                     <div class="flex flex-col sm:flex-row gap-6 items-start group fade-up" vid="246">
                         <div class="relative w-32 h-32 shrink-0 rounded-full overflow-hidden p-1 border border-brand-charcoal/20 group-hover:border-brand-gold transition-colors" vid="247">
                             <div class="absolute inset-0 border-[0.5px] border-brand-charcoal/30 border-dashed rounded-full spin-slow-reverse group-hover:border-brand-gold" vid="248"></div>
-                            <img src="../assets/cassan.png" alt="Cassandre Arkema" class="w-full h-full object-cover rounded-full filter grayscale contrast-125" loading="lazy" decoding="async" vid="249">
+                            <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&amp;w=400&amp;auto=format&amp;fit=crop" alt="Cassandre Arkema" class="w-full h-full object-cover rounded-full filter grayscale contrast-125" loading="lazy" decoding="async" vid="249">
                         </div>
                         <div vid="250">
                             <span class="font-mono text-[9px] uppercase tracking-widest text-brand-charcoal/50 mb-1 block" vid="251">Digital Systems</span>
                             <h3 class="text-2xl font-bold tracking-tight mb-2" vid="252">Cassandre Arkema</h3>
                             <p class="text-sm font-light text-brand-charcoal/80 mb-4 leading-relaxed" vid="253">Digital strategy, content systems, email infrastructure, and algorithm wizardry. Architects the unseen frameworks that drive measurable engagement.</p>
                             <div class="team-link-stack" vid="254">
-                                <a href="https://www.linkedin.com/in/cassandrearkema" class="profile-link text-[11px] uppercase tracking-widest hover:text-brand-gold transition-colors" aria-label="Cassandre Arkema LinkedIn" vid="255">
+                                <a href="#" class="profile-link text-[11px] uppercase tracking-widest hover:text-brand-gold transition-colors" aria-label="Cassandre Arkema LinkedIn" vid="255">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" vid="256"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 0 0 3.25 5c0 1.1.88 2 1.97 2h.03c1.13 0 2-.9 2-2A1.98 1.98 0 0 0 5.25 3ZM20.75 13.04c0-3.47-1.85-5.08-4.33-5.08-2 0-2.89 1.1-3.39 1.87V8.5H9.66c.04.88 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.9-1.38 1.95-1.38 1.38 0 1.93 1.04 1.93 2.57V20h3.37v-6.96Z"></path></svg>
                                     <span>LinkedIn</span>
                                 </a>
-                                <a href="thealgorithmwitch.com" class="profile-link text-[11px] uppercase tracking-widest text-brand-charcoal/70 hover:text-brand-gold transition-colors" aria-label="Visit Cassandre Arkema website">
+                                <a href="#" class="profile-link text-[11px] uppercase tracking-widest text-brand-charcoal/70 hover:text-brand-gold transition-colors" aria-label="Visit Cassandre Arkema website">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm6.9 9h-3.02a15.6 15.6 0 0 0-1.32-5.02A8.03 8.03 0 0 1 18.9 11ZM12 4.04c1.16 1.4 2.04 3.86 2.22 6.96H9.78C9.96 7.9 10.84 5.44 12 4.04ZM9.44 5.98A15.6 15.6 0 0 0 8.12 11H5.1a8.03 8.03 0 0 1 4.34-5.02ZM4.58 13h3.54a15.7 15.7 0 0 0 1.3 5.08A8.04 8.04 0 0 1 4.58 13Zm7.42 6.96c-1.16-1.4-2.04-3.86-2.22-6.96h4.44c-.18 3.1-1.06 5.56-2.22 6.96Zm2.56-1.88A15.7 15.7 0 0 0 15.88 13h3.54a8.04 8.04 0 0 1-4.86 5.08Z"></path></svg>
                                     <span>Visit Website</span>
                                 </a>
@@ -2660,8 +2711,8 @@ video {
     </section>
 
     
-    <section id="contact" class="relative w-full z-30 reveal-section overflow-hidden text-brand-cream" vid="289">
-        <div class="reveal-mask w-full h-full relative" style="clip-path: circle(0% at 50% 100%);" vid="290">
+    <section id="contact" class="relative w-full z-30 reveal-section overflow-visible text-brand-cream" vid="289">
+        <div class="reveal-mask is-static w-full h-full relative" vid="290">
             
             
             <div class="absolute inset-0 z-0" vid="291">
@@ -2929,7 +2980,7 @@ video {
                             <input type="hidden" id="service-interest" name="service_interest" value="">
                             <input type="hidden" id="selected-service-prices" name="selected_service_prices" value="">
 
-                            <div class="col-span-1 md:col-span-2" vid="350">
+                            <div class="contact-submit-wrap col-span-1 md:col-span-2" vid="350">
                                 <button type="submit" class="submit-button w-full py-5 rounded-full border border-brand-gold text-brand-cream bg-brand-gold/10 hover:bg-brand-gold hover:text-brand-charcoal transition-all duration-300 uppercase tracking-widest text-xs flex items-center justify-center gap-3" vid="351">
                                     <span class="submit-button-label">Transmit Data</span>
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" vid="352"><path d="M5 12h14M12 5l7 7-7 7" vid="353"></path></svg>
@@ -2942,32 +2993,28 @@ video {
             </div>
 
             
-            <footer class="relative z-10 border-t border-brand-cream/10 px-6 md:px-12 py-8 mt-12 bg-brand-charcoal" vid="334">
+            <footer class="contact-footer relative z-10 border-t border-brand-cream/10 px-6 md:px-12 py-8 mt-12 bg-brand-charcoal" vid="334">
                 <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6" vid="335">
                     <div class="flex items-center gap-3" vid="336">
                         <svg class="w-4 h-4" viewBox="0 0 100 100" fill="none" stroke="#C9A86A" stroke-width="4" vid="337">
                             <circle cx="50" cy="50" r="40" stroke-dasharray="10 5" vid="338"></circle>
                         </svg>
-                        <span class="brand-heading text-xl" vid="339">Aerial Communications</span>
+                        <span class="text-xl flex items-baseline gap-2" vid="339"><span class="brand-mark">Aerial</span><span class="brand-heading text-base md:text-lg text-brand-cream/78">Communications</span></span>
                     </div>
                     
                     <div class="flex flex-wrap justify-center gap-6 md:gap-8" vid="340">
-                        <a href="#" class="footer-social-link text-[11px] uppercase tracking-widest text-brand-cream/50 hover:text-brand-gold transition-colors" aria-label="Alyssa Cortes LinkedIn" vid="341">
+                        <a href="#" class="footer-social-link text-[11px] uppercase tracking-widest text-brand-cream/60 hover:text-brand-gold transition-colors" aria-label="Alyssa Cortes LinkedIn" vid="341">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" vid="342"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 0 0 3.25 5c0 1.1.88 2 1.97 2h.03c1.13 0 2-.9 2-2A1.98 1.98 0 0 0 5.25 3ZM20.75 13.04c0-3.47-1.85-5.08-4.33-5.08-2 0-2.89 1.1-3.39 1.87V8.5H9.66c.04.88 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.9-1.38 1.95-1.38 1.38 0 1.93 1.04 1.93 2.57V20h3.37v-6.96Z" vid="343"></path></svg>
                             <span vid="344">Alyssa LinkedIn</span>
                         </a>
-                        <a href="#" class="footer-social-link text-[11px] uppercase tracking-widest text-brand-cream/50 hover:text-brand-gold transition-colors" aria-label="Cassandre Arkema LinkedIn">
+                        <a href="#" class="footer-social-link text-[11px] uppercase tracking-widest text-brand-cream/60 hover:text-brand-gold transition-colors" aria-label="Cassandre Arkema LinkedIn">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 0 0 3.25 5c0 1.1.88 2 1.97 2h.03c1.13 0 2-.9 2-2A1.98 1.98 0 0 0 5.25 3ZM20.75 13.04c0-3.47-1.85-5.08-4.33-5.08-2 0-2.89 1.1-3.39 1.87V8.5H9.66c.04.88 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.9-1.38 1.95-1.38 1.38 0 1.93 1.04 1.93 2.57V20h3.37v-6.96Z"></path></svg>
                             <span>Cassandre LinkedIn</span>
-                        </a>
-                        <a href="#" class="footer-social-link text-[11px] uppercase tracking-widest text-brand-cream/50 hover:text-brand-gold transition-colors" aria-label="Cassandre Arkema website">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm6.9 9h-3.02a15.6 15.6 0 0 0-1.32-5.02A8.03 8.03 0 0 1 18.9 11ZM12 4.04c1.16 1.4 2.04 3.86 2.22 6.96H9.78C9.96 7.9 10.84 5.44 12 4.04ZM9.44 5.98A15.6 15.6 0 0 0 8.12 11H5.1a8.03 8.03 0 0 1 4.34-5.02ZM4.58 13h3.54a15.7 15.7 0 0 0 1.3 5.08A8.04 8.04 0 0 1 4.58 13Zm7.42 6.96c-1.16-1.4-2.04-3.86-2.22-6.96h4.44c-.18 3.1-1.06 5.56-2.22 6.96Zm2.56-1.88A15.7 15.7 0 0 0 15.88 13h3.54a8.04 8.04 0 0 1-4.86 5.08Z"></path></svg>
-                            <span>Cassandre Website</span>
                         </a>
                         <a href="#" class="text-[11px] uppercase tracking-widest text-brand-gold hover:text-brand-cream transition-colors" vid="345">Email Uplink</a>
                     </div>
                     
-                    <div class="text-[10px] uppercase tracking-widest text-brand-cream/30 text-center md:text-right flex flex-col items-center md:items-end" vid="344">
+                    <div class="text-[10px] uppercase tracking-[0.14em] text-brand-cream/34 text-center md:text-right flex flex-col items-center md:items-end" vid="344">
                         <span vid="345">© 2024 System Architecture</span>
                         <span vid="346">LAT: 45.523062 / LONG: -122.676482</span>
                     </div>
@@ -3248,27 +3295,6 @@ video {
                     : 'Add details, timing, and budget context to help shape the response.';
             }
         }
-
-        const keepFieldVisible = (field) => {
-            if (!field || !contactForm || !contactForm.contains(field) || !isMobileViewport()) return;
-            window.setTimeout(() => {
-                field.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
-            }, 180);
-        };
-
-        contactForm?.addEventListener('focusin', (event) => {
-            const field = event.target.closest('input, select, textarea');
-            if (field) {
-                keepFieldVisible(field);
-            }
-        });
-
-        window.visualViewport?.addEventListener('resize', () => {
-            const activeField = document.activeElement;
-            if (activeField instanceof HTMLElement && contactForm?.contains(activeField)) {
-                keepFieldVisible(activeField);
-            }
-        });
 
         const applyServicePrefill = (serviceKey) => {
             const config = serviceCatalog[serviceKey];
