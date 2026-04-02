@@ -426,12 +426,23 @@
 
         #team {
             padding-bottom: clamp(7rem, 9vw, 9.5rem);
+            isolation: isolate;
+        }
+
+        #contact {
+            isolation: isolate;
         }
 
         #team .max-w-screen-2xl,
         #contact .max-w-screen-2xl {
             position: relative;
             z-index: 2;
+        }
+
+        .contact-scene {
+            overflow: hidden;
+            inset: 0;
+            z-index: 0;
         }
 
         .team-ambient {
@@ -2468,8 +2479,8 @@ video {
                             <line x1="50" y1="5" x2="50" y2="95" vid="92"></line>
                         </svg>
                         <span class="font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/60 block mb-4" vid="93">Network Growth</span>
-                        <div class="text-6xl md:text-8xl font-black tracking-tighter text-brand-charcoal mb-4 relative z-10" vid="94">30k+</div>
-                        <p class="text-sm font-light leading-relaxed relative z-10" vid="95">Engaged newsletter subscribers across verified distribution channels and platform ecosystems, creating a captive distribution network.</p>
+                        <div class="text-6xl md:text-8xl font-black tracking-tighter text-brand-charcoal mb-4 relative z-10" vid="94">20k+</div>
+                        <p class="text-sm font-light leading-relaxed relative z-10" vid="95">Engaged followers across verified distribution channels and platform ecosystems, creating a captive distribution network.</p>
                     </div>
 
                     
@@ -2477,9 +2488,9 @@ video {
                         <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 opacity-5 group-hover:scale-90 transition-transform duration-700" viewBox="0 0 100 100" fill="none" stroke="#3A2F2A" stroke-width="0.5" vid="97">
                             <circle cx="50" cy="50" r="10" vid="98"></circle><circle cx="50" cy="50" r="20" vid="99"></circle><circle cx="50" cy="50" r="30" vid="100"></circle><circle cx="50" cy="50" r="40" vid="101"></circle>
                         </svg>
-                        <span class="font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/60 block mb-4" vid="102">Media Contacts</span>
-                        <div class="text-6xl md:text-8xl font-black tracking-tighter text-brand-gold mb-4 relative z-10" vid="103">450+</div>
-                        <p class="text-sm font-light leading-relaxed relative z-10" vid="104">Reporters driven through high-intent policy and advocacy funnels from targeted signal distribution.</p>
+                        <span class="font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/60 block mb-4" vid="102">Domain Traffic</span>
+                        <div class="text-6xl md:text-8xl font-black tracking-tighter text-brand-gold mb-4 relative z-10" vid="103">30k+</div>
+                        <p class="text-sm font-light leading-relaxed relative z-10" vid="104">Annual website visits driven through high-intent policy and advocacy funnels from targeted signal distribution.</p>
                     </div>
                 </div>
             </div>
@@ -2842,7 +2853,7 @@ video {
         <div class="reveal-mask is-static w-full h-full relative" vid="290">
             
             
-            <div class="absolute inset-0 z-0" vid="291">
+            <div class="contact-scene absolute" vid="291">
                 <div class="parallax-bg w-[120%] h-[120%] absolute top-[-10%] left-[-10%]" vid="292">
                     <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" class="w-full h-full object-cover filter grayscale opacity-40 mix-blend-overlay" alt="Mountain terrain at dusk" loading="lazy" decoding="async" vid="293">
                 </div>
