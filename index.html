@@ -1,14 +1,14 @@
 
 <html lang="en" class="scroll-smooth" vid="0"><head vid="1">
     <meta charset="UTF-8" vid="2">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" vid="3">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" vid="3">
     <title vid="4">Aerial Communications | Integrated Strategy</title>
     <meta name="description" content="Integrated communications for climate, clean energy, and policy." vid="5">
     
     
     <link rel="preconnect" href="https://fonts.googleapis.com" vid="6">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" vid="7">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet" vid="8">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Ranchers&family=Young+Serif&display=swap" rel="stylesheet" vid="8">
     
     
     
@@ -24,13 +24,69 @@
             --brand-brown: #2B2420;
             --brand-brown-soft: #3A2F2A;
             --brand-brown-deep: #231C18;
+            --desert-sand: #F3E9DC;
+            --desert-dune: #E7D8C6;
+            --desert-rust: #8E5A3C;
+            --desert-olive: #7A8062;
+            --desert-gold: #C9A86A;
+            --header-offset: 6.25rem;
+        }
+
+        html {
+            scroll-padding-top: var(--header-offset);
+            overflow-x: clip;
         }
 
         body {
             background-color: #F3E9DC;
             color: var(--brand-brown);
-            overflow-x: hidden;
+            overflow-x: clip;
             -webkit-font-smoothing: antialiased;
+            font-family: 'Young Serif', serif;
+            line-height: 1.65;
+        }
+
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            font-family: 'Young Serif', serif;
+        }
+
+        h2,
+        h3,
+        h4,
+        .brand-heading,
+        .service-card-heading,
+        .qa-question h3 {
+            font-family: 'Fraunces', serif;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+        }
+
+        .display-headline {
+            font-family: 'Ranchers', cursive;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+        }
+
+        .retro-shadow {
+            text-shadow: 4px 4px 0 rgba(142, 90, 60, 0.72);
+        }
+
+        .font-mono,
+        code,
+        kbd,
+        samp,
+        pre {
+            font-family: 'Young Serif', serif !important;
+            letter-spacing: 0.08em;
+        }
+
+        .desert-kicker {
+            color: rgba(58, 47, 42, 0.72);
+            letter-spacing: 0.16em;
         }
 
         
@@ -47,18 +103,18 @@
 
         
         .glass-panel {
-            background: rgba(243, 233, 220, 0.65);
+            background: rgba(243, 233, 220, 0.74);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(201, 168, 106, 0.3);
-            box-shadow: 0 8px 32px 0 rgba(43, 36, 32, 0.05);
+            border: 1px solid rgba(142, 90, 60, 0.14);
+            box-shadow: 0 18px 48px 0 rgba(43, 36, 32, 0.08);
         }
 
         .glass-dark {
-            background: rgba(35, 28, 24, 0.88);
+            background: rgba(35, 28, 24, 0.9);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(201, 168, 106, 0.2);
+            border: 1px solid rgba(201, 168, 106, 0.18);
         }
 
         
@@ -142,6 +198,34 @@
         }
         ::placeholder {
             color: rgba(58, 47, 42, 0.4);
+        }
+
+        section,
+        nav,
+        footer {
+            max-width: 100%;
+        }
+
+        .parallax-bg,
+        .parallax-bg-impact,
+        .hero-radar,
+        .hero-radar-secondary,
+        .contact-flight-lines,
+        .team-ambient {
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .hero-content,
+        .contact-panel,
+        .hero-cta {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-cta {
+            pointer-events: auto;
+            touch-action: manipulation;
         }
 
         .service-card {
@@ -250,7 +334,138 @@
             width: 100%;
         }
 
+        .contact-form-shell {
+            scroll-margin-top: calc(var(--header-offset) + 1rem);
+        }
+
+        .intake-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .field-label {
+            font-size: 0.72rem;
+            color: rgba(243, 233, 220, 0.72);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .intake-input,
+        .intake-select,
+        .intake-textarea {
+            width: 100%;
+            background: transparent;
+            border: 1px solid rgba(243, 233, 220, 0.18);
+            color: #F3E9DC;
+            border-radius: 1.25rem;
+            padding: 1rem 1rem 0.95rem;
+            font-size: 1rem;
+            line-height: 1.45;
+            box-shadow: none;
+        }
+
+        .intake-input:focus,
+        .intake-select:focus,
+        .intake-textarea:focus {
+            border-color: rgba(201, 168, 106, 0.9);
+            box-shadow: 0 0 0 1px rgba(201, 168, 106, 0.9);
+        }
+
+        .intake-select option {
+            color: #F3E9DC;
+            background: #231C18;
+        }
+
+        .intake-textarea {
+            min-height: 9rem;
+            resize: vertical;
+        }
+
+        .service-option {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.85rem;
+            padding: 1rem;
+            border-radius: 1.25rem;
+            border: 1px solid rgba(243, 233, 220, 0.14);
+            background: rgba(243, 233, 220, 0.03);
+            transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .service-option:hover,
+        .service-option:focus-within {
+            border-color: rgba(201, 168, 106, 0.5);
+            background: rgba(243, 233, 220, 0.06);
+            transform: translateY(-1px);
+        }
+
+        .service-option input {
+            width: 1.1rem;
+            height: 1.1rem;
+            margin-top: 0.2rem;
+            accent-color: var(--desert-gold);
+            flex-shrink: 0;
+        }
+
+        .service-option-title {
+            color: #F3E9DC;
+            font-family: 'Fraunces', serif;
+            font-size: 1rem;
+            line-height: 1.2;
+        }
+
+        .service-option-price {
+            color: rgba(201, 168, 106, 0.92);
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .service-option-copy {
+            color: rgba(243, 233, 220, 0.62);
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+
+        .summary-card {
+            border: 1px solid rgba(201, 168, 106, 0.24);
+            background: rgba(243, 233, 220, 0.06);
+            border-radius: 1.5rem;
+            padding: 1.25rem;
+        }
+
+        .summary-card dt {
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(201, 168, 106, 0.85);
+            margin-bottom: 0.35rem;
+        }
+
+        .summary-card dd {
+            color: rgba(243, 233, 220, 0.88);
+            margin-bottom: 1rem;
+            line-height: 1.55;
+        }
+
+        .summary-card dd:last-child {
+            margin-bottom: 0;
+        }
+
         @media (max-width: 767px) {
+            :root {
+                --header-offset: 5.25rem;
+            }
+
+            html,
+            body {
+                width: 100%;
+                max-width: 100%;
+                overflow-x: clip;
+            }
+
             #navbar {
                 padding: 1rem 1rem 0.875rem;
                 gap: 0.75rem;
@@ -269,16 +484,19 @@
             .cinematic-section:first-of-type {
                 min-height: auto;
                 height: auto;
-                padding: 7rem 0 4rem;
+                padding: calc(var(--header-offset) + 1.5rem) 0 4rem;
             }
             .cinematic-section:first-of-type .parallax-bg {
-                inset: -5%;
-                width: 110%;
-                height: 110%;
+                inset: -2%;
+                width: 104%;
+                height: 104%;
             }
             .cinematic-section:first-of-type h1 {
                 font-size: clamp(4rem, 20vw, 6.5rem);
                 line-height: 0.9;
+            }
+            .retro-shadow {
+                text-shadow: 3px 3px 0 rgba(142, 90, 60, 0.72);
             }
             .cinematic-section:first-of-type p {
                 font-size: 1rem;
@@ -319,6 +537,21 @@
                 background: transparent;
                 border: none;
             }
+            .hero-radar {
+                width: 100vw;
+                height: 100vw;
+            }
+            .hero-radar-secondary,
+            .contact-flight-lines {
+                width: 96vw;
+                height: 96vw;
+            }
+            .team-ambient {
+                width: 96vw;
+                height: 96vw;
+                right: -20vw;
+                transform: translateY(-20%);
+            }
             .service-card {
                 min-height: 0 !important;
                 padding: 1.75rem;
@@ -354,6 +587,19 @@
             }
             #contact .grid.grid-cols-1.md\:grid-cols-2 {
                 gap: 0;
+            }
+            .contact-form-shell {
+                padding: 1.5rem;
+                border-radius: 1.5rem;
+            }
+            .intake-input,
+            .intake-select,
+            .intake-textarea {
+                font-size: 16px;
+                padding: 0.95rem 0.95rem 0.9rem;
+            }
+            .service-option {
+                padding: 0.95rem;
             }
             #contact .submit-button {
                 width: 100%;
@@ -1921,7 +2167,7 @@ video {
                 <line x1="50" y1="0" x2="50" y2="100" stroke-opacity="0.3" vid="27"></line>
                 <line x1="0" y1="50" x2="100" y2="50" stroke-opacity="0.3" vid="28"></line>
             </svg>
-            <span class="font-black tracking-tighter text-lg uppercase text-brand-charcoal" vid="29">Aerial</span>
+            <span class="brand-heading text-xl text-brand-charcoal" vid="29">Aerial</span>
         </a>
         <div class="hidden md:flex gap-8" vid="30">
             <a href="#impact" class="text-xs font-bold uppercase tracking-widest text-brand-charcoal hover:text-brand-gold transition-colors" vid="31">Impact</a>
@@ -1938,7 +2184,7 @@ video {
     <section class="cinematic-section relative h-screen w-full flex items-center justify-center overflow-hidden" vid="36">
         
         <div class="parallax-bg absolute inset-[-10%] w-[120%] h-[120%] z-0" vid="37">
-            <img src="https://images.unsplash.com/photo-1585250058814-7f1549ee14a5?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" class="w-full h-full object-cover opacity-80" alt="Aerial geometry" vid="38">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" class="w-full h-full object-cover opacity-80" alt="Aerial geometry over desert ridgelines" fetchpriority="high" decoding="async" vid="38">
         </div>
         
         
@@ -1946,26 +2192,26 @@ video {
 
         
         <div class="absolute inset-0 z-10 flex items-center justify-center pointer-events-none opacity-40" vid="40">
-            <svg viewBox="0 0 1000 1000" class="w-[150vw] h-[150vw] md:w-[80vw] md:h-[80vw] max-w-none spin-slow" vid="41">
+            <svg viewBox="0 0 1000 1000" class="hero-radar w-[150vw] h-[150vw] md:w-[80vw] md:h-[80vw] max-w-none spin-slow" vid="41">
                 <circle cx="500" cy="500" r="300" fill="none" stroke="#C9A86A" stroke-width="1" stroke-dasharray="4 12" vid="42"></circle>
                 <circle cx="500" cy="500" r="450" fill="none" stroke="#3A2F2A" stroke-width="0.5" vid="43"></circle>
                 <circle cx="500" cy="500" r="200" fill="none" stroke="#C9A86A" stroke-width="0.5" stroke-dasharray="2 4" vid="44"></circle>
                 <path d="M500 50 L500 950 M50 500 L950 500" stroke="#3A2F2A" stroke-width="0.5" stroke-dasharray="10 10" opacity="0.3" vid="45"></path>
             </svg>
-            <svg viewBox="0 0 1000 1000" class="absolute w-[120vw] h-[120vw] md:w-[60vw] md:h-[60vw] max-w-none spin-slow-reverse opacity-50" vid="46">
+            <svg viewBox="0 0 1000 1000" class="hero-radar-secondary absolute w-[120vw] h-[120vw] md:w-[60vw] md:h-[60vw] max-w-none spin-slow-reverse opacity-50" vid="46">
                 <circle cx="500" cy="500" r="400" fill="none" stroke="#BFA7CF" stroke-width="2" stroke-dasharray="100 20 10 20" vid="47"></circle>
             </svg>
         </div>
 
         
-        <div class="relative z-20 text-center px-4 max-w-5xl fade-up" vid="48">
+        <div class="hero-content relative z-20 text-center px-4 max-w-5xl fade-up" vid="48">
             <div class="flex items-center justify-center gap-4 mb-6" vid="49">
                 <span class="h-[1px] w-8 bg-brand-gold" vid="50"></span>
-                <span class="font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] text-brand-charcoal/70" vid="51">Altitude: 35,000 FT // Integrated Systems</span>
+                <span class="font-mono desert-kicker text-[10px] md:text-xs uppercase tracking-[0.2em] text-brand-charcoal/70" vid="51">Arizona Airspace // Integrated Campaigns</span>
                 <span class="h-[1px] w-8 bg-brand-gold" vid="52"></span>
             </div>
             
-            <h1 class="text-[12vw] md:text-[8rem] font-black leading-[0.85] tracking-tighter uppercase text-brand-charcoal mb-6 relative inline-block" vid="53">
+            <h1 class="display-headline retro-shadow text-[12vw] md:text-[8rem] leading-[0.85] text-brand-charcoal mb-6 relative inline-block" vid="53">
                 AERIAL
                 
                 <svg class="absolute -top-4 -right-8 w-12 h-12 spin-slow" viewBox="0 0 50 50" fill="none" stroke="#C9A86A" vid="54">
@@ -1974,15 +2220,15 @@ video {
                 </svg>
             </h1>
             
-            <p class="text-lg md:text-2xl font-light text-brand-charcoal/80 max-w-2xl mx-auto mb-10 leading-relaxed" vid="57">
-                Integrated communications for climate, clean energy, and policy. Media, messaging, and digital systems designed to work together.
+            <p class="text-lg md:text-2xl text-brand-charcoal/82 max-w-2xl mx-auto mb-10 leading-relaxed" vid="57">
+                Integrated communications for climate, clean energy, and policy, rendered with the warm precision of a desert flight plan.
             </p>
             
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4" vid="58">
-                <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-full border border-brand-charcoal bg-brand-charcoal text-brand-cream text-xs font-bold uppercase tracking-widest btn-circular-hover" vid="59">
+                <a href="#contact" class="hero-cta w-full sm:w-auto px-8 py-4 rounded-full border border-brand-charcoal bg-brand-charcoal text-brand-cream text-xs uppercase tracking-widest btn-circular-hover" vid="59">
                     Initiate Sequence ↗
                 </a>
-                <a href="#system" class="w-full sm:w-auto px-8 py-4 rounded-full border border-brand-gold/50 bg-brand-cream/30 backdrop-blur-sm text-brand-charcoal text-xs font-bold uppercase tracking-widest hover:border-brand-gold hover:bg-brand-cream/50 transition-all" vid="60">
+                <a href="#system" class="hero-cta w-full sm:w-auto px-8 py-4 rounded-full border border-brand-gold/50 bg-brand-cream/30 backdrop-blur-sm text-brand-charcoal text-xs uppercase tracking-widest hover:border-brand-gold hover:bg-brand-cream/50 transition-all" vid="60">
                     View Architecture
                 </a>
             </div>
@@ -2004,7 +2250,7 @@ video {
             <div class="absolute inset-0 z-0" vid="66">
                 <div class="parallax-bg-impact w-[120%] h-[120%] absolute top-[-10%] left-[-10%]" vid="67">
                      
-                    <img src="https://images.unsplash.com/photo-1543837173-6c26bc8197f6?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" class="w-full h-full object-cover filter grayscale opacity-40 mix-blend-multiply" alt="Desert topology" vid="68">
+                    <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" class="w-full h-full object-cover filter grayscale opacity-40 mix-blend-multiply" alt="Desert topology" loading="lazy" decoding="async" vid="68">
                 </div>
                 <div class="absolute inset-0 bg-brand-cream opacity-90 mix-blend-normal" vid="69"></div>
                 <div class="absolute inset-0 bg-topo opacity-50" vid="70"></div>
@@ -2066,7 +2312,7 @@ video {
     <section id="system" class="cinematic-section relative w-full min-h-screen z-30 overflow-hidden bg-brand-charcoal text-brand-cream" vid="105">
         
         <div class="parallax-bg absolute inset-[-10%] w-[120%] h-[120%] z-0" vid="106">
-            <img src="https://images.unsplash.com/photo-1518182170546-0766de6b6aca?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" class="w-full h-full object-cover opacity-30 mix-blend-luminosity" alt="Ocean currents" vid="107">
+            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" class="w-full h-full object-cover opacity-30 mix-blend-luminosity" alt="Aerial desert light patterns" loading="lazy" decoding="async" vid="107">
         </div>
         
         <div class="absolute inset-0 bg-gradient-to-b from-brand-charcoal/90 via-brand-charcoal/80 to-brand-charcoal/90 z-0" vid="108"></div>
@@ -2093,7 +2339,7 @@ video {
                     
                     
                     <circle cx="400" cy="400" r="60" fill="rgba(201,168,106,0.1)" stroke="#C9A86A" stroke-width="2" filter="url(#blur-glow)" vid="120"></circle>
-                    <text x="400" y="404" fill="#C9A86A" font-size="12" font-weight="900" font-family="Inter" letter-spacing="0.2em" text-anchor="middle" vid="121">CORE</text>
+                    <text x="400" y="404" fill="#C9A86A" font-size="12" font-family="Young Serif" letter-spacing="0.2em" text-anchor="middle" vid="121">CORE</text>
 
                     
                     
@@ -2102,14 +2348,14 @@ video {
                         <g transform="translate(400, 150)" vid="123">
                             <circle cx="0" cy="0" r="8" fill="#F3E9DC" filter="url(#blur-glow)" vid="124"></circle>
                             <circle cx="0" cy="0" r="24" fill="none" stroke="#F3E9DC" stroke-width="0.5" opacity="0.5" vid="125"></circle>
-                            <text x="15" y="4" fill="#F3E9DC" font-size="10" font-family="ui-monospace, monospace" letter-spacing="0.1em" vid="126">MESSAGING</text>
+                            <text x="15" y="4" fill="#F3E9DC" font-size="10" font-family="Young Serif" letter-spacing="0.1em" vid="126">MESSAGING</text>
                             
                             <path d="M-15,-15 A 21 21 0 0 1 15,-15" fill="none" stroke="#C9A86A" stroke-width="1" class="spin-slow-reverse" style="transform-origin: 0 0;" vid="127"></path>
                         </g>
                         
                         <g transform="translate(400, 650)" vid="128">
                             <circle cx="0" cy="0" r="8" fill="#F3E9DC" vid="129"></circle>
-                            <text x="-15" y="4" fill="#F3E9DC" font-size="10" font-family="ui-monospace, monospace" letter-spacing="0.1em" text-anchor="end" vid="130">CONTENT</text>
+                            <text x="-15" y="4" fill="#F3E9DC" font-size="10" font-family="Young Serif" letter-spacing="0.1em" text-anchor="end" vid="130">CONTENT</text>
                         </g>
                     </g>
 
@@ -2118,12 +2364,12 @@ video {
                         
                         <g transform="translate(50, 400)" vid="132">
                             <circle cx="0" cy="0" r="10" fill="#C9A86A" vid="133"></circle>
-                            <text x="15" y="-15" fill="#C9A86A" font-size="10" font-family="ui-monospace, monospace" letter-spacing="0.1em" vid="134">MEDIA RELATIONS</text>
+                            <text x="15" y="-15" fill="#C9A86A" font-size="10" font-family="Young Serif" letter-spacing="0.1em" vid="134">MEDIA RELATIONS</text>
                         </g>
                         
                         <g transform="translate(750, 400)" vid="135">
                             <circle cx="0" cy="0" r="6" fill="#F3E9DC" vid="136"></circle>
-                            <text x="-15" y="15" fill="#F3E9DC" font-size="10" font-family="ui-monospace, monospace" letter-spacing="0.1em" text-anchor="end" vid="137">EMAIL DISTRIBUTION</text>
+                            <text x="-15" y="15" fill="#F3E9DC" font-size="10" font-family="Young Serif" letter-spacing="0.1em" text-anchor="end" vid="137">EMAIL DISTRIBUTION</text>
                         </g>
                     </g>
 
@@ -2131,7 +2377,7 @@ video {
                     <g class="orbit-mid" style="transform-origin: 400px 400px;" vid="138">
                         <g transform="translate(187, 187)" vid="139">
                             <rect x="-8" y="-8" width="16" height="16" fill="none" stroke="#BFA7CF" stroke-width="2" transform="rotate(45)" vid="140"></rect>
-                            <text x="20" y="4" fill="#BFA7CF" font-size="10" font-family="ui-monospace, monospace" letter-spacing="0.1em" vid="141">DIGITAL INFRASTRUCTURE</text>
+                            <text x="20" y="4" fill="#BFA7CF" font-size="10" font-family="Young Serif" letter-spacing="0.1em" vid="141">DIGITAL INFRASTRUCTURE</text>
                         </g>
                     </g>
                     
@@ -2149,7 +2395,7 @@ video {
             
             <div class="absolute inset-0 z-0" vid="145">
                 <div class="parallax-bg w-[120%] h-[120%] absolute top-[-10%] left-[-10%]" vid="146">
-                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" class="w-full h-full object-cover filter grayscale opacity-20 mix-blend-multiply" alt="River delta" vid="147">
+                    <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" class="w-full h-full object-cover filter grayscale opacity-20 mix-blend-multiply" alt="Desert river geometry" loading="lazy" decoding="async" vid="147">
                 </div>
                 
                 <div class="absolute inset-0 bg-gradient-to-br from-brand-lavender/20 via-brand-cream to-brand-blush/20 mix-blend-normal" vid="148"></div>
@@ -2167,7 +2413,7 @@ video {
                 </div>
 
                 <div class="services-grid grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-charcoal/10 border border-brand-charcoal/10" vid="155">
-                    <button type="button" class="service-card glass-panel rounded-none border-none p-10 flex flex-col justify-between min-h-[320px] group transition-colors duration-500 fade-up" data-service="message-architecture" aria-expanded="false" vid="156">
+                    <button type="button" class="service-card glass-panel rounded-none border-none p-10 flex flex-col justify-between min-h-[320px] group transition-colors duration-500 fade-up" data-service="message-architecture" data-service-label="Messaging / Narrative Strategy" data-service-price="$4,500+" aria-expanded="false" vid="156">
                         <div class="service-card-content flex h-full flex-col justify-between">
                             <div vid="157">
                                 <div class="flex items-center gap-4 mb-6" vid="158">
@@ -2190,7 +2436,7 @@ video {
                         </div>
                     </button>
 
-                    <button type="button" class="service-card glass-panel rounded-none border-none p-10 flex flex-col justify-between min-h-[320px] group transition-colors duration-500 fade-up" data-service="content-creation" aria-expanded="false" vid="170">
+                    <button type="button" class="service-card glass-panel rounded-none border-none p-10 flex flex-col justify-between min-h-[320px] group transition-colors duration-500 fade-up" data-service="content-creation" data-service-label="Content Creation" data-service-price="$5,000+" aria-expanded="false" vid="170">
                         <div class="service-card-content flex h-full flex-col justify-between">
                             <div vid="171">
                                 <div class="flex items-center gap-4 mb-6" vid="172">
@@ -2213,7 +2459,7 @@ video {
                         </div>
                     </button>
 
-                    <button type="button" class="service-card glass-panel rounded-none border-none p-10 flex flex-col justify-between min-h-[320px] group transition-colors duration-500 fade-up" data-service="media-relations" aria-expanded="false" vid="184">
+                    <button type="button" class="service-card glass-panel rounded-none border-none p-10 flex flex-col justify-between min-h-[320px] group transition-colors duration-500 fade-up" data-service="media-relations" data-service-label="Media Relations / Press Outreach" data-service-price="$6,000+" aria-expanded="false" vid="184">
                         <div class="service-card-content flex h-full flex-col justify-between">
                             <div vid="185">
                                 <div class="flex items-center gap-4 mb-6" vid="186">
@@ -2236,7 +2482,7 @@ video {
                         </div>
                     </button>
 
-                    <button type="button" class="service-card glass-panel rounded-none border-none p-10 flex flex-col justify-between min-h-[320px] group transition-colors duration-500 fade-up" data-service="digital-distribution" aria-expanded="false" vid="198">
+                    <button type="button" class="service-card glass-panel rounded-none border-none p-10 flex flex-col justify-between min-h-[320px] group transition-colors duration-500 fade-up" data-service="digital-distribution" data-service-label="Website / Digital Infrastructure" data-service-price="$5,500+" aria-expanded="false" vid="198">
                         <div class="service-card-content flex h-full flex-col justify-between">
                             <div vid="199">
                                 <div class="flex items-center gap-4 mb-6" vid="200">
@@ -2259,7 +2505,7 @@ video {
                         </div>
                     </button>
 
-                    <button type="button" class="service-card glass-panel rounded-none border-none p-10 flex flex-col justify-between min-h-[200px] md:col-span-2 group transition-colors duration-500 fade-up relative" data-service="ongoing-retainer" aria-expanded="false" vid="212">
+                    <button type="button" class="service-card glass-panel rounded-none border-none p-10 flex flex-col justify-between min-h-[200px] md:col-span-2 group transition-colors duration-500 fade-up relative" data-service="ongoing-retainer" data-service-label="Ongoing Communications Retainer" data-service-price="$8,000/mo" aria-expanded="false" vid="212">
                         <div class="service-card-content flex flex-col md:flex-row md:items-center justify-between gap-8" vid="213">
                             <div class="flex-1" vid="214">
                                 <div class="flex items-center gap-4 mb-4" vid="215">
@@ -2289,7 +2535,7 @@ video {
     <section id="team" class="relative w-full z-20 py-32 px-6 md:px-12 bg-brand-cream border-t border-brand-charcoal/10 overflow-hidden" vid="222">
         
         
-        <div class="absolute top-0 right-0 translate-x-1/3 -translate-y-1/3 w-[800px] h-[800px] opacity-5 pointer-events-none" vid="223">
+        <div class="team-ambient absolute top-0 right-0 translate-x-1/3 -translate-y-1/3 w-[800px] h-[800px] opacity-5 pointer-events-none" vid="223">
             <svg viewBox="0 0 100 100" class="w-full h-full spin-slow" vid="224">
                 <circle cx="50" cy="50" r="10" fill="none" stroke="#3A2F2A" stroke-width="0.2" vid="225"></circle><circle cx="50" cy="50" r="20" fill="none" stroke="#3A2F2A" stroke-width="0.2" vid="226"></circle><circle cx="50" cy="50" r="30" fill="none" stroke="#3A2F2A" stroke-width="0.2" vid="227"></circle><circle cx="50" cy="50" r="40" fill="none" stroke="#3A2F2A" stroke-width="0.2" vid="228"></circle><circle cx="50" cy="50" r="50" fill="none" stroke="#3A2F2A" stroke-width="0.2" vid="229"></circle>
             </svg>
@@ -2308,14 +2554,14 @@ video {
                         
                         <div class="relative w-32 h-32 shrink-0 rounded-full overflow-hidden p-1 border border-brand-charcoal/20 group-hover:border-brand-gold transition-colors" vid="236">
                             <div class="absolute inset-0 border-[0.5px] border-brand-charcoal/30 border-dashed rounded-full spin-slow group-hover:border-brand-gold" vid="237"></div>
-                            <img src="../assets/alyssa.png" alt="Alyssa Cortes" class="w-full h-full object-cover rounded-full filter grayscale contrast-125" vid="238">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&amp;w=400&amp;auto=format&amp;fit=crop" alt="Alyssa Cortes" class="w-full h-full object-cover rounded-full filter grayscale contrast-125" loading="lazy" decoding="async" vid="238">
                         </div>
                         <div vid="239">
                             <span class="font-mono text-[9px] uppercase tracking-widest text-brand-charcoal/50 mb-1 block" vid="240">External Affairs</span>
                             <h3 class="text-2xl font-bold tracking-tight mb-2" vid="241">Alyssa Cortes</h3>
                             <p class="text-sm font-light text-brand-charcoal/80 mb-4 leading-relaxed" vid="242">Media relations, narrative strategy, and crisis communications. Operates a mapped network of 450+ high-tier reporter contacts across climate and policy sectors.</p>
                             <div class="team-link-stack" vid="243">
-                                <a href="https://www.linkedin.com/in/alyssa-cortes/" class="profile-link font-mono text-[10px] font-bold uppercase tracking-widest hover:text-brand-gold transition-colors" aria-label="Alyssa Cortes LinkedIn" vid="244">
+                                <a href="#" class="profile-link text-[11px] uppercase tracking-widest hover:text-brand-gold transition-colors" aria-label="Alyssa Cortes LinkedIn" vid="244">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" vid="245"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 0 0 3.25 5c0 1.1.88 2 1.97 2h.03c1.13 0 2-.9 2-2A1.98 1.98 0 0 0 5.25 3ZM20.75 13.04c0-3.47-1.85-5.08-4.33-5.08-2 0-2.89 1.1-3.39 1.87V8.5H9.66c.04.88 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.9-1.38 1.95-1.38 1.38 0 1.93 1.04 1.93 2.57V20h3.37v-6.96Z" vid="246"></path></svg>
                                     <span vid="247">LinkedIn</span>
                                 </a>
@@ -2327,18 +2573,18 @@ video {
                     <div class="flex flex-col sm:flex-row gap-6 items-start group fade-up" vid="246">
                         <div class="relative w-32 h-32 shrink-0 rounded-full overflow-hidden p-1 border border-brand-charcoal/20 group-hover:border-brand-gold transition-colors" vid="247">
                             <div class="absolute inset-0 border-[0.5px] border-brand-charcoal/30 border-dashed rounded-full spin-slow-reverse group-hover:border-brand-gold" vid="248"></div>
-                            <img src="../assets/cassan.png" alt="Cassandre Arkema" class="w-full h-full object-cover rounded-full filter grayscale contrast-125" vid="249">
+                            <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&amp;w=400&amp;auto=format&amp;fit=crop" alt="Cassandre Arkema" class="w-full h-full object-cover rounded-full filter grayscale contrast-125" loading="lazy" decoding="async" vid="249">
                         </div>
                         <div vid="250">
                             <span class="font-mono text-[9px] uppercase tracking-widest text-brand-charcoal/50 mb-1 block" vid="251">Digital Systems</span>
                             <h3 class="text-2xl font-bold tracking-tight mb-2" vid="252">Cassandre Arkema</h3>
                             <p class="text-sm font-light text-brand-charcoal/80 mb-4 leading-relaxed" vid="253">Digital strategy, content systems, email infrastructure, and algorithm wizardry. Architects the unseen frameworks that drive measurable engagement.</p>
                             <div class="team-link-stack" vid="254">
-                                <a href="linkedin.com/in/cassandrearkema" class="profile-link font-mono text-[10px] font-bold uppercase tracking-widest hover:text-brand-gold transition-colors" aria-label="Cassandre Arkema LinkedIn" vid="255">
+                                <a href="#" class="profile-link text-[11px] uppercase tracking-widest hover:text-brand-gold transition-colors" aria-label="Cassandre Arkema LinkedIn" vid="255">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" vid="256"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 0 0 3.25 5c0 1.1.88 2 1.97 2h.03c1.13 0 2-.9 2-2A1.98 1.98 0 0 0 5.25 3ZM20.75 13.04c0-3.47-1.85-5.08-4.33-5.08-2 0-2.89 1.1-3.39 1.87V8.5H9.66c.04.88 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.9-1.38 1.95-1.38 1.38 0 1.93 1.04 1.93 2.57V20h3.37v-6.96Z"></path></svg>
                                     <span>LinkedIn</span>
                                 </a>
-                                <a href="thealgorithmwitch.com" class="profile-link font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/70 hover:text-brand-gold transition-colors" aria-label="Visit Cassandre Arkema website">
+                                <a href="#" class="profile-link text-[11px] uppercase tracking-widest text-brand-charcoal/70 hover:text-brand-gold transition-colors" aria-label="Visit Cassandre Arkema website">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm6.9 9h-3.02a15.6 15.6 0 0 0-1.32-5.02A8.03 8.03 0 0 1 18.9 11ZM12 4.04c1.16 1.4 2.04 3.86 2.22 6.96H9.78C9.96 7.9 10.84 5.44 12 4.04ZM9.44 5.98A15.6 15.6 0 0 0 8.12 11H5.1a8.03 8.03 0 0 1 4.34-5.02ZM4.58 13h3.54a15.7 15.7 0 0 0 1.3 5.08A8.04 8.04 0 0 1 4.58 13Zm7.42 6.96c-1.16-1.4-2.04-3.86-2.22-6.96h4.44c-.18 3.1-1.06 5.56-2.22 6.96Zm2.56-1.88A15.7 15.7 0 0 0 15.88 13h3.54a8.04 8.04 0 0 1-4.86 5.08Z"></path></svg>
                                     <span>Visit Website</span>
                                 </a>
@@ -2420,12 +2666,12 @@ video {
             
             <div class="absolute inset-0 z-0" vid="291">
                 <div class="parallax-bg w-[120%] h-[120%] absolute top-[-10%] left-[-10%]" vid="292">
-                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" class="w-full h-full object-cover filter grayscale opacity-40 mix-blend-overlay" alt="Mountain terrain" vid="293">
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" class="w-full h-full object-cover filter grayscale opacity-40 mix-blend-overlay" alt="Mountain terrain at dusk" loading="lazy" decoding="async" vid="293">
                 </div>
                 <div class="absolute inset-0 bg-brand-charcoal opacity-90 mix-blend-normal" vid="294"></div>
                 
                 
-                <svg viewBox="0 0 1000 1000" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vw] md:w-[100vw] md:h-[100vw] max-w-none opacity-10 pointer-events-none spin-slow" vid="295">
+                <svg viewBox="0 0 1000 1000" class="contact-flight-lines absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vw] md:w-[100vw] md:h-[100vw] max-w-none opacity-10 pointer-events-none spin-slow" vid="295">
                     <path d="M500 100 A 400 400 0 0 1 900 500" fill="none" stroke="#C9A86A" stroke-width="2" vid="296"></path>
                     <path d="M500 200 A 300 300 0 0 1 800 500" fill="none" stroke="#C9A86A" stroke-width="1" stroke-dasharray="4 8" vid="297"></path>
                     <path d="M100 500 A 400 400 0 0 0 500 900" fill="none" stroke="#C9A86A" stroke-width="2" vid="298"></path>
@@ -2436,10 +2682,10 @@ video {
                 
                 
                 <div class="fade-up" vid="300">
-                    <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold mb-4 block" vid="301">07 // Initiate</span>
-                    <h2 class="text-6xl md:text-8xl font-black tracking-tighter uppercase mb-6" vid="302">Start<br vid="303">System.</h2>
-                    <p class="font-light text-brand-cream/70 leading-relaxed max-w-md mb-12" vid="304">
-                        Initialize a project dialogue. Provide parameters below and we will establish a secure communication link within 24 hours.
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold mb-4 block" vid="301">07 // Flight Intake</span>
+                    <h2 class="display-headline retro-shadow text-6xl md:text-8xl mb-6" vid="302">Start<br vid="303">System.</h2>
+                    <p class="text-brand-cream/74 leading-relaxed max-w-md mb-12" vid="304">
+                        Chart the route below. Share as much or as little as you have today and we will return with a grounded recommendation within 24 hours.
                     </p>
                     
                     
@@ -2454,40 +2700,239 @@ video {
 
                 
                 <div class="fade-up" vid="310">
-                    <form class="glass-dark p-8 md:p-12 rounded-3xl relative overflow-hidden group" id="contact-form" novalidate="" vid="311">
+                    <form class="contact-form-shell glass-dark p-8 md:p-12 rounded-3xl relative overflow-hidden group" id="contact-form" novalidate="" vid="311">
                         
                         <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px] opacity-20 pointer-events-none" vid="312"></div>
                         
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 relative z-10" vid="313">
-                            <div class="mb-6 col-span-1 md:col-span-2" vid="314">
-                                <input type="text" id="operator-name" name="operator_name" placeholder="OPERATOR NAME" required="" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30" vid="315">
+                        <div class="relative z-10 space-y-8" vid="313">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1">
+                                <div class="intake-field md:col-span-2" vid="314">
+                                    <label class="field-label" for="operator-name">Name *</label>
+                                    <input type="text" id="operator-name" name="operator_name" required="" autocomplete="name" class="intake-input" vid="315">
+                                </div>
+                                <div class="intake-field" vid="316">
+                                    <label class="field-label" for="organization">Organization</label>
+                                    <input type="text" id="organization" name="organization" autocomplete="organization" class="intake-input" vid="317">
+                                </div>
+                                <div class="intake-field" vid="318">
+                                    <label class="field-label" for="comms-link">Email</label>
+                                    <input type="email" id="comms-link" name="email" autocomplete="email" inputmode="email" class="intake-input" vid="319">
+                                </div>
+                                <div class="intake-field" vid="320">
+                                    <label class="field-label" for="website-or-social">Website or Social Link</label>
+                                    <input type="url" id="website-or-social" name="website_or_social" inputmode="url" class="intake-input" vid="321">
+                                </div>
+                                <div class="intake-field" vid="322">
+                                    <label class="field-label" for="preferred-contact-method">Preferred Contact Method</label>
+                                    <select id="preferred-contact-method" name="preferred_contact_method" class="intake-select" vid="323">
+                                        <option value="">Choose a method</option>
+                                        <option value="Email">Email</option>
+                                        <option value="Phone">Phone</option>
+                                        <option value="Text">Text</option>
+                                        <option value="Any">Any</option>
+                                    </select>
+                                </div>
+                                <div class="intake-field" vid="324">
+                                    <label class="field-label" for="project-vector">Project Vector</label>
+                                    <select id="project-vector" name="project_vector" class="intake-select" vid="325">
+                                        <option value="">Choose a vector</option>
+                                        <option value="Integrated Campaign">Integrated Campaign</option>
+                                        <option value="Media Relations">Media Relations</option>
+                                        <option value="Digital Infrastructure">Digital Infrastructure</option>
+                                        <option value="Editorial / Content">Editorial / Content</option>
+                                        <option value="Event Communications">Event Communications</option>
+                                        <option value="Custom Scope">Custom Scope</option>
+                                    </select>
+                                </div>
+                                <div class="intake-field" vid="326">
+                                    <label class="field-label" for="resource-allocation">Resource Allocation</label>
+                                    <input type="text" id="resource-allocation" name="resource_allocation" class="intake-input" vid="327">
+                                </div>
+                                <div class="intake-field" vid="328">
+                                    <label class="field-label" for="budget-range">Estimated Budget Range</label>
+                                    <select id="budget-range" name="budget_range" class="intake-select" vid="329">
+                                        <option value="">Select a range</option>
+                                        <option value="Under $5,000">Under $5,000</option>
+                                        <option value="$5,000-$10,000">$5,000-$10,000</option>
+                                        <option value="$10,000-$20,000">$10,000-$20,000</option>
+                                        <option value="$20,000+">$20,000+</option>
+                                        <option value="Retainer / ongoing">Retainer / ongoing</option>
+                                    </select>
+                                </div>
+                                <div class="intake-field" vid="330">
+                                    <label class="field-label" for="timeline">Desired Timeline</label>
+                                    <select id="timeline" name="timeline" class="intake-select" vid="331">
+                                        <option value="">Select timing</option>
+                                        <option value="ASAP">ASAP</option>
+                                        <option value="Within 2 weeks">Within 2 weeks</option>
+                                        <option value="Within 1 month">Within 1 month</option>
+                                        <option value="1-3 months">1-3 months</option>
+                                        <option value="Just exploring">Just exploring</option>
+                                    </select>
+                                </div>
+                                <div class="intake-field" vid="332">
+                                    <label class="field-label" for="engagement-type">One-Time or Ongoing</label>
+                                    <select id="engagement-type" name="engagement_type" class="intake-select" vid="333">
+                                        <option value="">Select a format</option>
+                                        <option value="One-time project">One-time project</option>
+                                        <option value="Ongoing support">Ongoing support</option>
+                                        <option value="Open to recommendation">Open to recommendation</option>
+                                    </select>
+                                </div>
+                                <div class="intake-field" vid="334">
+                                    <label class="field-label" for="delivery-scope">Strategy, Execution, or Both</label>
+                                    <select id="delivery-scope" name="delivery_scope" class="intake-select" vid="335">
+                                        <option value="">Choose a mode</option>
+                                        <option value="Strategy">Strategy</option>
+                                        <option value="Execution">Execution</option>
+                                        <option value="Both">Both</option>
+                                    </select>
+                                </div>
+                                <div class="intake-field" vid="336">
+                                    <label class="field-label" for="main-goal">Main Goal</label>
+                                    <select id="main-goal" name="main_goal" class="intake-select" vid="337">
+                                        <option value="">Select a goal</option>
+                                        <option value="Build awareness">Build awareness</option>
+                                        <option value="Launch a project or campaign">Launch a project or campaign</option>
+                                        <option value="Increase press coverage">Increase press coverage</option>
+                                        <option value="Improve digital presence">Improve digital presence</option>
+                                        <option value="Support an event">Support an event</option>
+                                        <option value="Clarify messaging">Clarify messaging</option>
+                                        <option value="Ongoing communications support">Ongoing communications support</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="intake-field" vid="338">
+                                    <label class="field-label" for="audiences">Audience(s) You Need to Reach</label>
+                                    <input type="text" id="audiences" name="audiences" class="intake-input" vid="339">
+                                </div>
+                                <div class="intake-field" vid="340">
+                                    <label class="field-label" for="support-focus">Press Support, Digital Support, or Both</label>
+                                    <select id="support-focus" name="support_focus" class="intake-select" vid="341">
+                                        <option value="">Choose a focus</option>
+                                        <option value="Press support">Press support</option>
+                                        <option value="Digital support">Digital support</option>
+                                        <option value="Both">Both</option>
+                                    </select>
+                                </div>
+                                <div class="intake-field" vid="342">
+                                    <label class="field-label" for="urgency-level">Urgency Level</label>
+                                    <select id="urgency-level" name="urgency_level" class="intake-select" vid="343">
+                                        <option value="">Select urgency</option>
+                                        <option value="Immediate">Immediate</option>
+                                        <option value="High">High</option>
+                                        <option value="Moderate">Moderate</option>
+                                        <option value="Flexible">Flexible</option>
+                                    </select>
+                                </div>
+                                <div class="intake-field md:col-span-2" vid="344">
+                                    <label class="field-label" for="referral-source">How Did You Hear About Us?</label>
+                                    <input type="text" id="referral-source" name="referral_source" class="intake-input" vid="345">
+                                </div>
                             </div>
-                            <div class="mb-6 col-span-1" vid="316">
-                                <input type="text" id="organization" name="organization" placeholder="ORGANIZATION" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30" vid="317">
+
+                            <fieldset class="intake-field" vid="346">
+                                <legend class="field-label">Which Services Are You Interested In?</legend>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <label class="service-option">
+                                        <input type="checkbox" name="selected_services[]" value="Ongoing Communications Retainer" data-price="$8,000/mo">
+                                        <span>
+                                            <span class="service-option-title">Ongoing Communications Retainer</span>
+                                            <span class="service-option-price">$8,000/mo</span>
+                                            <span class="service-option-copy">Integrated strategy, media, content, and systems support.</span>
+                                        </span>
+                                    </label>
+                                    <label class="service-option">
+                                        <input type="checkbox" name="selected_services[]" value="Media Relations / Press Outreach" data-price="$6,000+">
+                                        <span>
+                                            <span class="service-option-title">Media Relations / Press Outreach</span>
+                                            <span class="service-option-price">$6,000+</span>
+                                            <span class="service-option-copy">Press strategy, reporter pitching, releases, and amplification.</span>
+                                        </span>
+                                    </label>
+                                    <label class="service-option">
+                                        <input type="checkbox" name="selected_services[]" value="Content Creation" data-price="$5,000+">
+                                        <span>
+                                            <span class="service-option-title">Content Creation</span>
+                                            <span class="service-option-price">$5,000+</span>
+                                            <span class="service-option-copy">Editorial systems, articles, op-eds, and high-value assets.</span>
+                                        </span>
+                                    </label>
+                                    <label class="service-option">
+                                        <input type="checkbox" name="selected_services[]" value="Content + Media Amplification" data-price="$7,500+">
+                                        <span>
+                                            <span class="service-option-title">Content + Media Amplification</span>
+                                            <span class="service-option-price">$7,500+</span>
+                                            <span class="service-option-copy">Editorial development paired with distribution and media lift.</span>
+                                        </span>
+                                    </label>
+                                    <label class="service-option">
+                                        <input type="checkbox" name="selected_services[]" value="Website / Digital Infrastructure" data-price="$5,500+">
+                                        <span>
+                                            <span class="service-option-title">Website / Digital Infrastructure</span>
+                                            <span class="service-option-price">$5,500+</span>
+                                            <span class="service-option-copy">Website systems, email infrastructure, and digital routing.</span>
+                                        </span>
+                                    </label>
+                                    <label class="service-option">
+                                        <input type="checkbox" name="selected_services[]" value="Messaging / Narrative Strategy" data-price="$4,500+">
+                                        <span>
+                                            <span class="service-option-title">Messaging / Narrative Strategy</span>
+                                            <span class="service-option-price">$4,500+</span>
+                                            <span class="service-option-copy">Clarified positioning, campaign narrative, and core message architecture.</span>
+                                        </span>
+                                    </label>
+                                    <label class="service-option">
+                                        <input type="checkbox" name="selected_services[]" value="Launch or Campaign Support" data-price="$6,500+">
+                                        <span>
+                                            <span class="service-option-title">Launch or Campaign Support</span>
+                                            <span class="service-option-price">$6,500+</span>
+                                            <span class="service-option-copy">A structured rollout for announcements, launches, and narrative moments.</span>
+                                        </span>
+                                    </label>
+                                    <label class="service-option">
+                                        <input type="checkbox" name="selected_services[]" value="Event / Summit Communications" data-price="$6,000+">
+                                        <span>
+                                            <span class="service-option-title">Event / Summit Communications</span>
+                                            <span class="service-option-price">$6,000+</span>
+                                            <span class="service-option-copy">Speaker narratives, press coordination, and communications around live moments.</span>
+                                        </span>
+                                    </label>
+                                    <label class="service-option md:col-span-2">
+                                        <input type="checkbox" name="selected_services[]" value="Custom Scope" data-price="Custom quote">
+                                        <span>
+                                            <span class="service-option-title">Custom Scope</span>
+                                            <span class="service-option-price">Custom quote</span>
+                                            <span class="service-option-copy">A tailored communications build shaped around the mission, moment, and constraints.</span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="intake-field" vid="347">
+                                    <label class="field-label" for="transmission-details">Project Details *</label>
+                                    <textarea id="transmission-details" name="transmission_details" required="" class="intake-textarea" vid="348"></textarea>
+                                </div>
+                                <div class="summary-card" vid="349">
+                                    <dl>
+                                        <dt>Selected Scope</dt>
+                                        <dd id="summary-scope">No services selected yet.</dd>
+                                        <dt>Estimated Investment</dt>
+                                        <dd id="summary-investment">Choose one or more services to generate an estimated range.</dd>
+                                        <dt>Notes</dt>
+                                        <dd id="summary-notes">Add details, timing, and budget context to help shape the response.</dd>
+                                    </dl>
+                                </div>
                             </div>
-                            <div class="mb-6 col-span-1" vid="318">
-                                <input type="email" id="comms-link" name="email" placeholder="COMMS LINK (EMAIL)" required="" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30" vid="319">
-                            </div>
-                            <div class="mb-6 col-span-1" vid="320">
-                                <select id="project-vector" name="project_vector" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream/30 py-4 text-sm font-mono tracking-wider focus:border-brand-gold focus:text-brand-cream appearance-none rounded-none" vid="321">
-                                    <option value="" disabled="" selected="" vid="322">PROJECT VECTOR</option>
-                                    <option value="campaign" class="bg-brand-charcoal text-brand-cream" vid="323">Integrated Campaign</option>
-                                    <option value="media" class="bg-brand-charcoal text-brand-cream" vid="324">Media Relations</option>
-                                    <option value="digital" class="bg-brand-charcoal text-brand-cream" vid="325">Digital Infrastructure</option>
-                                </select>
-                            </div>
-                            <div class="mb-6 col-span-1" vid="326">
-                                <input type="text" id="resource-allocation" name="resource_allocation" placeholder="RESOURCE ALLOCATION" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30" vid="327">
-                            </div>
-                            <div class="mb-8 col-span-1 md:col-span-2" vid="328">
-                                <textarea rows="3" id="transmission-details" name="transmission_details" placeholder="TRANSMISSION DETAILS" required="" class="w-full bg-transparent border-b border-brand-cream/20 text-brand-cream py-4 text-sm font-mono tracking-wider focus:border-brand-gold placeholder-brand-cream/30 resize-none" vid="329"></textarea>
-                            </div>
+
                             <input type="hidden" id="service-interest" name="service_interest" value="">
-                            
-                            <div class="col-span-1 md:col-span-2" vid="330">
-                                <button type="submit" class="submit-button w-full py-5 rounded-full border border-brand-gold text-brand-cream bg-brand-gold/10 hover:bg-brand-gold hover:text-brand-charcoal transition-all duration-300 font-bold uppercase tracking-widest text-xs flex items-center justify-center gap-3" vid="331">
+                            <input type="hidden" id="selected-service-prices" name="selected_service_prices" value="">
+
+                            <div class="col-span-1 md:col-span-2" vid="350">
+                                <button type="submit" class="submit-button w-full py-5 rounded-full border border-brand-gold text-brand-cream bg-brand-gold/10 hover:bg-brand-gold hover:text-brand-charcoal transition-all duration-300 uppercase tracking-widest text-xs flex items-center justify-center gap-3" vid="351">
                                     <span class="submit-button-label">Transmit Data</span>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" vid="332"><path d="M5 12h14M12 5l7 7-7 7" vid="333"></path></svg>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" vid="352"><path d="M5 12h14M12 5l7 7-7 7" vid="353"></path></svg>
                                 </button>
                             </div>
                             <p id="form-status" class="form-status col-span-1 md:col-span-2 font-mono text-[10px] uppercase tracking-widest text-brand-cream/50" aria-live="polite"></p>
@@ -2503,26 +2948,26 @@ video {
                         <svg class="w-4 h-4" viewBox="0 0 100 100" fill="none" stroke="#C9A86A" stroke-width="4" vid="337">
                             <circle cx="50" cy="50" r="40" stroke-dasharray="10 5" vid="338"></circle>
                         </svg>
-                        <span class="font-black tracking-tighter uppercase" vid="339">Aerial Communications</span>
+                        <span class="brand-heading text-xl" vid="339">Aerial Communications</span>
                     </div>
                     
                     <div class="flex flex-wrap justify-center gap-6 md:gap-8" vid="340">
-                        <a href="#" class="footer-social-link font-mono text-[10px] uppercase tracking-widest text-brand-cream/50 hover:text-brand-gold transition-colors" aria-label="Alyssa Cortes LinkedIn" vid="341">
+                        <a href="#" class="footer-social-link text-[11px] uppercase tracking-widest text-brand-cream/50 hover:text-brand-gold transition-colors" aria-label="Alyssa Cortes LinkedIn" vid="341">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" vid="342"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 0 0 3.25 5c0 1.1.88 2 1.97 2h.03c1.13 0 2-.9 2-2A1.98 1.98 0 0 0 5.25 3ZM20.75 13.04c0-3.47-1.85-5.08-4.33-5.08-2 0-2.89 1.1-3.39 1.87V8.5H9.66c.04.88 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.9-1.38 1.95-1.38 1.38 0 1.93 1.04 1.93 2.57V20h3.37v-6.96Z" vid="343"></path></svg>
                             <span vid="344">Alyssa LinkedIn</span>
                         </a>
-                        <a href="#" class="footer-social-link font-mono text-[10px] uppercase tracking-widest text-brand-cream/50 hover:text-brand-gold transition-colors" aria-label="Cassandre Arkema LinkedIn">
+                        <a href="#" class="footer-social-link text-[11px] uppercase tracking-widest text-brand-cream/50 hover:text-brand-gold transition-colors" aria-label="Cassandre Arkema LinkedIn">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 0 0 3.25 5c0 1.1.88 2 1.97 2h.03c1.13 0 2-.9 2-2A1.98 1.98 0 0 0 5.25 3ZM20.75 13.04c0-3.47-1.85-5.08-4.33-5.08-2 0-2.89 1.1-3.39 1.87V8.5H9.66c.04.88 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.9-1.38 1.95-1.38 1.38 0 1.93 1.04 1.93 2.57V20h3.37v-6.96Z"></path></svg>
                             <span>Cassandre LinkedIn</span>
                         </a>
-                        <a href="#" class="footer-social-link font-mono text-[10px] uppercase tracking-widest text-brand-cream/50 hover:text-brand-gold transition-colors" aria-label="Cassandre Arkema website">
+                        <a href="#" class="footer-social-link text-[11px] uppercase tracking-widest text-brand-cream/50 hover:text-brand-gold transition-colors" aria-label="Cassandre Arkema website">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm6.9 9h-3.02a15.6 15.6 0 0 0-1.32-5.02A8.03 8.03 0 0 1 18.9 11ZM12 4.04c1.16 1.4 2.04 3.86 2.22 6.96H9.78C9.96 7.9 10.84 5.44 12 4.04ZM9.44 5.98A15.6 15.6 0 0 0 8.12 11H5.1a8.03 8.03 0 0 1 4.34-5.02ZM4.58 13h3.54a15.7 15.7 0 0 0 1.3 5.08A8.04 8.04 0 0 1 4.58 13Zm7.42 6.96c-1.16-1.4-2.04-3.86-2.22-6.96h4.44c-.18 3.1-1.06 5.56-2.22 6.96Zm2.56-1.88A15.7 15.7 0 0 0 15.88 13h3.54a8.04 8.04 0 0 1-4.86 5.08Z"></path></svg>
                             <span>Cassandre Website</span>
                         </a>
-                        <a href="#" class="font-mono text-[10px] uppercase tracking-widest text-brand-gold hover:text-brand-cream transition-colors" vid="345">Email Uplink</a>
+                        <a href="#" class="text-[11px] uppercase tracking-widest text-brand-gold hover:text-brand-cream transition-colors" vid="345">Email Uplink</a>
                     </div>
                     
-                    <div class="font-mono text-[9px] uppercase tracking-widest text-brand-cream/30 text-center md:text-right flex flex-col items-center md:items-end" vid="344">
+                    <div class="text-[10px] uppercase tracking-widest text-brand-cream/30 text-center md:text-right flex flex-col items-center md:items-end" vid="344">
                         <span vid="345">© 2024 System Architecture</span>
                         <span vid="346">LAT: 45.523062 / LONG: -122.676482</span>
                     </div>
@@ -2534,7 +2979,7 @@ video {
     
     <script vid="347">
         
-        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxEDWwatHSqyyCFly_Hp3AnRryoKVye0WdCY0g9vZc8vbgTf8B8Gt1CICrIhXYONDQHZg/exec';
+        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyhLgmjlbHg5ZIDXHpEOf5kxl5r-bLedfDZaWfIPrCk6ICFKsALPnpGskT04tqjWW5Fhg/exec';
 
         gsap.registerPlugin(ScrollTrigger);
 
@@ -2675,64 +3120,166 @@ video {
             });
         }
 
-        const servicePrefills = {
+        const serviceCatalog = {
             "message-architecture": {
-                projectVector: "campaign",
+                projectVector: "Integrated Campaign",
+                serviceInterest: "Message Architecture & Campaign Narrative",
+                selectedLabel: "Messaging / Narrative Strategy",
+                selectedPrice: "$4,500+",
                 transmissionDetails: "I’m interested in Message Architecture & Campaign Narrative. I’d like support clarifying core messaging, campaign narrative, and strategic positioning.",
                 resourceAllocation: "Suggested starting scope: message architecture intensive"
             },
             "content-creation": {
-                projectVector: "campaign",
+                projectVector: "Integrated Campaign",
+                serviceInterest: "Content Creation & Editorial Systems",
+                selectedLabel: "Content Creation",
+                selectedPrice: "$5,000+",
                 transmissionDetails: "I’m interested in Content Creation & Editorial Systems. I’d like support with content development, editorial planning, and communications assets.",
                 resourceAllocation: "Suggested starting scope: editorial development package"
             },
             "media-relations": {
-                projectVector: "media",
+                projectVector: "Media Relations",
+                serviceInterest: "Media Relations & Amplification",
+                selectedLabel: "Media Relations / Press Outreach",
+                selectedPrice: "$6,000+",
                 transmissionDetails: "I’m interested in Media Relations & Amplification. I’d like support with press strategy, outreach, press releases, and media visibility.",
                 resourceAllocation: "Suggested starting scope: media launch sprint"
             },
             "digital-distribution": {
-                projectVector: "digital",
+                projectVector: "Digital Infrastructure",
+                serviceInterest: "Digital Distribution Infrastructure",
+                selectedLabel: "Website / Digital Infrastructure",
+                selectedPrice: "$5,500+",
                 transmissionDetails: "I’m interested in Digital Distribution Infrastructure. I’d like support with email systems, digital channels, distribution planning, and communications infrastructure.",
                 resourceAllocation: "Suggested starting scope: infrastructure setup"
             },
             "ongoing-retainer": {
-                projectVector: "campaign",
+                projectVector: "Integrated Campaign",
+                serviceInterest: "Ongoing Communications Retainer",
+                selectedLabel: "Ongoing Communications Retainer",
+                selectedPrice: "$8,000/mo",
                 transmissionDetails: "I’m interested in the Ongoing Communications Retainer. I’d like integrated support across messaging, media, content, and digital systems.",
                 resourceAllocation: "Suggested starting scope: monthly retainer"
             }
         };
 
         const serviceCards = document.querySelectorAll('.service-card');
+        const serviceCheckboxes = Array.from(document.querySelectorAll('input[name="selected_services[]"]'));
         const contactForm = document.getElementById('contact-form');
         const contactSection = document.getElementById('contact');
         const projectVectorField = document.getElementById('project-vector');
         const resourceAllocationField = document.getElementById('resource-allocation');
         const transmissionDetailsField = document.getElementById('transmission-details');
         const serviceInterestField = document.getElementById('service-interest');
+        const selectedServicePricesField = document.getElementById('selected-service-prices');
+        const summaryScope = document.getElementById('summary-scope');
+        const summaryInvestment = document.getElementById('summary-investment');
+        const summaryNotes = document.getElementById('summary-notes');
+        const budgetRangeField = document.getElementById('budget-range');
+        const timelineField = document.getElementById('timeline');
+        const deliveryScopeField = document.getElementById('delivery-scope');
         const submitButton = contactForm?.querySelector('.submit-button');
         const submitButtonLabel = contactForm?.querySelector('.submit-button-label');
         const formStatus = document.getElementById('form-status');
         const defaultSubmitLabel = submitButtonLabel?.textContent || 'Transmit Data';
 
+        const isMobileViewport = () => window.matchMedia('(max-width: 767px)').matches;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
         [resourceAllocationField, transmissionDetailsField].forEach((field) => {
             if (!field) return;
             field.addEventListener('input', () => {
                 field.dataset.userEdited = 'true';
+                updateSummary();
             });
         });
 
+        [budgetRangeField, timelineField, deliveryScopeField].forEach((field) => {
+            field?.addEventListener('change', updateSummary);
+        });
+
+        const selectedServices = () => serviceCheckboxes
+            .filter((checkbox) => checkbox.checked)
+            .map((checkbox) => ({
+                label: checkbox.value,
+                price: checkbox.dataset.price || 'Custom quote'
+            }));
+
+        const syncServiceFields = () => {
+            const services = selectedServices();
+            const serviceLabels = services.map((item) => item.label);
+            const servicePrices = services.map((item) => item.price);
+
+            if (selectedServicePricesField) {
+                selectedServicePricesField.value = servicePrices.join(' | ');
+            }
+
+            if (serviceInterestField) {
+                const existingCardInterest = serviceInterestField.dataset.cardInterest || '';
+                serviceInterestField.value = serviceLabels.length ? serviceLabels.join(' | ') : existingCardInterest;
+            }
+
+            return services;
+        };
+
+        function updateSummary() {
+            const services = syncServiceFields();
+            const noteParts = [
+                budgetRangeField?.value || '',
+                timelineField?.value || '',
+                deliveryScopeField?.value || ''
+            ].filter(Boolean);
+
+            if (summaryScope) {
+                summaryScope.textContent = services.length
+                    ? services.map((item) => item.label).join(', ')
+                    : 'No services selected yet.';
+            }
+
+            if (summaryInvestment) {
+                summaryInvestment.textContent = services.length
+                    ? [...new Set(services.map((item) => item.price))].join(' · ')
+                    : 'Choose one or more services to generate an estimated range.';
+            }
+
+            if (summaryNotes) {
+                summaryNotes.textContent = noteParts.length
+                    ? noteParts.join(' · ')
+                    : 'Add details, timing, and budget context to help shape the response.';
+            }
+        }
+
+        const keepFieldVisible = (field) => {
+            if (!field || !contactForm || !contactForm.contains(field) || !isMobileViewport()) return;
+            window.setTimeout(() => {
+                field.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
+            }, 180);
+        };
+
+        contactForm?.addEventListener('focusin', (event) => {
+            const field = event.target.closest('input, select, textarea');
+            if (field) {
+                keepFieldVisible(field);
+            }
+        });
+
+        window.visualViewport?.addEventListener('resize', () => {
+            const activeField = document.activeElement;
+            if (activeField instanceof HTMLElement && contactForm?.contains(activeField)) {
+                keepFieldVisible(activeField);
+            }
+        });
+
         const applyServicePrefill = (serviceKey) => {
-            const config = servicePrefills[serviceKey];
+            const config = serviceCatalog[serviceKey];
             if (!config) return;
 
             if (serviceInterestField) {
-                serviceInterestField.value = serviceKey;
+                serviceInterestField.dataset.cardInterest = config.serviceInterest;
             }
 
             if (projectVectorField) {
                 projectVectorField.value = config.projectVector;
-                projectVectorField.classList.add('text-brand-cream');
             }
 
             if (transmissionDetailsField && transmissionDetailsField.dataset.userEdited !== 'true') {
@@ -2740,9 +3287,20 @@ video {
             }
 
             if (resourceAllocationField && resourceAllocationField.dataset.userEdited !== 'true' && !resourceAllocationField.value.trim()) {
-                resourceAllocationField.placeholder = config.resourceAllocation;
+                resourceAllocationField.value = config.resourceAllocation;
             }
+
+            const matchingCheckbox = serviceCheckboxes.find((checkbox) => checkbox.value === config.selectedLabel);
+            if (matchingCheckbox) {
+                matchingCheckbox.checked = true;
+            }
+
+            updateSummary();
         };
+
+        serviceCheckboxes.forEach((checkbox) => {
+            checkbox.addEventListener('change', updateSummary);
+        });
 
         serviceCards.forEach((card) => {
             const collapseCard = () => card.setAttribute('aria-expanded', 'false');
@@ -2763,10 +3321,11 @@ video {
                     contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
 
-                window.setTimeout(() => {
-                    applyServicePrefill(card.dataset.service);
-                    transmissionDetailsField?.focus({ preventScroll: true });
-                }, 500);
+                if (!isMobileViewport()) {
+                    window.setTimeout(() => {
+                        transmissionDetailsField?.focus({ preventScroll: true });
+                    }, 350);
+                }
             });
         });
 
@@ -2795,16 +3354,31 @@ video {
 
         const buildPayload = (form) => {
             const formData = new FormData(form);
+            const services = selectedServices();
+
             return {
                 operator_name: (formData.get('operator_name') || '').toString().trim(),
                 organization: (formData.get('organization') || '').toString().trim(),
                 email: (formData.get('email') || '').toString().trim(),
+                website_or_social: (formData.get('website_or_social') || '').toString().trim(),
+                preferred_contact_method: (formData.get('preferred_contact_method') || '').toString().trim(),
                 project_vector: (formData.get('project_vector') || '').toString().trim(),
+                service_interest: (formData.get('service_interest') || '').toString().trim(),
+                selected_services: services.map((item) => item.label),
+                selected_service_prices: services.map((item) => item.price),
                 resource_allocation: (formData.get('resource_allocation') || '').toString().trim(),
+                budget_range: (formData.get('budget_range') || '').toString().trim(),
+                timeline: (formData.get('timeline') || '').toString().trim(),
+                engagement_type: (formData.get('engagement_type') || '').toString().trim(),
+                delivery_scope: (formData.get('delivery_scope') || '').toString().trim(),
+                main_goal: (formData.get('main_goal') || '').toString().trim(),
+                audiences: (formData.get('audiences') || '').toString().trim(),
+                support_focus: (formData.get('support_focus') || '').toString().trim(),
+                urgency_level: (formData.get('urgency_level') || '').toString().trim(),
+                referral_source: (formData.get('referral_source') || '').toString().trim(),
                 transmission_details: (formData.get('transmission_details') || '').toString().trim(),
                 timestamp: new Date().toISOString(),
                 submission_id: buildSubmissionId(),
-                service_interest: (formData.get('service_interest') || '').toString().trim(),
                 source_page: window.location.href,
                 referrer: document.referrer || '',
                 user_agent: navigator.userAgent
@@ -2812,13 +3386,15 @@ video {
         };
 
         const validatePayload = (payload) => {
-            if (!payload.operator_name) return 'Operator name is required.';
-            if (!payload.email) return 'Email is required.';
-            if (!payload.transmission_details) return 'Transmission details are required.';
+            if (!payload.operator_name) return 'Name is required.';
+            if (!payload.transmission_details) return 'Project details are required.';
+            if (payload.email && !emailPattern.test(payload.email)) return 'Enter a valid email or leave it blank.';
             return '';
         };
 
         if (contactForm) {
+            updateSummary();
+
             contactForm.addEventListener('submit', async (event) => {
                 event.preventDefault();
 
@@ -2860,16 +3436,26 @@ video {
                         throw new Error(result.error || 'Transmission failed. Please try again.');
                     }
 
-                    setFormStatus('Transmission received. We will respond within 24 hours.', 'success');
+                    const warningMessage = Array.isArray(result.warnings) && result.warnings.length
+                        ? 'Inquiry received. The confirmation email could not be delivered automatically, but your request is logged.'
+                        : 'Transmission received. We will respond within 24 hours.';
+
+                    setFormStatus(warningMessage, 'success');
                     contactForm.reset();
-                    serviceInterestField.value = '';
-                    projectVectorField.classList.remove('text-brand-cream');
-                    resourceAllocationField.placeholder = 'RESOURCE ALLOCATION';
+                    if (serviceInterestField) {
+                        serviceInterestField.value = '';
+                        serviceInterestField.dataset.cardInterest = '';
+                    }
+                    if (selectedServicePricesField) {
+                        selectedServicePricesField.value = '';
+                    }
                     [resourceAllocationField, transmissionDetailsField].forEach((field) => {
                         if (field) {
+                            field.value = '';
                             delete field.dataset.userEdited;
                         }
                     });
+                    updateSummary();
                 } catch (error) {
                     setFormStatus(error.message || 'Unable to transmit right now. Please try again shortly.', 'error');
                 } finally {
