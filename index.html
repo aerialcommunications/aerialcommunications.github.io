@@ -150,7 +150,7 @@
             font-size: clamp(4.5rem, 12vw, 8.5rem);
             letter-spacing: 0.065em;
             line-height: 0.84;
-            color: var(--desert-gold);
+            color: var(--brand-brown);
             text-transform: none;
             text-shadow: 3px 3px 0 rgba(58, 47, 42, 0.28);
             display: inline-block;
@@ -162,7 +162,7 @@
         }
 
         .hero-support-line {
-            color: #8F79B8;
+            color: var(--brand-brown);
             margin-bottom: 1.75rem;
         }
 
@@ -761,6 +761,44 @@
                 radial-gradient(circle at 18% 18%, rgba(224, 159, 171, 0.12), transparent 28%),
                 radial-gradient(circle at 82% 20%, rgba(241, 198, 95, 0.14), transparent 30%),
                 linear-gradient(145deg, rgba(58, 44, 86, 0.92), rgba(45, 35, 70, 0.95));
+        }
+
+        .team-atmosphere {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            clip-path: inset(0);
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 14% 18%, rgba(224, 159, 171, 0.14), transparent 26%),
+                radial-gradient(circle at 78% 22%, rgba(154, 127, 187, 0.16), transparent 28%),
+                radial-gradient(circle at 62% 78%, rgba(241, 198, 95, 0.14), transparent 24%);
+        }
+
+        .team-atmosphere::before,
+        .team-atmosphere::after {
+            content: "";
+            position: absolute;
+            border-radius: 999px;
+            filter: blur(85px);
+            opacity: 0.55;
+        }
+
+        .team-atmosphere::before {
+            width: 20rem;
+            height: 20rem;
+            left: -4rem;
+            bottom: -4rem;
+            background: radial-gradient(circle, rgba(224, 159, 171, 0.22), transparent 72%);
+        }
+
+        .team-atmosphere::after {
+            width: 22rem;
+            height: 22rem;
+            right: -5rem;
+            top: 2rem;
+            background: radial-gradient(circle, rgba(154, 127, 187, 0.2), transparent 74%);
         }
 
         .intake-field {
@@ -2674,8 +2712,8 @@ video {
 
     
     <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 px-6 py-5 md:px-12 flex justify-between items-center glass-panel border-x-0 border-t-0 rounded-none" vid="22">
-        <a href="#" class="flex items-center gap-3 group" vid="23">
-            <svg class="w-6 h-6 spin-slow" viewBox="0 0 100 100" fill="none" stroke="#C9A86A" stroke-width="2" vid="24">
+        <a href="#" class="flex items-center gap-3 group text-brand-charcoal hover:text-brand-gold transition-colors" vid="23">
+            <svg class="w-6 h-6 spin-slow" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" vid="24">
                 <circle cx="50" cy="50" r="40" stroke-dasharray="10 5" vid="25"></circle>
                 <circle cx="50" cy="50" r="20" vid="26"></circle>
                 <line x1="50" y1="0" x2="50" y2="100" stroke-opacity="0.3" vid="27"></line>
@@ -3057,6 +3095,7 @@ video {
 
     
     <section id="team" class="relative w-full z-20 py-32 px-6 md:px-12 bg-brand-cream border-t border-brand-charcoal/10 overflow-visible" vid="222">
+        <div class="team-atmosphere" aria-hidden="true"></div>
         
         
         <div class="team-ambient absolute pointer-events-none" vid="223">
