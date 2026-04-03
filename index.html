@@ -21,6 +21,8 @@
             --desert-rust: #8E5A3C;
             --desert-olive: #7A8062;
             --desert-gold: #C9A86A;
+            --atmo-pink: rgba(224, 159, 171, 0.2);
+            --atmo-pink-soft: rgba(224, 159, 171, 0.11);
             --atmo-purple: rgba(154, 127, 187, 0.26);
             --atmo-purple-soft: rgba(154, 127, 187, 0.14);
             --atmo-yellow: rgba(241, 198, 95, 0.2);
@@ -38,6 +40,7 @@
         body {
             background:
                 radial-gradient(circle at top left, var(--atmo-yellow-soft), transparent 28%),
+                radial-gradient(circle at 24% 46%, var(--atmo-pink-soft), transparent 30%),
                 radial-gradient(circle at 85% 18%, var(--atmo-purple-soft), transparent 34%),
                 var(--desert-sand);
             color: var(--brand-brown);
@@ -59,26 +62,27 @@
         h2,
         .section-title,
         .major-title {
-            font-family: 'Comfortaa', 'Fascinate', sans-serif;
-            letter-spacing: 0.01em;
-            line-height: 0.94;
-            font-weight: 700;
+            font-family: 'Fascinate', 'Trebuchet MS', cursive;
+            letter-spacing: 0.02em;
+            line-height: 0.97;
+            font-weight: 400;
         }
 
         h3,
         h4,
         .service-card-heading,
         .qa-question h3 {
-            font-family: 'Fascinate', 'Trebuchet MS', sans-serif;
+            font-family: 'Comfortaa', 'Baloo 2', sans-serif;
             letter-spacing: 0.01em;
-            line-height: 1.08;
-            font-weight: 400;
+            line-height: 1.16;
+            font-weight: 700;
         }
 
         .display-headline {
-            font-family: 'Comfortaa', 'Fascinate', sans-serif;
+            font-family: 'Fascinate', 'Trebuchet MS', cursive;
             font-weight: 400;
             letter-spacing: 0.02em;
+            line-height: 0.9;
         }
 
         .retro-shadow {
@@ -101,24 +105,32 @@
             font-weight: 600;
         }
 
-        .brand-heading {
-            font-family: 'Monoton', 'Fascinate', cursive;
-            letter-spacing: 0.04em;
-            line-height: 0.95;
-        }
-
         .brand-mark {
-            font-family: 'Monoton', 'Fascinate', cursive;
-            font-weight: 400;
-            letter-spacing: 0.035em;
-            line-height: 0.92;
-            display: inline-block;
+            display: inline-flex;
+            align-items: baseline;
+            gap: 0.26rem;
             white-space: nowrap;
         }
 
+        .brand-word {
+            font-family: 'Monoton', 'Fascinate', cursive;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            line-height: 0.88;
+            display: inline-block;
+        }
+
+        .brand-tail {
+            font-family: 'Baloo 2', 'Trebuchet MS', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
         .accent-display {
-            font-family: 'Fascinate', 'Comfortaa', sans-serif;
-            letter-spacing: 0.015em;
+            font-family: 'Fascinate', 'Trebuchet MS', cursive;
+            letter-spacing: 0.02em;
             display: inline-block;
         }
 
@@ -245,6 +257,7 @@
             inset: 0;
             z-index: 0;
             overflow: hidden;
+            clip-path: inset(0);
             pointer-events: none;
         }
 
@@ -259,46 +272,91 @@
 
         .hero-atmosphere {
             background:
-                linear-gradient(135deg, rgba(244, 233, 215, 0.74) 0%, rgba(239, 214, 173, 0.22) 42%, rgba(154, 127, 187, 0.2) 100%);
+                linear-gradient(135deg, rgba(244, 233, 215, 0.7) 0%, rgba(239, 214, 173, 0.16) 34%, rgba(224, 159, 171, 0.16) 58%, rgba(154, 127, 187, 0.22) 100%);
         }
 
         .services-atmosphere {
             background:
-                linear-gradient(140deg, rgba(154, 127, 187, 0.12) 0%, rgba(244, 233, 215, 0.94) 40%, rgba(241, 198, 95, 0.12) 100%);
+                linear-gradient(140deg, rgba(224, 159, 171, 0.1) 0%, rgba(154, 127, 187, 0.12) 28%, rgba(244, 233, 215, 0.92) 50%, rgba(241, 198, 95, 0.14) 100%);
+        }
+
+        .impact-atmosphere {
+            background:
+                linear-gradient(150deg, rgba(244, 233, 215, 0.82) 0%, rgba(224, 159, 171, 0.08) 22%, rgba(154, 127, 187, 0.12) 48%, rgba(241, 198, 95, 0.08) 100%);
+        }
+
+        .section-image {
+            position: absolute;
+            inset: -8%;
+            width: 116%;
+            height: 116%;
+            z-index: 0;
+        }
+
+        .section-image > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.2;
+        }
+
+        .hero-image > img {
+            opacity: 0.5;
+        }
+
+        .impact-image > img,
+        .services-image > img,
+        .system-image > img {
+            opacity: 0.18;
+            mix-blend-mode: multiply;
+        }
+
+        .impact-wind {
+            position: absolute;
+            inset: -6%;
+            z-index: 1;
+            opacity: 0.14;
+            mix-blend-mode: screen;
+        }
+
+        .impact-wind img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .hero-scene::before {
-            width: 28rem;
-            height: 28rem;
-            left: -8rem;
-            top: -8rem;
-            background: radial-gradient(circle, var(--atmo-yellow), transparent 70%);
+            width: 22rem;
+            height: 22rem;
+            left: -5rem;
+            top: -4rem;
+            background: radial-gradient(circle, var(--atmo-yellow), transparent 72%);
         }
 
         .hero-scene::after {
-            width: 34rem;
-            height: 34rem;
-            right: -10rem;
-            top: -4rem;
-            background: radial-gradient(circle, var(--atmo-purple), transparent 70%);
+            width: 28rem;
+            height: 28rem;
+            right: -6rem;
+            top: -3rem;
+            background: radial-gradient(circle, var(--atmo-purple), transparent 72%);
         }
 
         .impact-scene::before,
         .services-scene::before {
-            width: 26rem;
-            height: 26rem;
-            left: -6rem;
-            bottom: -10rem;
-            background: radial-gradient(circle, var(--atmo-purple-soft), transparent 72%);
+            width: 20rem;
+            height: 20rem;
+            left: -4rem;
+            bottom: -5rem;
+            background: radial-gradient(circle, var(--atmo-purple-soft), transparent 74%);
         }
 
         .impact-scene::after,
         .services-scene::after {
-            width: 20rem;
-            height: 20rem;
-            right: -4rem;
-            top: -2rem;
-            background: radial-gradient(circle, var(--atmo-yellow-soft), transparent 70%);
+            width: 17rem;
+            height: 17rem;
+            right: -2rem;
+            top: -1rem;
+            background: radial-gradient(circle, var(--atmo-pink-soft), transparent 72%);
         }
 
         .system-scene::before,
@@ -319,8 +377,7 @@
             background: radial-gradient(circle, rgba(241, 198, 95, 0.14), transparent 72%);
         }
 
-        .parallax-bg,
-        .parallax-bg-impact,
+        .section-image,
         .hero-radar,
         .hero-radar-secondary,
         .contact-flight-lines,
@@ -467,8 +524,7 @@
             filter: blur(0);
         }
 
-        .parallax-bg > img,
-        .parallax-bg-impact > img {
+        .section-image > img {
             transform: translate3d(0, var(--parallax-shift, 0px), 0) scale(var(--parallax-scale, 1.04));
             will-change: transform;
             transition: transform 140ms linear;
@@ -645,9 +701,10 @@
 
         .service-option-title {
             color: #F3E9DC;
-            font-family: 'Fascinate', 'Trebuchet MS', sans-serif;
+            font-family: 'Comfortaa', 'Baloo 2', sans-serif;
             font-size: 1rem;
             line-height: 1.2;
+            font-weight: 700;
         }
 
         .service-option-price {
@@ -715,6 +772,16 @@
                 padding: 1rem 1rem 0.875rem;
                 gap: 0.75rem;
             }
+            .brand-mark {
+                gap: 0.2rem;
+            }
+            .brand-word {
+                letter-spacing: 0.02em;
+            }
+            .brand-tail {
+                letter-spacing: 0.11em;
+                font-size: 0.72em;
+            }
             #navbar .mobile-nav-cta {
                 display: inline-flex;
                 flex-shrink: 0;
@@ -731,7 +798,7 @@
                 height: auto;
                 padding: calc(var(--header-offset) + 1.5rem) 0 4rem;
             }
-            .cinematic-section:first-of-type .parallax-bg {
+            .cinematic-section:first-of-type .section-image {
                 inset: -2%;
                 width: 104%;
                 height: 104%;
@@ -885,8 +952,7 @@
         @media (prefers-reduced-motion: reduce) {
             .fade-up,
             .js-enhanced .fade-up,
-            .parallax-bg > img,
-            .parallax-bg-impact > img {
+            .section-image > img {
                 transition: none !important;
                 transform: none !important;
                 filter: none !important;
@@ -2462,7 +2528,7 @@ video {
                 <line x1="50" y1="0" x2="50" y2="100" stroke-opacity="0.3" vid="27"></line>
                 <line x1="0" y1="50" x2="100" y2="50" stroke-opacity="0.3" vid="28"></line>
             </svg>
-            <span class="brand-mark text-[1.32rem] md:text-[1.52rem] text-brand-charcoal" vid="29">Aerial Communications</span>
+            <span class="brand-mark text-[1.52rem] md:text-[1.82rem] text-brand-charcoal" vid="29"><span class="brand-word">Aerial</span><span class="brand-tail">Communications</span></span>
         </a>
         <div class="hidden md:flex gap-8" vid="30">
             <a href="#impact" class="text-xs font-bold uppercase tracking-widest text-brand-charcoal hover:text-brand-gold transition-colors" vid="31">Impact</a>
@@ -2479,8 +2545,8 @@ video {
     <section class="cinematic-section relative h-screen w-full flex items-center justify-center overflow-hidden" vid="36">
         
         <div class="section-scene hero-scene" vid="37">
-        <div class="parallax-bg absolute inset-[-10%] w-[120%] h-[120%] z-0" vid="38">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" class="w-full h-full object-cover opacity-80" alt="Aerial geometry over desert ridgelines" fetchpriority="high" decoding="async" vid="39">
+        <div class="section-image hero-image" vid="38">
+            <img src="../assets/hero.png" class="w-full h-full object-cover" alt="Aerial geometry over desert ridgelines" fetchpriority="high" decoding="async" vid="39">
         </div>
         
         
@@ -2545,12 +2611,15 @@ video {
             
             
             <div class="section-scene impact-scene" vid="66">
-                <div class="parallax-bg-impact w-[120%] h-[120%] absolute top-[-10%] left-[-10%]" vid="67">
-                     
-                    <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" class="w-full h-full object-cover filter grayscale opacity-40 mix-blend-multiply" alt="Desert topology" loading="lazy" decoding="async" vid="68">
+                <div class="section-image impact-image" vid="67">
+                    <img src="../assets/sunset.png" class="w-full h-full object-cover" alt="Desert topology" loading="lazy" decoding="async" vid="68">
                 </div>
-                <div class="absolute inset-0 bg-brand-cream opacity-90 mix-blend-normal" vid="69"></div>
-                <div class="absolute inset-0 bg-topo opacity-50" vid="70"></div>
+                <div class="impact-wind" vid="69">
+                    <img src="../assets/wind.png" alt="" loading="lazy" decoding="async" aria-hidden="true">
+                </div>
+                <div class="absolute inset-0 impact-atmosphere mix-blend-normal" vid="69"></div>
+                <div class="absolute inset-0 bg-brand-cream opacity-86 mix-blend-normal" vid="70"></div>
+                <div class="absolute inset-0 bg-topo opacity-40" vid="71"></div>
             </div>
 
             <div class="relative z-10 py-32 px-6 md:px-12 max-w-screen-2xl mx-auto" vid="71">
@@ -2609,8 +2678,8 @@ video {
     <section id="system" class="cinematic-section relative w-full min-h-screen z-30 overflow-hidden bg-brand-charcoal text-brand-cream" vid="105">
         
         <div class="section-scene system-scene" vid="106">
-        <div class="parallax-bg absolute inset-[-10%] w-[120%] h-[120%] z-0" vid="107">
-            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" class="w-full h-full object-cover opacity-30 mix-blend-luminosity" alt="Aerial desert light patterns" loading="lazy" decoding="async" vid="107">
+        <div class="section-image system-image" vid="107">
+            <img src="../assets/red.png" class="w-full h-full object-cover" alt="Aerial desert light patterns" loading="lazy" decoding="async" vid="107">
         </div>
         
         <div class="absolute inset-0 bg-gradient-to-b from-brand-charcoal/90 via-brand-charcoal/80 to-brand-charcoal/90 z-0" vid="108"></div>
@@ -2693,8 +2762,8 @@ video {
             
             
             <div class="section-scene services-scene" vid="145">
-                <div class="parallax-bg w-[120%] h-[120%] absolute top-[-10%] left-[-10%]" vid="146">
-                    <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" class="w-full h-full object-cover filter grayscale opacity-20 mix-blend-multiply" alt="Desert river geometry" loading="lazy" decoding="async" vid="147">
+                <div class="section-image services-image" vid="146">
+                    <img src="../assets/desert.png" class="w-full h-full object-cover" alt="Desert river geometry" loading="lazy" decoding="async" vid="147">
                 </div>
                 
                 <div class="absolute inset-0 services-atmosphere mix-blend-normal" vid="148"></div>
@@ -3247,7 +3316,7 @@ video {
                         <svg class="w-4 h-4" viewBox="0 0 100 100" fill="none" stroke="#C9A86A" stroke-width="4" vid="337">
                             <circle cx="50" cy="50" r="40" stroke-dasharray="10 5" vid="338"></circle>
                         </svg>
-                        <span class="brand-mark text-[1.32rem] md:text-[1.52rem] text-brand-cream" vid="339">Aerial Communications</span>
+                        <span class="brand-mark text-[1.52rem] md:text-[1.82rem] text-brand-cream" vid="339"><span class="brand-word">Aerial</span><span class="brand-tail">Communications</span></span>
                     </div>
                     
                     <div class="flex flex-wrap justify-center gap-6 md:gap-8" vid="340">
@@ -3298,7 +3367,7 @@ video {
             fadeUpElements.forEach((element) => fadeObserver.observe(element));
         }
 
-        const parallaxLayers = Array.from(document.querySelectorAll('.parallax-bg, .parallax-bg-impact'));
+        const parallaxLayers = Array.from(document.querySelectorAll('.section-image, .parallax-bg'));
         const motionMediaQuery = window.matchMedia('(min-width: 768px)');
         let parallaxTicking = false;
 
