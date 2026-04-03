@@ -312,13 +312,16 @@
             content: "";
             position: absolute;
             border-radius: 999px;
-            filter: blur(80px);
+            filter: blur(110px);
             opacity: 0.7;
         }
 
         .hero-atmosphere {
             background:
-                linear-gradient(135deg, rgba(244, 233, 215, 0.66) 0%, rgba(239, 214, 173, 0.12) 30%, rgba(224, 159, 171, 0.18) 56%, rgba(154, 127, 187, 0.24) 100%);
+                radial-gradient(circle at 18% 22%, rgba(224, 159, 171, 0.18), transparent 26%),
+                radial-gradient(circle at 78% 18%, rgba(241, 198, 95, 0.18), transparent 28%),
+                radial-gradient(circle at 56% 72%, rgba(154, 127, 187, 0.16), transparent 30%),
+                linear-gradient(135deg, rgba(244, 233, 215, 0.62) 0%, rgba(239, 214, 173, 0.16) 28%, rgba(224, 159, 171, 0.22) 56%, rgba(154, 127, 187, 0.3) 100%);
         }
 
         .services-atmosphere {
@@ -328,7 +331,10 @@
 
         .impact-atmosphere {
             background:
-                linear-gradient(150deg, rgba(244, 233, 215, 0.82) 0%, rgba(224, 159, 171, 0.08) 22%, rgba(154, 127, 187, 0.12) 48%, rgba(241, 198, 95, 0.08) 100%);
+                radial-gradient(circle at 16% 22%, rgba(224, 159, 171, 0.16), transparent 26%),
+                radial-gradient(circle at 78% 20%, rgba(154, 127, 187, 0.16), transparent 28%),
+                radial-gradient(circle at 64% 76%, rgba(241, 198, 95, 0.14), transparent 24%),
+                linear-gradient(150deg, rgba(244, 233, 215, 0.78) 0%, rgba(224, 159, 171, 0.12) 22%, rgba(154, 127, 187, 0.16) 48%, rgba(241, 198, 95, 0.12) 100%);
         }
 
         .section-image {
@@ -347,7 +353,7 @@
         }
 
         .hero-image > img {
-            opacity: 0.5;
+            opacity: 0.6;
         }
 
         .impact-image > img,
@@ -362,7 +368,7 @@
             position: absolute;
             inset: -6%;
             z-index: 1;
-            opacity: 0.26;
+            opacity: 0.34;
             mix-blend-mode: multiply;
         }
 
@@ -373,37 +379,37 @@
         }
 
         .hero-scene::before {
-            width: 22rem;
-            height: 22rem;
-            left: -5rem;
-            top: -4rem;
-            background: radial-gradient(circle, var(--atmo-yellow), transparent 72%);
+            width: 28rem;
+            height: 28rem;
+            left: -7rem;
+            top: -5rem;
+            background: radial-gradient(circle, rgba(241, 198, 95, 0.28), transparent 74%);
         }
 
         .hero-scene::after {
-            width: 28rem;
-            height: 28rem;
-            right: -6rem;
-            top: -3rem;
-            background: radial-gradient(circle, var(--atmo-purple), transparent 72%);
+            width: 34rem;
+            height: 34rem;
+            right: -8rem;
+            top: -4rem;
+            background: radial-gradient(circle, rgba(154, 127, 187, 0.32), transparent 74%);
         }
 
         .impact-scene::before,
         .services-scene::before {
-            width: 20rem;
-            height: 20rem;
-            left: -4rem;
-            bottom: -5rem;
-            background: radial-gradient(circle, var(--atmo-purple-soft), transparent 74%);
+            width: 24rem;
+            height: 24rem;
+            left: -5rem;
+            bottom: -6rem;
+            background: radial-gradient(circle, rgba(154, 127, 187, 0.2), transparent 76%);
         }
 
         .impact-scene::after,
         .services-scene::after {
-            width: 17rem;
-            height: 17rem;
-            right: -2rem;
-            top: -1rem;
-            background: radial-gradient(circle, var(--atmo-pink-soft), transparent 72%);
+            width: 22rem;
+            height: 22rem;
+            right: -4rem;
+            top: -2rem;
+            background: radial-gradient(circle, rgba(224, 159, 171, 0.2), transparent 74%);
         }
 
         .system-scene::before,
