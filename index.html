@@ -2,7 +2,7 @@
 <html lang="en" vid="0"><head vid="1">
     <meta charset="UTF-8" vid="2">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" vid="3">
-    <title vid="4">Aerial Communications | Integrated Strategy</title>
+    <title vid="4">Aerial | Integrated Strategy</title>
     <meta name="description" content="Integrated communications for climate, clean energy, and policy." vid="5">
     <link rel="icon" href="../assets/aerial.png" type="image/png">
     <meta property="og:image" content="../assets/aerial.png">
@@ -123,18 +123,30 @@
             display: inline-block;
         }
 
-        .brand-tail {
-            font-family: 'Baloo 2', 'Trebuchet MS', sans-serif;
-            font-weight: 600;
-            letter-spacing: 0.14em;
-            line-height: 1;
-            text-transform: uppercase;
-        }
-
         .accent-display {
             font-family: 'Fascinate', 'Trebuchet MS', cursive;
             letter-spacing: 0.02em;
             display: inline-block;
+        }
+
+        .hero-brand-shell {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-brand {
+            font-family: 'Monoton', 'Fascinate', cursive;
+            font-size: clamp(4.5rem, 12vw, 8.5rem);
+            letter-spacing: 0.065em;
+            line-height: 0.84;
+            color: var(--desert-gold);
+            text-transform: none;
+            text-shadow: 3px 3px 0 rgba(58, 47, 42, 0.28);
+            display: inline-block;
+            padding-left: 0.06em;
         }
 
         
@@ -781,9 +793,14 @@
             .brand-word {
                 letter-spacing: 0.02em;
             }
-            .brand-tail {
-                letter-spacing: 0.11em;
-                font-size: 0.72em;
+            .hero-brand-shell {
+                margin-bottom: 1rem;
+            }
+            .hero-brand {
+                font-size: clamp(3.7rem, 19vw, 5.6rem);
+                letter-spacing: 0.05em;
+                line-height: 0.86;
+                text-shadow: 2px 2px 0 rgba(58, 47, 42, 0.25);
             }
             #navbar .mobile-nav-cta {
                 display: inline-flex;
@@ -2577,14 +2594,16 @@ video {
                 <span class="h-[1px] w-8 bg-brand-gold" vid="52"></span>
             </div>
             
-            <h1 class="display-headline retro-shadow text-[12vw] md:text-[8rem] leading-[0.85] text-brand-charcoal mb-6 relative inline-block" vid="53">
-                AERIAL
+            <div class="hero-brand-shell" vid="53">
+            <h1 class="hero-brand relative inline-block" vid="53">
+                Aerial
                 
                 <svg class="absolute -top-4 -right-8 w-12 h-12 spin-slow" viewBox="0 0 50 50" fill="none" stroke="#C9A86A" vid="54">
                     <circle cx="25" cy="25" r="10" vid="55"></circle>
                     <path d="M25 0 V15 M25 50 V35 M0 25 H15 M50 25 H35" stroke-width="2" vid="56"></path>
                 </svg>
             </h1>
+            </div>
             
             <p class="text-lg md:text-2xl text-brand-charcoal/82 max-w-2xl mx-auto mb-10 leading-relaxed" vid="57">
                 Integrated communications for climate, clean energy, and policy, rendered with the warm precision of a desert flight plan.
@@ -3319,7 +3338,7 @@ video {
                         <svg class="w-4 h-4" viewBox="0 0 100 100" fill="none" stroke="#C9A86A" stroke-width="4" vid="337">
                             <circle cx="50" cy="50" r="40" stroke-dasharray="10 5" vid="338"></circle>
                         </svg>
-                        <span class="brand-mark text-[1.52rem] md:text-[1.82rem] text-brand-cream" vid="339"><span class="brand-word">Aerial</span></span>
+                        <span class="brand-mark text-[1.52rem] md:text-[1.82rem] text-brand-gold" vid="339"><span class="brand-word">Aerial</span></span>
                     </div>
                     
                     <div class="flex flex-wrap justify-center gap-6 md:gap-8" vid="340">
