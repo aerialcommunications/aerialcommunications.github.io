@@ -88,6 +88,14 @@
             line-height: 0.9;
         }
 
+        .display-subheadline {
+            font-family: 'Fascinate', 'Trebuchet MS', cursive;
+            font-size: clamp(2.05rem, 5vw, 4.1rem);
+            line-height: 0.98;
+            letter-spacing: 0.02em;
+            font-weight: 400;
+        }
+
         .retro-shadow {
             text-shadow: 4px 4px 0 var(--sunset-shadow);
         }
@@ -337,8 +345,8 @@
             position: absolute;
             inset: -6%;
             z-index: 1;
-            opacity: 0.14;
-            mix-blend-mode: screen;
+            opacity: 0.26;
+            mix-blend-mode: multiply;
         }
 
         .impact-wind img {
@@ -729,6 +737,11 @@
                 radial-gradient(circle at 18% 18%, rgba(224, 159, 171, 0.12), transparent 28%),
                 radial-gradient(circle at 82% 20%, rgba(241, 198, 95, 0.14), transparent 30%),
                 linear-gradient(145deg, rgba(58, 44, 86, 0.9), rgba(45, 35, 70, 0.94));
+        }
+
+        .purple-heading {
+            color: #E6D8FF;
+            text-shadow: 4px 4px 0 rgba(63, 49, 95, 0.4);
         }
 
         .intake-field {
@@ -2696,7 +2709,7 @@ video {
                 </svg>
             </h1>
             </div>
-            <p class="text-base md:text-xl text-brand-charcoal/76 uppercase tracking-[0.16em] mb-5">Communications and Marketing</p>
+            <p class="display-subheadline text-brand-charcoal mb-5">Communications and Marketing</p>
             
             <p class="text-lg md:text-2xl text-brand-charcoal/82 max-w-2xl mx-auto mb-10 leading-relaxed" vid="57">
                 Integrated Communications for ESG, social impact, and policy organizations executed with the clarity and coordination of a defined flight path
@@ -2733,8 +2746,8 @@ video {
                     <img src="../assets/wind.png" alt="" loading="lazy" decoding="async" aria-hidden="true">
                 </div>
                 <div class="absolute inset-0 impact-atmosphere mix-blend-normal" vid="69"></div>
-                <div class="absolute inset-0 bg-brand-cream opacity-86 mix-blend-normal" vid="70"></div>
-                <div class="absolute inset-0 bg-topo opacity-40" vid="71"></div>
+                <div class="absolute inset-0 bg-brand-cream opacity-72 mix-blend-normal" vid="70"></div>
+                <div class="absolute inset-0 bg-topo opacity-22" vid="71"></div>
             </div>
 
             <div class="relative z-10 py-32 px-6 md:px-12 max-w-screen-2xl mx-auto" vid="71">
@@ -2804,7 +2817,7 @@ video {
             
             <div class="text-center max-w-2xl mb-16 fade-up" vid="110">
                 <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold mb-4 block" vid="111">Interconnection Matrix</span>
-                <h2 class="major-title text-4xl md:text-6xl uppercase mb-6" vid="112">Unified Architecture</h2>
+                <h2 class="major-title purple-heading text-4xl md:text-6xl uppercase mb-6" vid="112">Unified Architecture</h2>
                 <p class="font-light text-brand-cream/70 leading-relaxed" vid="113">
                     We connect message development, content creation, media placement, and digital infrastructure so visibility does not disappear after a single moment. It orbits.
                 </p>
