@@ -163,15 +163,21 @@
 
         
         .glass-panel {
-            background: rgba(244, 233, 215, 0.78);
+            background:
+                radial-gradient(circle at 18% 18%, rgba(224, 159, 171, 0.14), transparent 30%),
+                radial-gradient(circle at 80% 26%, rgba(241, 198, 95, 0.16), transparent 34%),
+                linear-gradient(135deg, rgba(240, 233, 247, 0.84), rgba(244, 233, 215, 0.78) 52%, rgba(225, 215, 242, 0.8));
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(142, 90, 60, 0.14);
-            box-shadow: 0 18px 48px 0 rgba(43, 36, 32, 0.08);
+            border: 1px solid rgba(154, 127, 187, 0.18);
+            box-shadow: 0 18px 48px 0 rgba(102, 82, 140, 0.12);
         }
 
         .glass-dark {
-            background: rgba(35, 28, 24, 0.92);
+            background:
+                radial-gradient(circle at 22% 14%, rgba(224, 159, 171, 0.12), transparent 28%),
+                radial-gradient(circle at 78% 18%, rgba(241, 198, 95, 0.12), transparent 30%),
+                linear-gradient(145deg, rgba(65, 51, 90, 0.94), rgba(55, 42, 78, 0.96) 48%, rgba(44, 35, 64, 0.98));
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(201, 168, 106, 0.18);
@@ -287,12 +293,12 @@
 
         .hero-atmosphere {
             background:
-                linear-gradient(135deg, rgba(244, 233, 215, 0.7) 0%, rgba(239, 214, 173, 0.16) 34%, rgba(224, 159, 171, 0.16) 58%, rgba(154, 127, 187, 0.22) 100%);
+                linear-gradient(135deg, rgba(244, 233, 215, 0.66) 0%, rgba(239, 214, 173, 0.12) 30%, rgba(224, 159, 171, 0.18) 56%, rgba(154, 127, 187, 0.24) 100%);
         }
 
         .services-atmosphere {
             background:
-                linear-gradient(140deg, rgba(224, 159, 171, 0.1) 0%, rgba(154, 127, 187, 0.12) 28%, rgba(244, 233, 215, 0.92) 50%, rgba(241, 198, 95, 0.14) 100%);
+                linear-gradient(140deg, rgba(224, 159, 171, 0.14) 0%, rgba(154, 127, 187, 0.18) 28%, rgba(244, 233, 215, 0.84) 50%, rgba(241, 198, 95, 0.18) 100%);
         }
 
         .impact-atmosphere {
@@ -321,7 +327,8 @@
 
         .impact-image > img,
         .services-image > img,
-        .system-image > img {
+        .system-image > img,
+        .contact-image > img {
             opacity: 0.18;
             mix-blend-mode: multiply;
         }
@@ -643,6 +650,87 @@
             margin-bottom: 1.25rem;
         }
 
+        .touch-hover {
+            transform: translateY(-1px);
+        }
+
+        .touch-hover::before {
+            transform: translateY(0);
+        }
+
+        .touch-hover .service-card-reveal {
+            max-height: 80px;
+            opacity: 1;
+            margin-top: 1.5rem;
+            transform: translateY(0);
+        }
+
+        .touch-hover .service-card-heading,
+        .touch-hover .service-card-content .font-mono,
+        .touch-hover .service-card-content p {
+            color: #F3E9DC;
+        }
+
+        .touch-hover .service-card-divider,
+        .touch-hover [data-service-price-badge] {
+            border-color: rgba(201, 168, 106, 0.3);
+            color: #F3E9DC;
+        }
+
+        .nav-link {
+            font-size: 0.88rem;
+            letter-spacing: 0.16em;
+        }
+
+        .nav-on-dark {
+            background:
+                radial-gradient(circle at 20% 10%, rgba(224, 159, 171, 0.08), transparent 24%),
+                linear-gradient(140deg, rgba(67, 52, 96, 0.9), rgba(48, 38, 72, 0.92));
+            border-color: rgba(201, 168, 106, 0.18);
+        }
+
+        .nav-on-dark .nav-link,
+        .nav-on-dark .brand-mark,
+        .nav-on-dark .mobile-nav-cta {
+            color: #F3E9DC;
+        }
+
+        .nav-on-dark .mobile-nav-cta {
+            border-color: rgba(243, 233, 220, 0.4);
+        }
+
+        .cta-primary {
+            background:
+                radial-gradient(circle at 20% 20%, rgba(224, 159, 171, 0.14), transparent 28%),
+                radial-gradient(circle at 82% 26%, rgba(241, 198, 95, 0.18), transparent 30%),
+                linear-gradient(145deg, rgba(93, 74, 129, 0.96), rgba(67, 52, 96, 0.98));
+            border-color: rgba(93, 74, 129, 0.88);
+            color: #F3E9DC;
+        }
+
+        .purple-surface {
+            background:
+                radial-gradient(circle at 18% 18%, rgba(224, 159, 171, 0.12), transparent 28%),
+                radial-gradient(circle at 82% 24%, rgba(241, 198, 95, 0.12), transparent 30%),
+                linear-gradient(145deg, rgba(67, 52, 96, 0.96), rgba(53, 42, 79, 0.98));
+        }
+
+        .purple-grid {
+            background: rgba(93, 74, 129, 0.12);
+            border-color: rgba(93, 74, 129, 0.18);
+        }
+
+        .purple-badge {
+            background: rgba(93, 74, 129, 0.12);
+        }
+
+        .contact-atmosphere {
+            background:
+                radial-gradient(circle at 18% 18%, rgba(224, 159, 171, 0.12), transparent 28%),
+                radial-gradient(circle at 82% 20%, rgba(241, 198, 95, 0.14), transparent 30%),
+                linear-gradient(145deg, rgba(58, 44, 86, 0.9), rgba(45, 35, 70, 0.94));
+        }
+
         .intake-field {
             display: flex;
             flex-direction: column;
@@ -680,7 +768,7 @@
 
         .intake-select option {
             color: #F3E9DC;
-            background: #231C18;
+            background: #43335A;
         }
 
         .intake-textarea {
@@ -787,6 +875,10 @@
                 padding: 1rem 1rem 0.875rem;
                 gap: 0.75rem;
             }
+            .nav-link {
+                font-size: 0.78rem;
+                letter-spacing: 0.14em;
+            }
             .brand-mark {
                 gap: 0.2rem;
             }
@@ -805,8 +897,8 @@
             #navbar .mobile-nav-cta {
                 display: inline-flex;
                 flex-shrink: 0;
-                padding: 0.7rem 1rem;
-                font-size: 10px;
+                padding: 0.8rem 1.05rem;
+                font-size: 11px;
                 line-height: 1;
                 text-align: center;
             }
@@ -2551,13 +2643,13 @@ video {
             <span class="brand-mark text-[1.52rem] md:text-[1.82rem] text-brand-charcoal" vid="29"><span class="brand-word">Aerial</span></span>
         </a>
         <div class="hidden md:flex gap-8" vid="30">
-            <a href="#impact" class="text-xs font-bold uppercase tracking-widest text-brand-charcoal hover:text-brand-gold transition-colors" vid="31">Impact</a>
-            <a href="#system" class="text-xs font-bold uppercase tracking-widest text-brand-charcoal hover:text-brand-gold transition-colors" vid="32">System</a>
-            <a href="#services" class="text-xs font-bold uppercase tracking-widest text-brand-charcoal hover:text-brand-gold transition-colors" vid="33">Services</a>
-            <a href="#team" class="text-xs font-bold uppercase tracking-widest text-brand-charcoal hover:text-brand-gold transition-colors" vid="34">Team</a>
+            <a href="#impact" class="nav-link font-bold uppercase text-brand-charcoal hover:text-brand-gold transition-colors" vid="31">Impact</a>
+            <a href="#system" class="nav-link font-bold uppercase text-brand-charcoal hover:text-brand-gold transition-colors" vid="32">Architecture</a>
+            <a href="#services" class="nav-link font-bold uppercase text-brand-charcoal hover:text-brand-gold transition-colors" vid="33">Services</a>
+            <a href="#team" class="nav-link font-bold uppercase text-brand-charcoal hover:text-brand-gold transition-colors" vid="34">Team</a>
         </div>
-        <a href="#contact" class="mobile-nav-cta inline-flex items-center justify-center px-6 py-2.5 rounded-full border border-brand-charcoal text-[10px] md:text-xs font-bold uppercase tracking-widest text-brand-charcoal btn-circular-hover" vid="35">
-            Start Protocol ↗
+        <a href="#contact-form" class="mobile-nav-cta inline-flex items-center justify-center px-6 py-2.5 rounded-full border border-brand-charcoal text-[10px] md:text-xs font-bold uppercase tracking-widest text-brand-charcoal btn-circular-hover" vid="35">
+            INITIATE SEQUENCE ↗
         </a>
     </nav>
 
@@ -2590,13 +2682,13 @@ video {
         <div class="hero-content relative z-20 text-center px-4 max-w-5xl fade-up" vid="48">
             <div class="flex items-center justify-center gap-4 mb-6" vid="49">
                 <span class="h-[1px] w-8 bg-brand-gold" vid="50"></span>
-                <span class="font-mono desert-kicker text-[10px] md:text-xs uppercase tracking-[0.2em] text-brand-charcoal/70" vid="51">Arizona Airspace // Integrated Campaigns</span>
+                <span class="font-mono desert-kicker text-[10px] md:text-xs uppercase tracking-[0.2em] text-brand-charcoal/70" vid="51">360 VIEW // INTEGRATED CAMPAIGNS</span>
                 <span class="h-[1px] w-8 bg-brand-gold" vid="52"></span>
             </div>
             
             <div class="hero-brand-shell" vid="53">
             <h1 class="hero-brand relative inline-block" vid="53">
-                Aerial
+                AERIAL
                 
                 <svg class="absolute -top-4 -right-8 w-12 h-12 spin-slow" viewBox="0 0 50 50" fill="none" stroke="#C9A86A" vid="54">
                     <circle cx="25" cy="25" r="10" vid="55"></circle>
@@ -2604,17 +2696,18 @@ video {
                 </svg>
             </h1>
             </div>
+            <p class="text-base md:text-xl text-brand-charcoal/76 uppercase tracking-[0.16em] mb-5">Communications and Marketing</p>
             
             <p class="text-lg md:text-2xl text-brand-charcoal/82 max-w-2xl mx-auto mb-10 leading-relaxed" vid="57">
-                Integrated communications for climate, clean energy, and policy, rendered with the warm precision of a desert flight plan.
+                Integrated Communications for ESG, social impact, and policy organizations executed with the clarity and coordination of a defined flight path
             </p>
             
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4" vid="58">
-                <a href="#contact" class="hero-cta w-full sm:w-auto px-8 py-4 rounded-full border border-brand-charcoal bg-brand-charcoal text-brand-cream text-xs uppercase tracking-widest btn-circular-hover" vid="59">
-                    Initiate Sequence ↗
+                <a href="#contact-form" class="hero-cta cta-primary w-full sm:w-auto px-8 py-4 rounded-full border text-xs uppercase tracking-widest btn-circular-hover" vid="59">
+                    INITIATE SEQUENCE ↗
                 </a>
                 <a href="#system" class="hero-cta w-full sm:w-auto px-8 py-4 rounded-full border border-brand-gold/50 bg-brand-cream/30 backdrop-blur-sm text-brand-charcoal text-xs uppercase tracking-widest hover:border-brand-gold hover:bg-brand-cream/50 transition-all" vid="60">
-                    View Architecture
+                    VIEW ARCHITECTURE
                 </a>
             </div>
         </div>
@@ -2667,7 +2760,7 @@ video {
                         </svg>
                         <span class="font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/60 block mb-4" vid="85">Total Visibility</span>
                         <div class="text-6xl md:text-8xl font-black tracking-tighter text-brand-gold mb-4 relative z-10" vid="86">2M+</div>
-                        <p class="text-sm font-light leading-relaxed relative z-10" vid="87">Strategic impressions delivered across climate and clean energy media landscapes, generating sustained narrative pressure.</p>
+                        <p class="text-sm font-light leading-relaxed relative z-10" vid="87">Strategic impressions delivered across ESG, climate, and policy media ecosystems</p>
                     </div>
 
                     
@@ -2687,9 +2780,9 @@ video {
                         <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 opacity-5 group-hover:scale-90 transition-transform duration-700" viewBox="0 0 100 100" fill="none" stroke="#3A2F2A" stroke-width="0.5" vid="97">
                             <circle cx="50" cy="50" r="10" vid="98"></circle><circle cx="50" cy="50" r="20" vid="99"></circle><circle cx="50" cy="50" r="30" vid="100"></circle><circle cx="50" cy="50" r="40" vid="101"></circle>
                         </svg>
-                        <span class="font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/60 block mb-4" vid="102">National Network</span>
-                        <div class="text-6xl md:text-8xl font-black tracking-tighter text-brand-gold mb-4 relative z-10" vid="103">450+</div>
-                        <p class="text-sm font-light leading-relaxed relative z-10" vid="104">National reporter coverage driven through high-intent policy and advocacy funnels from targeted signal distribution.</p>
+                        <span class="font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/60 block mb-4" vid="102">Domain Traffic</span>
+                        <div class="text-6xl md:text-8xl font-black tracking-tighter text-brand-gold mb-4 relative z-10" vid="103">30k+</div>
+                        <p class="text-sm font-light leading-relaxed relative z-10" vid="104">Annual website visits driven through high-intent policy and advocacy funnels from targeted signal distribution.</p>
                     </div>
                 </div>
             </div>
@@ -2697,7 +2790,7 @@ video {
     </section>
 
     
-    <section id="system" class="cinematic-section relative w-full min-h-screen z-30 overflow-hidden bg-brand-charcoal text-brand-cream" vid="105">
+    <section id="system" class="cinematic-section purple-surface relative w-full min-h-screen z-30 overflow-hidden text-brand-cream" vid="105">
         
         <div class="section-scene system-scene" vid="106">
         <div class="section-image system-image" vid="107">
@@ -2785,7 +2878,7 @@ video {
             
             <div class="section-scene services-scene" vid="145">
                 <div class="section-image services-image" vid="146">
-                    <img src="../assets/desert.png" class="w-full h-full object-cover" alt="Desert river geometry" loading="lazy" decoding="async" vid="147">
+                    <img src="../assets/sunset.png" class="w-full h-full object-cover" alt="Desert river geometry" loading="lazy" decoding="async" vid="147">
                 </div>
                 
                 <div class="absolute inset-0 services-atmosphere mix-blend-normal" vid="148"></div>
@@ -2802,7 +2895,7 @@ video {
                     </p>
                 </div>
 
-                <div class="services-grid grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-charcoal/10 border border-brand-charcoal/10" vid="155">
+                <div class="services-grid purple-grid grid grid-cols-1 md:grid-cols-2 gap-px border" vid="155">
                     <button type="button" class="service-card glass-panel rounded-none border-none p-10 flex flex-col justify-between min-h-[320px] group transition-colors duration-500 fade-up" data-service="message-architecture" data-service-label="Messaging / Narrative Strategy" data-service-price="$4,500+" aria-expanded="false" vid="156">
                         <div class="service-card-content flex h-full flex-col justify-between">
                             <div vid="157">
@@ -2821,7 +2914,7 @@ video {
                             </div>
                             <div class="service-card-divider mt-8 pt-6 border-t border-brand-charcoal/10 flex justify-between items-center transition-colors" vid="167">
                                 <span class="font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/50 group-hover:text-brand-cream/50 transition-colors" vid="168">Baseline</span>
-                                <span class="font-mono text-xs font-bold bg-brand-charcoal/5 px-3 py-1 rounded-full group-hover:border-brand-gold group-hover:text-brand-gold border border-transparent transition-colors" vid="169">FROM $4,500</span>
+                                <span data-service-price-badge class="purple-badge font-mono text-xs font-bold px-3 py-1 rounded-full group-hover:border-brand-gold group-hover:text-brand-gold border border-transparent transition-colors" vid="169">FROM $4,500</span>
                             </div>
                         </div>
                     </button>
@@ -2844,7 +2937,7 @@ video {
                             </div>
                             <div class="service-card-divider mt-8 pt-6 border-t border-brand-charcoal/10 flex justify-between items-center transition-colors" vid="181">
                                 <span class="font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/50 group-hover:text-brand-cream/50 transition-colors" vid="182">Baseline</span>
-                                <span class="font-mono text-xs font-bold bg-brand-charcoal/5 px-3 py-1 rounded-full group-hover:border-brand-gold group-hover:text-brand-gold border border-transparent transition-colors" vid="183">FROM $5,000</span>
+                                <span data-service-price-badge class="purple-badge font-mono text-xs font-bold px-3 py-1 rounded-full group-hover:border-brand-gold group-hover:text-brand-gold border border-transparent transition-colors" vid="183">FROM $5,000</span>
                             </div>
                         </div>
                     </button>
@@ -2867,7 +2960,7 @@ video {
                             </div>
                             <div class="service-card-divider mt-8 pt-6 border-t border-brand-charcoal/10 flex justify-between items-center transition-colors" vid="195">
                                 <span class="font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/50 group-hover:text-brand-cream/50 transition-colors" vid="196">Baseline</span>
-                                <span class="font-mono text-xs font-bold bg-brand-charcoal/5 px-3 py-1 rounded-full group-hover:border-brand-gold group-hover:text-brand-gold border border-transparent transition-colors" vid="197">FROM $6,000</span>
+                                <span data-service-price-badge class="purple-badge font-mono text-xs font-bold px-3 py-1 rounded-full group-hover:border-brand-gold group-hover:text-brand-gold border border-transparent transition-colors" vid="197">FROM $6,000</span>
                             </div>
                         </div>
                     </button>
@@ -2890,7 +2983,7 @@ video {
                             </div>
                             <div class="service-card-divider mt-8 pt-6 border-t border-brand-charcoal/10 flex justify-between items-center transition-colors" vid="209">
                                 <span class="font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/50 group-hover:text-brand-cream/50 transition-colors" vid="210">Baseline</span>
-                                <span class="font-mono text-xs font-bold bg-brand-charcoal/5 px-3 py-1 rounded-full group-hover:border-brand-gold group-hover:text-brand-gold border border-transparent transition-colors" vid="211">FROM $5,500</span>
+                                <span data-service-price-badge class="purple-badge font-mono text-xs font-bold px-3 py-1 rounded-full group-hover:border-brand-gold group-hover:text-brand-gold border border-transparent transition-colors" vid="211">FROM $5,500</span>
                             </div>
                         </div>
                     </button>
@@ -3055,10 +3148,10 @@ video {
             
             
             <div class="contact-scene absolute" vid="291">
-                <div class="parallax-bg w-[120%] h-[120%] absolute top-[-10%] left-[-10%]" vid="292">
-                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" class="w-full h-full object-cover filter grayscale opacity-40 mix-blend-overlay" alt="Mountain terrain at dusk" loading="lazy" decoding="async" vid="293">
+                <div class="section-image contact-image" vid="292">
+                    <img src="../assets/desert.png" class="w-full h-full object-cover" alt="Mountain terrain at dusk" loading="lazy" decoding="async" vid="293">
                 </div>
-                <div class="absolute inset-0 bg-brand-charcoal opacity-90 mix-blend-normal" vid="294"></div>
+                <div class="absolute inset-0 contact-atmosphere opacity-95 mix-blend-normal" vid="294"></div>
                 
                 
                 <svg viewBox="0 0 1000 1000" class="contact-flight-lines absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vw] md:w-[100vw] md:h-[100vw] max-w-none opacity-10 pointer-events-none spin-slow" vid="295">
@@ -3073,7 +3166,7 @@ video {
                 
                 <div class="fade-up" vid="300">
                     <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold mb-4 block" vid="301">07 // Flight Intake</span>
-                    <h2 class="display-headline retro-shadow text-6xl md:text-8xl mb-6" vid="302">Start<br vid="303"><span class="accent-display">System.</span></h2>
+                    <h2 class="display-headline retro-shadow text-6xl md:text-8xl mb-6" vid="302">Initiate<br vid="303"><span class="accent-display">Sequence.</span></h2>
                     <p class="text-brand-cream/74 leading-relaxed max-w-md mb-12" vid="304">
                         Chart the route below. Share as much or as little as you have today and we will return with a grounded recommendation within 24 hours.
                     </p>
@@ -3332,7 +3425,7 @@ video {
             </div>
 
             
-            <footer class="contact-footer relative z-10 border-t border-brand-cream/10 px-6 md:px-12 py-8 mt-12 bg-brand-charcoal" vid="334">
+            <footer class="contact-footer purple-surface relative z-10 border-t border-brand-cream/10 px-6 md:px-12 py-8 mt-12" vid="334">
                 <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6" vid="335">
                     <div class="flex items-center gap-3" vid="336">
                         <svg class="w-4 h-4" viewBox="0 0 100 100" fill="none" stroke="#C9A86A" stroke-width="4" vid="337">
@@ -3430,6 +3523,17 @@ video {
         window.addEventListener('resize', requestParallaxUpdate, { passive: true });
         requestParallaxUpdate();
 
+        const updateNavbarTheme = () => {
+            if (!navbar) return;
+            const probeY = (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-offset')) || 96) + 18;
+            const probeTarget = document.elementFromPoint(window.innerWidth / 2, Math.min(probeY, window.innerHeight - 1));
+            navbar.classList.toggle('nav-on-dark', Boolean(probeTarget?.closest('#system, #contact')));
+        };
+
+        window.addEventListener('scroll', updateNavbarTheme, { passive: true });
+        window.addEventListener('resize', updateNavbarTheme, { passive: true });
+        updateNavbarTheme();
+
         const serviceCatalog = {
             "message-architecture": {
                 projectVector: "Integrated Campaign",
@@ -3477,6 +3581,7 @@ video {
         const serviceCheckboxes = Array.from(document.querySelectorAll('input[name="selected_services[]"]'));
         const contactForm = document.getElementById('contact-form');
         const contactSection = document.getElementById('contact');
+        const navbar = document.getElementById('navbar');
         const projectVectorField = document.getElementById('project-vector');
         const resourceAllocationField = document.getElementById('resource-allocation');
         const transmissionDetailsField = document.getElementById('transmission-details');
@@ -3599,6 +3704,19 @@ video {
             card.addEventListener('mouseleave', collapseCard);
             card.addEventListener('focus', expandCard);
             card.addEventListener('blur', collapseCard);
+            card.addEventListener('touchstart', () => {
+                serviceCards.forEach((item) => {
+                    if (item !== card) item.classList.remove('touch-hover');
+                });
+                card.classList.add('touch-hover');
+                expandCard();
+            }, { passive: true });
+            card.addEventListener('touchend', () => {
+                window.setTimeout(() => card.classList.remove('touch-hover'), 420);
+            }, { passive: true });
+            card.addEventListener('touchcancel', () => {
+                card.classList.remove('touch-hover');
+            }, { passive: true });
 
             card.addEventListener('click', () => {
                 if (window.getSelection && window.getSelection().toString()) return;
@@ -3606,9 +3724,10 @@ video {
                 expandCard();
                 applyServicePrefill(card.dataset.service);
 
-                if (contactSection) {
+                if (contactForm || contactSection) {
                     const headerOffset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-offset')) || 96;
-                    const targetTop = contactSection.getBoundingClientRect().top + window.scrollY - headerOffset + 12;
+                    const scrollTarget = contactForm || contactSection;
+                    const targetTop = scrollTarget.getBoundingClientRect().top + window.scrollY - headerOffset + 12;
                     window.scrollTo({ top: Math.max(targetTop, 0), behavior: 'smooth' });
                 }
 
@@ -3756,11 +3875,10 @@ video {
         }
 
         
-        const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
+            if (!navbar) return;
             if (window.scrollY > 50) {
                 navbar.classList.add('shadow-md');
-                
             } else {
                 navbar.classList.remove('shadow-md');
             }
