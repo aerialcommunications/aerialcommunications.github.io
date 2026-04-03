@@ -8,18 +8,24 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com" vid="6">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" vid="7">
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Ranchers&family=Young+Serif&display=swap" rel="stylesheet" vid="8">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Comfortaa:wght@300;400;500;600;700&family=Fascinate&family=Monoton&display=swap" onload="this.onload=null;this.rel='stylesheet'" vid="8">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Comfortaa:wght@300;400;500;600;700&family=Fascinate&family=Monoton&display=swap" rel="stylesheet"></noscript>
     
     <style vid="13">
         :root {
             --brand-brown: #2B2420;
             --brand-brown-soft: #3A2F2A;
             --brand-brown-deep: #231C18;
-            --desert-sand: #F3E9DC;
-            --desert-dune: #E7D8C6;
+            --desert-sand: #F4E9D7;
+            --desert-dune: #E9D8BF;
             --desert-rust: #8E5A3C;
             --desert-olive: #7A8062;
             --desert-gold: #C9A86A;
+            --atmo-purple: rgba(154, 127, 187, 0.26);
+            --atmo-purple-soft: rgba(154, 127, 187, 0.14);
+            --atmo-yellow: rgba(241, 198, 95, 0.2);
+            --atmo-yellow-soft: rgba(241, 198, 95, 0.1);
+            --sunset-shadow: rgba(112, 70, 49, 0.62);
             --header-offset: 6.25rem;
         }
 
@@ -30,13 +36,16 @@
         }
 
         body {
-            background-color: #F3E9DC;
+            background:
+                radial-gradient(circle at top left, var(--atmo-yellow-soft), transparent 28%),
+                radial-gradient(circle at 85% 18%, var(--atmo-purple-soft), transparent 34%),
+                var(--desert-sand);
             color: var(--brand-brown);
             overflow-x: clip;
             overscroll-behavior-y: auto;
             -webkit-font-smoothing: antialiased;
-            font-family: 'Young Serif', serif;
-            line-height: 1.65;
+            font-family: 'Baloo 2', 'Trebuchet MS', sans-serif;
+            line-height: 1.7;
         }
 
         body,
@@ -44,27 +53,36 @@
         input,
         select,
         textarea {
-            font-family: 'Young Serif', serif;
+            font-family: 'Baloo 2', 'Trebuchet MS', sans-serif;
         }
 
         h2,
+        .section-title,
+        .major-title {
+            font-family: 'Comfortaa', 'Fascinate', sans-serif;
+            letter-spacing: 0.01em;
+            line-height: 0.94;
+            font-weight: 700;
+        }
+
         h3,
         h4,
         .service-card-heading,
         .qa-question h3 {
-            font-family: 'Fraunces', serif;
-            letter-spacing: -0.03em;
-            line-height: 1.05;
+            font-family: 'Fascinate', 'Trebuchet MS', sans-serif;
+            letter-spacing: 0.01em;
+            line-height: 1.08;
+            font-weight: 400;
         }
 
         .display-headline {
-            font-family: 'Ranchers', cursive;
+            font-family: 'Comfortaa', 'Fascinate', sans-serif;
             font-weight: 400;
-            letter-spacing: 0.03em;
+            letter-spacing: 0.02em;
         }
 
         .retro-shadow {
-            text-shadow: 4px 4px 0 rgba(142, 90, 60, 0.72);
+            text-shadow: 4px 4px 0 var(--sunset-shadow);
         }
 
         .font-mono,
@@ -72,26 +90,35 @@
         kbd,
         samp,
         pre {
-            font-family: 'Young Serif', serif !important;
-            letter-spacing: 0.08em;
+            font-family: 'Baloo 2', 'Trebuchet MS', sans-serif !important;
+            letter-spacing: 0.14em;
+            font-weight: 600;
         }
 
         .desert-kicker {
             color: rgba(58, 47, 42, 0.72);
             letter-spacing: 0.16em;
+            font-weight: 600;
         }
 
         .brand-heading {
-            font-family: 'Fraunces', serif;
-            letter-spacing: -0.03em;
-            line-height: 1.05;
+            font-family: 'Monoton', 'Fascinate', cursive;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
         }
 
         .brand-mark {
-            font-family: 'Ranchers', cursive;
+            font-family: 'Monoton', 'Fascinate', cursive;
             font-weight: 400;
-            letter-spacing: 0.05em;
-            line-height: 0.95;
+            letter-spacing: 0.035em;
+            line-height: 0.92;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .accent-display {
+            font-family: 'Fascinate', 'Comfortaa', sans-serif;
+            letter-spacing: 0.015em;
             display: inline-block;
         }
 
@@ -109,7 +136,7 @@
 
         
         .glass-panel {
-            background: rgba(243, 233, 220, 0.74);
+            background: rgba(244, 233, 215, 0.78);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(142, 90, 60, 0.14);
@@ -117,7 +144,7 @@
         }
 
         .glass-dark {
-            background: rgba(35, 28, 24, 0.9);
+            background: rgba(35, 28, 24, 0.92);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(201, 168, 106, 0.18);
@@ -211,6 +238,85 @@
         footer {
             max-width: 100%;
             isolation: isolate;
+        }
+
+        .section-scene {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .section-scene::before,
+        .section-scene::after {
+            content: "";
+            position: absolute;
+            border-radius: 999px;
+            filter: blur(80px);
+            opacity: 0.7;
+        }
+
+        .hero-atmosphere {
+            background:
+                linear-gradient(135deg, rgba(244, 233, 215, 0.74) 0%, rgba(239, 214, 173, 0.22) 42%, rgba(154, 127, 187, 0.2) 100%);
+        }
+
+        .services-atmosphere {
+            background:
+                linear-gradient(140deg, rgba(154, 127, 187, 0.12) 0%, rgba(244, 233, 215, 0.94) 40%, rgba(241, 198, 95, 0.12) 100%);
+        }
+
+        .hero-scene::before {
+            width: 28rem;
+            height: 28rem;
+            left: -8rem;
+            top: -8rem;
+            background: radial-gradient(circle, var(--atmo-yellow), transparent 70%);
+        }
+
+        .hero-scene::after {
+            width: 34rem;
+            height: 34rem;
+            right: -10rem;
+            top: -4rem;
+            background: radial-gradient(circle, var(--atmo-purple), transparent 70%);
+        }
+
+        .impact-scene::before,
+        .services-scene::before {
+            width: 26rem;
+            height: 26rem;
+            left: -6rem;
+            bottom: -10rem;
+            background: radial-gradient(circle, var(--atmo-purple-soft), transparent 72%);
+        }
+
+        .impact-scene::after,
+        .services-scene::after {
+            width: 20rem;
+            height: 20rem;
+            right: -4rem;
+            top: -2rem;
+            background: radial-gradient(circle, var(--atmo-yellow-soft), transparent 70%);
+        }
+
+        .system-scene::before,
+        .contact-scene::before {
+            width: 24rem;
+            height: 24rem;
+            left: -5rem;
+            bottom: -8rem;
+            background: radial-gradient(circle, rgba(154, 127, 187, 0.2), transparent 72%);
+        }
+
+        .system-scene::after,
+        .contact-scene::after {
+            width: 22rem;
+            height: 22rem;
+            right: -5rem;
+            top: -4rem;
+            background: radial-gradient(circle, rgba(241, 198, 95, 0.14), transparent 72%);
         }
 
         .parallax-bg,
@@ -539,7 +645,7 @@
 
         .service-option-title {
             color: #F3E9DC;
-            font-family: 'Fraunces', serif;
+            font-family: 'Fascinate', 'Trebuchet MS', sans-serif;
             font-size: 1rem;
             line-height: 1.2;
         }
@@ -2356,7 +2462,7 @@ video {
                 <line x1="50" y1="0" x2="50" y2="100" stroke-opacity="0.3" vid="27"></line>
                 <line x1="0" y1="50" x2="100" y2="50" stroke-opacity="0.3" vid="28"></line>
             </svg>
-            <span class="brand-mark text-[1.45rem] md:text-[1.6rem] text-brand-charcoal" vid="29">AERIAL COMMUNICATIONS</span>
+            <span class="brand-mark text-[1.32rem] md:text-[1.52rem] text-brand-charcoal" vid="29">Aerial Communications</span>
         </a>
         <div class="hidden md:flex gap-8" vid="30">
             <a href="#impact" class="text-xs font-bold uppercase tracking-widest text-brand-charcoal hover:text-brand-gold transition-colors" vid="31">Impact</a>
@@ -2372,15 +2478,16 @@ video {
     
     <section class="cinematic-section relative h-screen w-full flex items-center justify-center overflow-hidden" vid="36">
         
-        <div class="parallax-bg absolute inset-[-10%] w-[120%] h-[120%] z-0" vid="37">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" class="w-full h-full object-cover opacity-80" alt="Aerial geometry over desert ridgelines" fetchpriority="high" decoding="async" vid="38">
+        <div class="section-scene hero-scene" vid="37">
+        <div class="parallax-bg absolute inset-[-10%] w-[120%] h-[120%] z-0" vid="38">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" class="w-full h-full object-cover opacity-80" alt="Aerial geometry over desert ridgelines" fetchpriority="high" decoding="async" vid="39">
         </div>
         
         
-        <div class="absolute inset-0 z-0 bg-gradient-editorial mix-blend-normal opacity-90" vid="39"></div>
+        <div class="absolute inset-0 z-0 hero-atmosphere mix-blend-normal opacity-90" vid="40"></div>
 
         
-        <div class="absolute inset-0 z-10 flex items-center justify-center pointer-events-none opacity-40" vid="40">
+        <div class="absolute inset-0 z-10 flex items-center justify-center pointer-events-none opacity-40" vid="41">
             <svg viewBox="0 0 1000 1000" class="hero-radar w-[150vw] h-[150vw] md:w-[80vw] md:h-[80vw] max-w-none spin-slow" vid="41">
                 <circle cx="500" cy="500" r="300" fill="none" stroke="#C9A86A" stroke-width="1" stroke-dasharray="4 12" vid="42"></circle>
                 <circle cx="500" cy="500" r="450" fill="none" stroke="#3A2F2A" stroke-width="0.5" vid="43"></circle>
@@ -2390,6 +2497,7 @@ video {
             <svg viewBox="0 0 1000 1000" class="hero-radar-secondary absolute w-[120vw] h-[120vw] md:w-[60vw] md:h-[60vw] max-w-none spin-slow-reverse opacity-50" vid="46">
                 <circle cx="500" cy="500" r="400" fill="none" stroke="#BFA7CF" stroke-width="2" stroke-dasharray="100 20 10 20" vid="47"></circle>
             </svg>
+        </div>
         </div>
 
         
@@ -2436,7 +2544,7 @@ video {
         <div class="reveal-mask is-static w-full h-full relative" vid="65">
             
             
-            <div class="absolute inset-0 z-0" vid="66">
+            <div class="section-scene impact-scene" vid="66">
                 <div class="parallax-bg-impact w-[120%] h-[120%] absolute top-[-10%] left-[-10%]" vid="67">
                      
                     <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" class="w-full h-full object-cover filter grayscale opacity-40 mix-blend-multiply" alt="Desert topology" loading="lazy" decoding="async" vid="68">
@@ -2449,7 +2557,7 @@ video {
                 <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-brand-gold/30 pb-6 fade-up" vid="72">
                     <div vid="73">
                         <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold mb-2 block" vid="74">Phase 01 // System Resonance</span>
-                        <h2 class="text-5xl md:text-7xl font-black tracking-tighter uppercase text-brand-charcoal" vid="75">Global Impact</h2>
+                        <h2 class="major-title text-5xl md:text-7xl uppercase text-brand-charcoal" vid="75">Global <span class="accent-display">Impact</span></h2>
                     </div>
                     <div class="mt-6 md:mt-0 glass-panel py-2 px-6 rounded-full inline-flex items-center gap-2" vid="76">
                         <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse" vid="77"></span>
@@ -2489,8 +2597,8 @@ video {
                             <circle cx="50" cy="50" r="10" vid="98"></circle><circle cx="50" cy="50" r="20" vid="99"></circle><circle cx="50" cy="50" r="30" vid="100"></circle><circle cx="50" cy="50" r="40" vid="101"></circle>
                         </svg>
                         <span class="font-mono text-[10px] uppercase tracking-widest text-brand-charcoal/60 block mb-4" vid="102">Domain Traffic</span>
-                        <div class="text-6xl md:text-8xl font-black tracking-tighter text-brand-gold mb-4 relative z-10" vid="103">450+</div>
-                        <p class="text-sm font-light leading-relaxed relative z-10" vid="104">National reporter network driven through high-intent policy and advocacy funnels from targeted signal distribution.</p>
+                        <div class="text-6xl md:text-8xl font-black tracking-tighter text-brand-gold mb-4 relative z-10" vid="103">30k+</div>
+                        <p class="text-sm font-light leading-relaxed relative z-10" vid="104">Annual website visits driven through high-intent policy and advocacy funnels from targeted signal distribution.</p>
                     </div>
                 </div>
             </div>
@@ -2500,17 +2608,19 @@ video {
     
     <section id="system" class="cinematic-section relative w-full min-h-screen z-30 overflow-hidden bg-brand-charcoal text-brand-cream" vid="105">
         
-        <div class="parallax-bg absolute inset-[-10%] w-[120%] h-[120%] z-0" vid="106">
+        <div class="section-scene system-scene" vid="106">
+        <div class="parallax-bg absolute inset-[-10%] w-[120%] h-[120%] z-0" vid="107">
             <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" class="w-full h-full object-cover opacity-30 mix-blend-luminosity" alt="Aerial desert light patterns" loading="lazy" decoding="async" vid="107">
         </div>
         
         <div class="absolute inset-0 bg-gradient-to-b from-brand-charcoal/90 via-brand-charcoal/80 to-brand-charcoal/90 z-0" vid="108"></div>
+        </div>
 
         <div class="relative z-10 py-32 px-6 md:px-12 max-w-screen-2xl mx-auto flex flex-col items-center" vid="109">
             
             <div class="text-center max-w-2xl mb-16 fade-up" vid="110">
                 <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold mb-4 block" vid="111">Interconnection Matrix</span>
-                <h2 class="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-6" vid="112">Unified Architecture</h2>
+                <h2 class="major-title text-4xl md:text-6xl uppercase mb-6" vid="112">Unified Architecture</h2>
                 <p class="font-light text-brand-cream/70 leading-relaxed" vid="113">
                     We connect message development, content creation, media placement, and digital infrastructure so visibility does not disappear after a single moment. It orbits.
                 </p>
@@ -2528,7 +2638,7 @@ video {
                     
                     
                     <circle cx="400" cy="400" r="60" fill="rgba(201,168,106,0.1)" stroke="#C9A86A" stroke-width="2" filter="url(#blur-glow)" vid="120"></circle>
-                    <text x="400" y="404" fill="#C9A86A" font-size="12" font-family="Young Serif" letter-spacing="0.2em" text-anchor="middle" vid="121">CORE</text>
+                    <text x="400" y="404" fill="#C9A86A" font-size="12" font-family="Baloo 2" letter-spacing="0.2em" text-anchor="middle" vid="121">CORE</text>
 
                     
                     
@@ -2537,14 +2647,14 @@ video {
                         <g transform="translate(400, 150)" vid="123">
                             <circle cx="0" cy="0" r="8" fill="#F3E9DC" filter="url(#blur-glow)" vid="124"></circle>
                             <circle cx="0" cy="0" r="24" fill="none" stroke="#F3E9DC" stroke-width="0.5" opacity="0.5" vid="125"></circle>
-                            <text x="15" y="4" fill="#F3E9DC" font-size="10" font-family="Young Serif" letter-spacing="0.1em" vid="126">MESSAGING</text>
+                            <text x="15" y="4" fill="#F3E9DC" font-size="10" font-family="Baloo 2" letter-spacing="0.1em" vid="126">MESSAGING</text>
                             
                             <path d="M-15,-15 A 21 21 0 0 1 15,-15" fill="none" stroke="#C9A86A" stroke-width="1" class="spin-slow-reverse" style="transform-origin: 0 0;" vid="127"></path>
                         </g>
                         
                         <g transform="translate(400, 650)" vid="128">
                             <circle cx="0" cy="0" r="8" fill="#F3E9DC" vid="129"></circle>
-                            <text x="-15" y="4" fill="#F3E9DC" font-size="10" font-family="Young Serif" letter-spacing="0.1em" text-anchor="end" vid="130">CONTENT</text>
+                            <text x="-15" y="4" fill="#F3E9DC" font-size="10" font-family="Baloo 2" letter-spacing="0.1em" text-anchor="end" vid="130">CONTENT</text>
                         </g>
                     </g>
 
@@ -2553,12 +2663,12 @@ video {
                         
                         <g transform="translate(50, 400)" vid="132">
                             <circle cx="0" cy="0" r="10" fill="#C9A86A" vid="133"></circle>
-                            <text x="15" y="-15" fill="#C9A86A" font-size="10" font-family="Young Serif" letter-spacing="0.1em" vid="134">MEDIA RELATIONS</text>
+                            <text x="15" y="-15" fill="#C9A86A" font-size="10" font-family="Baloo 2" letter-spacing="0.1em" vid="134">MEDIA RELATIONS</text>
                         </g>
                         
                         <g transform="translate(750, 400)" vid="135">
                             <circle cx="0" cy="0" r="6" fill="#F3E9DC" vid="136"></circle>
-                            <text x="-15" y="15" fill="#F3E9DC" font-size="10" font-family="Young Serif" letter-spacing="0.1em" text-anchor="end" vid="137">EMAIL DISTRIBUTION</text>
+                            <text x="-15" y="15" fill="#F3E9DC" font-size="10" font-family="Baloo 2" letter-spacing="0.1em" text-anchor="end" vid="137">EMAIL DISTRIBUTION</text>
                         </g>
                     </g>
 
@@ -2566,7 +2676,7 @@ video {
                     <g class="orbit-mid" style="transform-origin: 400px 400px;" vid="138">
                         <g transform="translate(187, 187)" vid="139">
                             <rect x="-8" y="-8" width="16" height="16" fill="none" stroke="#BFA7CF" stroke-width="2" transform="rotate(45)" vid="140"></rect>
-                            <text x="20" y="4" fill="#BFA7CF" font-size="10" font-family="Young Serif" letter-spacing="0.1em" vid="141">DIGITAL INFRASTRUCTURE</text>
+                            <text x="20" y="4" fill="#BFA7CF" font-size="10" font-family="Baloo 2" letter-spacing="0.1em" vid="141">DIGITAL INFRASTRUCTURE</text>
                         </g>
                     </g>
                     
@@ -2582,19 +2692,19 @@ video {
         <div class="reveal-mask services-reveal-mask is-static w-full relative" vid="144">
             
             
-            <div class="absolute inset-0 z-0" vid="145">
+            <div class="section-scene services-scene" vid="145">
                 <div class="parallax-bg w-[120%] h-[120%] absolute top-[-10%] left-[-10%]" vid="146">
                     <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" class="w-full h-full object-cover filter grayscale opacity-20 mix-blend-multiply" alt="Desert river geometry" loading="lazy" decoding="async" vid="147">
                 </div>
                 
-                <div class="absolute inset-0 bg-gradient-to-br from-brand-lavender/20 via-brand-cream to-brand-blush/20 mix-blend-normal" vid="148"></div>
+                <div class="absolute inset-0 services-atmosphere mix-blend-normal" vid="148"></div>
             </div>
 
             <div class="relative z-10 py-32 px-6 md:px-12 max-w-screen-xl mx-auto" vid="149">
                 <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-brand-charcoal/10 pb-6 fade-up" vid="150">
                     <div vid="151">
                         <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold mb-2 block" vid="152">Available Modules // Pathing</span>
-                        <h2 class="text-4xl md:text-6xl font-black tracking-tighter uppercase text-brand-charcoal" vid="153">Service Stack</h2>
+                        <h2 class="major-title text-4xl md:text-6xl uppercase text-brand-charcoal" vid="153">Service Stack</h2>
                     </div>
                     <p class="services-copy mt-6 md:mt-0 max-w-xs text-xs font-light text-brand-charcoal/60 text-right font-mono" vid="154">
                         Deployable as standalone modules or an integrated ecosystem.
@@ -2735,7 +2845,7 @@ video {
             
             <div vid="231">
                 <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold mb-4 block fade-up" vid="232">Structure // Personnel</span>
-                <h2 class="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-12 fade-up" vid="233">The Collective</h2>
+                <h2 class="major-title text-4xl md:text-5xl uppercase mb-12 fade-up" vid="233">The Collective</h2>
 
                 <div class="space-y-12" vid="234">
                     
@@ -2786,7 +2896,7 @@ video {
             
             <div vid="257">
                 <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold mb-4 block fade-up" vid="258">Transmission Log</span>
-                <h2 class="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-12 fade-up" vid="259">Query / Response</h2>
+                <h2 class="major-title text-4xl md:text-5xl uppercase mb-12 fade-up" vid="259">Query / Response</h2>
 
                 <div class="border-t border-brand-charcoal/20" vid="260">
                     
@@ -2872,7 +2982,7 @@ video {
                 
                 <div class="fade-up" vid="300">
                     <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold mb-4 block" vid="301">07 // Flight Intake</span>
-                    <h2 class="display-headline retro-shadow text-6xl md:text-8xl mb-6" vid="302">Start<br vid="303">System.</h2>
+                    <h2 class="display-headline retro-shadow text-6xl md:text-8xl mb-6" vid="302">Start<br vid="303"><span class="accent-display">System.</span></h2>
                     <p class="text-brand-cream/74 leading-relaxed max-w-md mb-12" vid="304">
                         Chart the route below. Share as much or as little as you have today and we will return with a grounded recommendation within 24 hours.
                     </p>
@@ -3137,7 +3247,7 @@ video {
                         <svg class="w-4 h-4" viewBox="0 0 100 100" fill="none" stroke="#C9A86A" stroke-width="4" vid="337">
                             <circle cx="50" cy="50" r="40" stroke-dasharray="10 5" vid="338"></circle>
                         </svg>
-                        <span class="brand-mark text-[1.45rem] md:text-[1.6rem] text-brand-cream" vid="339">AERIAL COMMUNICATIONS</span>
+                        <span class="brand-mark text-[1.32rem] md:text-[1.52rem] text-brand-cream" vid="339">Aerial Communications</span>
                     </div>
                     
                     <div class="flex flex-wrap justify-center gap-6 md:gap-8" vid="340">
@@ -3153,7 +3263,7 @@ video {
                     </div>
                     
                     <div class="text-[10px] uppercase tracking-[0.14em] text-brand-cream/34 text-center md:text-right flex flex-col items-center md:items-end" vid="344">
-                        <span vid="345">© 2026 System Architecture</span>
+                        <span vid="345">© 2024 System Architecture</span>
                         <span vid="346">LAT: 45.523062 / LONG: -122.676482</span>
                     </div>
                 </div>
