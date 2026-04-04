@@ -10,8 +10,8 @@
     <meta name="twitter:image" content="../assets/aerial.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Comfortaa:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Comfortaa:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet"></noscript>
     <style>
         :root {
             --bg: #f4e8d1;
@@ -25,6 +25,7 @@
             --gold: #d4a373;
             --line: rgba(44, 27, 51, 0.18);
             --body: "Baloo 2", sans-serif;
+            --soft: "Comfortaa", sans-serif;
             --display: "Playfair Display", serif;
             --radius: 34px;
             --shadow: 0 24px 70px rgba(44, 27, 51, 0.08);
@@ -45,6 +46,7 @@
                 var(--bg);
             color: var(--ink);
             font-family: var(--body);
+            font-size: 16px;
             line-height: 1.55;
             overflow-x: clip;
             -webkit-font-smoothing: antialiased;
@@ -134,6 +136,12 @@
             color: var(--ink);
         }
 
+        .brand-word {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.01em;
+        }
+
         .brand-mark {
             width: 18px;
             height: 18px;
@@ -152,12 +160,38 @@
             font-weight: 900;
         }
 
+        .brand-letter {
+            display: inline-block;
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), color 0.25s ease;
+            will-change: transform;
+        }
+
+        .brand-lockup:hover .brand-letter,
+        .brand-lockup:focus-visible .brand-letter {
+            transform: translateY(-0.08em);
+        }
+
+        .brand-lockup:hover .brand-letter:nth-child(2),
+        .brand-lockup:focus-visible .brand-letter:nth-child(2) {
+            transform: translateY(0.08em);
+        }
+
+        .brand-lockup:hover .brand-letter:nth-child(4),
+        .brand-lockup:focus-visible .brand-letter:nth-child(4) {
+            transform: translateY(0.08em);
+        }
+
+        .brand-lockup:hover .brand-letter:nth-child(5),
+        .brand-lockup:focus-visible .brand-letter:nth-child(5) {
+            transform: translateY(-0.08em);
+        }
+
         .header-links {
             display: flex;
             gap: 34px;
             font-family: var(--body);
             font-weight: 700;
-            font-size: 11px;
+            font-size: 12px;
             letter-spacing: 0.18em;
             text-transform: uppercase;
         }
@@ -265,6 +299,18 @@
             background: radial-gradient(circle, rgba(255, 140, 97, 0.18), transparent 72%);
         }
 
+        .hero-atmosphere {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 18% 28%, rgba(214, 109, 117, 0.13), transparent 24%),
+                radial-gradient(circle at 74% 16%, rgba(255, 140, 97, 0.12), transparent 26%),
+                radial-gradient(circle at 56% 68%, rgba(65, 60, 88, 0.14), transparent 30%),
+                radial-gradient(circle at 34% 70%, rgba(212, 163, 115, 0.12), transparent 28%);
+        }
+
         .hero-path {
             position: absolute;
             width: min(1100px, 88vw);
@@ -344,15 +390,18 @@
             max-width: 13ch;
         }
 
-        .hero-mission,
+        .hero-tagline,
         .hero-copy {
             max-width: 720px;
-            font-size: clamp(1rem, 1.6vw, 1.2rem);
+            font-size: clamp(1.04rem, 1.7vw, 1.24rem);
         }
 
-        .hero-mission {
+        .hero-tagline {
+            font-family: var(--soft);
             color: var(--purple);
-            font-weight: 600;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-transform: lowercase;
         }
 
         .hero-copy {
@@ -377,7 +426,7 @@
             border-radius: 999px;
             border: 1px solid currentColor;
             font-family: var(--body);
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 700;
             letter-spacing: 0.18em;
             text-transform: uppercase;
@@ -422,7 +471,7 @@
             gap: 12px;
             font-family: var(--body);
             font-weight: 700;
-            font-size: 10px;
+            font-size: 11px;
             letter-spacing: 0.18em;
             text-transform: uppercase;
             color: rgba(44, 27, 51, 0.55);
@@ -482,7 +531,7 @@
         .stat-label {
             font-family: var(--body);
             font-weight: 700;
-            font-size: 9px;
+            font-size: 10px;
             letter-spacing: 0.16em;
             text-transform: uppercase;
             color: var(--pink);
@@ -535,7 +584,7 @@
             margin-bottom: 18px;
             font-family: var(--body);
             font-weight: 700;
-            font-size: 9px;
+            font-size: 10px;
             letter-spacing: 0.18em;
             text-transform: uppercase;
             color: var(--purple);
@@ -568,7 +617,7 @@
             margin-bottom: 8px;
             font-family: var(--body);
             font-weight: 700;
-            font-size: 10px;
+            font-size: 11px;
             letter-spacing: 0.16em;
             text-transform: uppercase;
             color: var(--ink);
@@ -645,7 +694,7 @@
 
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 1px;
             background: rgba(244, 232, 209, 0.14);
         }
@@ -653,21 +702,60 @@
         .service-card {
             position: relative;
             padding: 44px 34px 38px;
-            background: linear-gradient(180deg, rgba(44, 27, 51, 0.96) 0%, rgba(54, 38, 71, 0.98) 100%);
+            background:
+                radial-gradient(circle at 22% 24%, rgba(214, 109, 117, 0.12), transparent 28%),
+                radial-gradient(circle at 82% 20%, rgba(255, 140, 97, 0.08), transparent 30%),
+                radial-gradient(circle at 60% 78%, rgba(212, 163, 115, 0.08), transparent 28%),
+                linear-gradient(180deg, rgba(44, 27, 51, 0.96) 0%, rgba(54, 38, 71, 0.98) 100%);
             min-height: 320px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             gap: 20px;
-            transition: background-color 0.25s ease, transform 0.25s ease;
+            transition: background-color 0.25s ease, transform 0.25s ease, color 0.25s ease, border-color 0.25s ease;
             cursor: pointer;
+            text-align: center;
+            overflow: clip;
+        }
+
+        .service-card::after {
+            content: "Click to launch";
+            position: absolute;
+            right: 26px;
+            bottom: 18px;
+            font-family: var(--body);
+            font-weight: 700;
+            font-size: 11px;
+            letter-spacing: 0.08em;
+            color: rgba(244, 232, 209, 0.58);
+            transition: color 0.25s ease;
+            pointer-events: none;
         }
 
         .service-card:hover,
         .service-card:focus-visible {
-            background: linear-gradient(180deg, rgba(58, 42, 82, 0.98) 0%, rgba(66, 49, 89, 0.99) 100%);
+            background:
+                radial-gradient(circle at 24% 26%, rgba(214, 109, 117, 0.18), transparent 30%),
+                radial-gradient(circle at 84% 18%, rgba(255, 140, 97, 0.12), transparent 34%),
+                radial-gradient(circle at 50% 78%, rgba(140, 100, 177, 0.16), transparent 30%),
+                linear-gradient(180deg, rgba(73, 52, 103, 0.98) 0%, rgba(62, 45, 94, 0.99) 100%);
             transform: translateY(-2px);
             outline: none;
+        }
+
+        .service-card:hover::after,
+        .service-card:focus-visible::after {
+            color: rgba(244, 232, 209, 0.88);
+        }
+
+        .service-card[data-service="ongoing-retainer"] {
+            grid-column: span 2;
+        }
+
+        .service-card > div {
+            display: grid;
+            gap: 18px;
+            justify-items: center;
         }
 
         .service-card-header {
@@ -675,12 +763,13 @@
             align-items: center;
             justify-content: space-between;
             gap: 18px;
+            width: 100%;
         }
 
         .service-index {
             font-family: var(--body);
             font-weight: 700;
-            font-size: 10px;
+            font-size: 11px;
             letter-spacing: 0.18em;
             text-transform: uppercase;
             color: rgba(244, 232, 209, 0.6);
@@ -689,7 +778,7 @@
         .service-price {
             font-family: var(--body);
             font-weight: 700;
-            font-size: 10px;
+            font-size: 11px;
             letter-spacing: 0.16em;
             text-transform: uppercase;
             color: var(--gold);
@@ -700,20 +789,26 @@
             font-size: clamp(2rem, 3vw, 2.5rem);
             line-height: 1;
             font-style: italic;
+            color: #fffaf0;
+            width: 100%;
         }
 
         .service-card p {
-            max-width: 28ch;
-            color: rgba(244, 232, 209, 0.7);
+            max-width: none;
+            width: 100%;
+            color: rgba(244, 232, 209, 0.84);
+            text-align: center;
         }
 
         .service-card small {
             font-family: var(--body);
             font-weight: 700;
-            font-size: 10px;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: rgba(244, 232, 209, 0.6);
+            font-size: 11px;
+            letter-spacing: 0.04em;
+            text-transform: none;
+            color: rgba(244, 232, 209, 0.72);
+            text-align: center;
+            padding-right: 94px;
         }
 
         .team {
@@ -734,18 +829,24 @@
             display: flex;
             flex-direction: column;
             gap: 36px;
+            align-items: center;
         }
 
         .member-img {
-            width: 100%;
-            height: 360px;
+            width: min(100%, 22rem);
+            height: clamp(320px, 32vw, 420px);
             object-fit: cover;
+            object-position: center;
             filter: grayscale(1) sepia(0.15) contrast(1.08);
+            margin-inline: auto;
         }
 
         .member-info {
             display: grid;
             gap: 12px;
+            justify-items: center;
+            text-align: center;
+            max-width: 34rem;
         }
 
         .member-info h4 {
@@ -758,7 +859,7 @@
         .member-role {
             font-family: var(--body);
             font-weight: 700;
-            font-size: 10px;
+            font-size: 11px;
             letter-spacing: 0.16em;
             text-transform: uppercase;
             color: var(--pink);
@@ -774,7 +875,7 @@
         .member-links a {
             font-family: var(--body);
             font-weight: 700;
-            font-size: 10px;
+            font-size: 11px;
             letter-spacing: 0.14em;
             text-transform: uppercase;
             color: var(--ink-soft);
@@ -900,9 +1001,9 @@
         .field legend {
             font-family: var(--body);
             font-weight: 700;
-            font-size: 10px;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 0.01em;
+            text-transform: none;
             color: rgba(244, 232, 209, 0.66);
         }
 
@@ -913,7 +1014,8 @@
             background: transparent;
             padding: 16px 0;
             color: var(--bg);
-            font-size: 15px;
+            font-size: 1rem;
+            line-height: 1.6;
             outline: none;
             border-radius: 0;
         }
@@ -977,15 +1079,16 @@
             margin-top: 4px;
             font-family: var(--body);
             font-weight: 700;
-            font-size: 10px;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
+            font-size: 0.92rem;
+            letter-spacing: 0.02em;
+            text-transform: none;
             color: var(--gold);
         }
 
         .service-option-copy {
             display: block;
             margin-top: 6px;
+            font-size: 1rem;
             color: rgba(244, 232, 209, 0.62);
         }
 
@@ -1000,13 +1103,15 @@
         .summary-card dt {
             font-family: var(--body);
             font-weight: 700;
-            font-size: 10px;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
+            font-size: 0.96rem;
+            letter-spacing: 0.01em;
+            text-transform: none;
             color: var(--gold);
         }
 
         .summary-card dd {
+            font-size: 1rem;
+            line-height: 1.6;
             color: rgba(244, 232, 209, 0.82);
             margin-bottom: 8px;
         }
@@ -1019,9 +1124,9 @@
             min-height: 20px;
             font-family: var(--body);
             font-weight: 700;
-            font-size: 10px;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
+            font-size: 0.96rem;
+            letter-spacing: 0.01em;
+            text-transform: none;
             color: rgba(244, 232, 209, 0.6);
         }
 
@@ -1035,6 +1140,14 @@
 
         .submit-button {
             margin-top: 16px;
+        }
+
+        .intake .button,
+        .intake .button-primary,
+        .intake .button-secondary {
+            text-transform: none;
+            letter-spacing: 0.03em;
+            font-size: 1rem;
         }
 
         .submit-button[disabled] {
@@ -1051,7 +1164,7 @@
             align-items: center;
             font-family: var(--body);
             font-weight: 700;
-            font-size: 9px;
+            font-size: 10px;
             letter-spacing: 0.12em;
             text-transform: uppercase;
             color: rgba(244, 232, 209, 0.58);
@@ -1082,7 +1195,7 @@
             }
 
             .service-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
             .header-links {
@@ -1099,6 +1212,10 @@
                 top: -40px;
                 width: 260px;
                 height: 260px;
+            }
+
+            .service-card[data-service="ongoing-retainer"] {
+                grid-column: span 2;
             }
         }
 
@@ -1135,6 +1252,18 @@
                 grid-template-columns: 1fr;
             }
 
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card[data-service="ongoing-retainer"] {
+                grid-column: auto;
+            }
+
+            .service-card small {
+                padding-right: 0;
+            }
+
             .stat-item,
             .section-shell,
             .footer {
@@ -1167,7 +1296,7 @@
                 <circle cx="12" cy="12" r="8"></circle>
                 <path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path>
             </svg>
-            <span class="brand-word">AERIAL</span>
+            <span class="brand-word" aria-label="AERIAL"><span class="brand-letter">A</span><span class="brand-letter">E</span><span class="brand-letter">R</span><span class="brand-letter">I</span><span class="brand-letter">A</span><span class="brand-letter">L</span></span>
         </a>
         <nav class="header-links" aria-label="Primary navigation">
             <a href="#stats">Impact</a>
@@ -1180,6 +1309,7 @@
     </header>
 
     <section class="hero">
+        <div class="hero-atmosphere" aria-hidden="true"></div>
         <div class="hero-grid" aria-hidden="true"></div>
         <svg class="hero-path" viewBox="0 0 800 400" aria-hidden="true">
             <path class="flight-path" d="M -50,200 Q 200,50 400,200 T 850,300"></path>
@@ -1192,10 +1322,10 @@
                     <circle cx="12" cy="12" r="8"></circle>
                     <path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path>
                 </svg>
-                <div class="hero-title">AERIAL</div>
+                <div class="hero-title" aria-label="AERIAL"><span class="brand-letter">A</span><span class="brand-letter">E</span><span class="brand-letter">R</span><span class="brand-letter">I</span><span class="brand-letter">A</span><span class="brand-letter">L</span></div>
             </div>
-            <h1 class="hero-subtitle">Communications and Marketing</h1>
-            <p class="hero-mission">“Navigating the complex atmosphere of ESG, policy, and social impact through high-altitude strategic communication. We translate global data into grounded human narratives.”</p>
+            <h1 class="hero-subtitle">Communications &amp; Marketing</h1>
+            <p class="hero-tagline">navigating complex</p>
             <p class="hero-copy">Integrated Communications for ESG, social impact, and policy organizations executed with the clarity and coordination of a defined flight path.</p>
             <div class="hero-actions">
                 <a href="#contact-form" class="button button-primary">Initiate Sequence</a>
@@ -1328,6 +1458,17 @@
                 </div>
                 <small>Articles, op-eds, newsletters, editorial planning.</small>
             </button>
+            <button type="button" class="service-card" data-service="ongoing-retainer">
+                <div>
+                    <div class="service-card-header">
+                        <span class="service-index">04 // Retainer</span>
+                        <span class="service-price">$8,000 / mo</span>
+                    </div>
+                    <h3>Ongoing Communications Retainer</h3>
+                    <p>Integrated monthly support across messaging, media, content, and digital systems, aligned to live campaigns and long-term shifts.</p>
+                </div>
+                <small>Integrated monthly support across strategy, media, content, and systems.</small>
+            </button>
             <button type="button" class="service-card" data-service="media-relations">
                 <div>
                     <div class="service-card-header">
@@ -1338,28 +1479,6 @@
                     <p>Press releases, outreach, and visibility programs routed through a high-trust media network.</p>
                 </div>
                 <small>Press strategy, reporter pitching, releases, amplification.</small>
-            </button>
-            <button type="button" class="service-card" data-service="digital-distribution">
-                <div>
-                    <div class="service-card-header">
-                        <span class="service-index">04 // Infrastructure</span>
-                        <span class="service-price">From $5,500</span>
-                    </div>
-                    <h3>Digital Distribution Infrastructure</h3>
-                    <p>Email systems, websites, and communications pathways designed for durable distribution and signal control.</p>
-                </div>
-                <small>Email systems, digital channels, distribution workflows.</small>
-            </button>
-            <button type="button" class="service-card" data-service="ongoing-retainer">
-                <div>
-                    <div class="service-card-header">
-                        <span class="service-index">05 // Retainer</span>
-                        <span class="service-price">$8,000 / mo</span>
-                    </div>
-                    <h3>Ongoing Communications Retainer</h3>
-                    <p>Integrated monthly support across messaging, media, content, and digital systems, aligned to live campaigns and long-term shifts.</p>
-                </div>
-                <small>Integrated monthly support across strategy, media, content, and systems.</small>
             </button>
         </div>
     </section>
@@ -1691,7 +1810,7 @@
                 <circle cx="12" cy="12" r="8"></circle>
                 <path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path>
             </svg>
-            <span class="brand-word">AERIAL</span>
+            <span class="brand-word" aria-label="AERIAL"><span class="brand-letter">A</span><span class="brand-letter">E</span><span class="brand-letter">R</span><span class="brand-letter">I</span><span class="brand-letter">A</span><span class="brand-letter">L</span></span>
         </div>
         <div class="footer-links">
             <a href="https://www.linkedin.com/in/alyssa-cortes">Alyssa LinkedIn</a>
