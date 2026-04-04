@@ -1,8 +1,7 @@
 
 <html lang="en" vid="0"><head vid="1">
     <meta charset="UTF-8" vid="2">
-    <meta name="viewport" conte
-    nt="width=device-width, initial-scale=1.0, viewport-fit=cover" vid="3">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" vid="3">
     <title vid="4">Aerial | Integrated Strategy</title>
     <meta name="description" content="Integrated communications for climate, clean energy, and policy." vid="5">
     <link rel="icon" href="../assets/aerial.png" type="image/png">
@@ -68,9 +67,10 @@
         .section-title,
         .major-title {
             font-family: 'Ranchers', cursive;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.045em;
             line-height: 1.02;
             font-weight: 400;
+            text-shadow: 4px 4px 0 var(--sunset-shadow);
         }
 
         .display-monoton {
@@ -82,7 +82,7 @@
 
         .retro-heading {
             font-family: 'Ranchers', cursive;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.045em;
             line-height: 1.02;
             font-weight: 400;
         }
@@ -92,7 +92,7 @@
         .service-card-heading,
         .qa-question h3 {
             font-family: 'Ranchers', cursive;
-            letter-spacing: 0.01em;
+            letter-spacing: 0.04em;
             line-height: 1.12;
             font-weight: 400;
         }
@@ -108,7 +108,7 @@
             font-family: 'Ranchers', cursive;
             font-size: clamp(2.05rem, 5vw, 4.1rem);
             line-height: 0.98;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.045em;
             font-weight: 400;
         }
 
@@ -128,8 +128,8 @@
 
         .grid-overlay {
             background-image:
-                linear-gradient(rgba(44, 27, 51, 0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(44, 27, 51, 0.04) 1px, transparent 1px);
+                linear-gradient(rgba(95, 74, 103, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(201, 168, 106, 0.035) 1px, transparent 1px);
             background-size: 60px 60px;
         }
 
@@ -161,10 +161,11 @@
         .brand-word {
             font-family: 'Ranchers', cursive;
             font-weight: 400;
-            letter-spacing: 0.035em;
+            letter-spacing: 0.06em;
             line-height: 0.94;
             display: inline-block;
             transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+            text-transform: uppercase;
         }
 
         .accent-display {
@@ -183,14 +184,21 @@
 
         .hero-brand {
             font-family: 'Monoton', cursive;
-            font-size: clamp(4.5rem, 12vw, 8.5rem);
+            font-size: clamp(5.8rem, 15vw, 10.8rem);
             letter-spacing: 0.065em;
             line-height: 0.84;
             color: var(--brand-brown);
             text-transform: none;
-            text-shadow: 3px 3px 0 rgba(58, 47, 42, 0.28);
+            text-shadow: 4px 4px 0 var(--sunset-shadow);
             display: inline-block;
             padding-left: 0.06em;
+            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.35s ease;
+            transform-origin: center;
+        }
+
+        .hero-brand:hover,
+        .hero-brand:focus-visible {
+            transform: scale(1.045);
         }
 
         .hero-kicker {
@@ -200,6 +208,8 @@
         .hero-support-line {
             color: var(--brand-brown);
             margin-bottom: 1.75rem;
+            text-transform: lowercase;
+            text-shadow: 4px 4px 0 var(--sunset-shadow);
         }
 
         .hero-copy {
@@ -362,9 +372,11 @@
             background:
                 radial-gradient(circle at 16% 18%, rgba(224, 159, 171, 0.24), transparent 24%),
                 radial-gradient(circle at 76% 18%, rgba(241, 198, 95, 0.24), transparent 26%),
-                radial-gradient(circle at 58% 68%, rgba(154, 127, 187, 0.24), transparent 28%),
+                radial-gradient(circle at 58% 68%, rgba(154, 127, 187, 0.3), transparent 28%),
+                radial-gradient(circle at 30% 32%, rgba(154, 127, 187, 0.26), transparent 24%),
+                radial-gradient(circle at 72% 60%, rgba(154, 127, 187, 0.22), transparent 26%),
                 radial-gradient(circle at 28% 74%, rgba(244, 233, 215, 0.68), transparent 30%),
-                linear-gradient(140deg, rgba(224, 159, 171, 0.2) 0%, rgba(154, 127, 187, 0.22) 30%, rgba(244, 233, 215, 0.88) 56%, rgba(241, 198, 95, 0.18) 100%);
+                linear-gradient(140deg, rgba(224, 159, 171, 0.2) 0%, rgba(154, 127, 187, 0.28) 30%, rgba(244, 233, 215, 0.88) 56%, rgba(241, 198, 95, 0.18) 100%);
         }
 
         .services-atmosphere {
@@ -1005,16 +1017,16 @@
                 gap: 0.2rem;
             }
             .brand-word {
-                letter-spacing: 0.02em;
+                letter-spacing: 0.05em;
             }
             .hero-brand-shell {
                 margin-bottom: 1.4rem;
             }
             .hero-brand {
-                font-size: clamp(3.7rem, 19vw, 5.6rem);
+                font-size: clamp(4.5rem, 21vw, 6.9rem);
                 letter-spacing: 0.05em;
                 line-height: 0.86;
-                text-shadow: 2px 2px 0 rgba(58, 47, 42, 0.25);
+                text-shadow: 4px 4px 0 var(--sunset-shadow);
             }
             .hero-kicker {
                 margin-bottom: 1.2rem;
@@ -2766,7 +2778,7 @@ video {
     <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 px-6 py-5 md:px-12 flex justify-between items-center glass-panel border-x-0 border-t-0 rounded-none" vid="22">
         <a href="#" class="brand-link flex items-center gap-3 group text-brand-charcoal hover:text-brand-gold transition-colors" vid="23">
             <i class="brand-icon ph ph-crosshair text-[1.45rem] md:text-[1.65rem] text-brand-charcoal transition-all duration-300" vid="24"></i>
-            <span class="brand-mark text-[1.88rem] md:text-[2.22rem] text-brand-charcoal" vid="29"><span class="brand-word">Aerial</span></span>
+            <span class="brand-mark text-[1.88rem] md:text-[2.22rem] text-brand-charcoal" vid="29"><span class="brand-word">AERIAL</span></span>
         </a>
         <div class="hidden md:flex gap-8" vid="30">
             <a href="#impact" class="nav-link font-bold uppercase text-brand-charcoal hover:text-brand-gold transition-colors" vid="31">Impact</a>
@@ -2809,13 +2821,9 @@ video {
             </div>
             
             <div class="hero-brand-shell" vid="53">
-            <h1 class="hero-brand relative inline-block" vid="53">
-                AERIAL
-                
-                <i class="ph ph-sparkle absolute -top-4 -right-8 text-[2.5rem] text-brand-gold spin-slow opacity-40" vid="54"></i>
-            </h1>
+            <h1 class="hero-brand relative inline-block" vid="53">AERIAL</h1>
             </div>
-            <p class="display-subheadline hero-support-line uppercase">COMMUNICATIONS &amp; MARKETING</p>
+            <p class="display-subheadline hero-support-line">communications &amp; marketing</p>
             
             <p class="hero-copy hero-sentence text-lg md:text-2xl text-brand-charcoal/82 max-w-2xl mx-auto leading-relaxed" vid="57">
                 Integrated Communications for ESG, social impact, and policy organizations executed with the clarity and coordination of a defined flight path
@@ -2854,7 +2862,7 @@ video {
                 <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-brand-gold/30 pb-6 fade-up" vid="72">
                     <div vid="73">
                         <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold mb-2 flex items-center gap-3 block" vid="74"><i class="ph ph-saturn text-lg" aria-hidden="true"></i> Phase 01 // System Resonance</span>
-                        <h2 class="major-title retro-heading text-5xl md:text-7xl uppercase text-brand-charcoal" vid="75">Global <span class="text-brand-gold">Impact</span></h2>
+                        <h2 class="major-title display-monoton text-5xl md:text-7xl uppercase text-brand-charcoal retro-shadow" vid="75">Global <span class="text-brand-gold">Impact</span></h2>
                     </div>
                     <div class="mt-6 md:mt-0 glass-panel py-2 px-6 rounded-full inline-flex items-center gap-2" vid="76">
                         <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse" vid="77"></span>
@@ -3554,7 +3562,7 @@ video {
                         <svg class="w-4 h-4" viewBox="0 0 100 100" fill="none" stroke="#C9A86A" stroke-width="4" vid="337">
                             <circle cx="50" cy="50" r="40" stroke-dasharray="10 5" vid="338"></circle>
                         </svg>
-                        <span class="brand-mark text-[1.52rem] md:text-[1.82rem] text-brand-gold" vid="339"><span class="brand-word">Aerial</span></span>
+                        <span class="brand-mark text-[1.52rem] md:text-[1.82rem] text-brand-gold" vid="339"><span class="brand-word">AERIAL</span></span>
                     </div>
                     
                     <div class="flex flex-wrap justify-center gap-6 md:gap-8" vid="340">
