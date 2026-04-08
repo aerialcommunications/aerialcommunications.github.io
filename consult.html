@@ -1,0 +1,1287 @@
+
+<html vid="0"><head vid="1">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700;1,900&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet" vid="3">
+    <script src="https://unpkg.com/@phosphor-icons/web" vid="4"></script>
+    <style vid="5">
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F4E8D9;
+            color: #2D1B3F;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .serif-italic {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+        .grid-bg {
+            background-image: 
+                linear-gradient(to right, rgba(45, 27, 63, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(45, 27, 63, 0.05) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+        .grid-bg-dark {
+            background-image: 
+                linear-gradient(to right, rgba(244, 232, 217, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(244, 232, 217, 0.03) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+        .orbital-path {
+            border: 1px dashed rgba(217, 114, 123, 0.3);
+            border-radius: 50%;
+            position: absolute;
+            pointer-events: none;
+        }
+        .orbital-path-light {
+            border-color: rgba(244, 232, 217, 0.15);
+        }
+        .btn-nav {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            border: 1px solid rgba(45, 27, 63, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-nav:hover {
+            background: #2D1B3F;
+            color: #F4E8D9;
+            border-color: #2D1B3F;
+            transform: scale(1.05);
+        }
+        .btn-nav.dark-mode {
+            border-color: rgba(244, 232, 217, 0.2);
+            color: #F4E8D9;
+        }
+        .btn-nav.dark-mode:hover {
+            background: #F4E8D9;
+            color: #2D1B3F;
+            border-color: #F4E8D9;
+        }
+        .bg-burgundy { background-color: #D9727B; }
+        .text-burgundy { color: #D9727B; }
+        .bg-navy { background-color: #2D1B3F; }
+        .text-navy { color: #2D1B3F; }
+        .bg-cream { background-color: #F4E8D9; }
+        .text-cream { color: #F4E8D9; }
+
+        .slide-content-grid {
+            display: grid;
+            grid-template-cols: 1.2fr 0.8fr;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            padding: 0 10%;
+            gap: 4rem;
+        }
+    </style>
+
+  <style type="text/css">
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}/*
+! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com
+*//*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
+*/
+
+html,
+:host {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  tab-size: 4; /* 3 */
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+  font-feature-settings: normal; /* 5 */
+  font-variation-settings: normal; /* 6 */
+  -webkit-tap-highlight-color: transparent; /* 7 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+  margin: 0; /* 1 */
+  line-height: inherit; /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
+  font-feature-settings: normal; /* 2 */
+  font-variation-settings: normal; /* 3 */
+  font-size: 1em; /* 4 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  font-weight: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  letter-spacing: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+dialog {
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+[hidden]:where(:not([hidden="until-found"])) {
+  display: none;
+}
+.pointer-events-none {
+  pointer-events: none;
+}
+.pointer-events-auto {
+  pointer-events: auto;
+}
+.fixed {
+  position: fixed;
+}
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+.bottom-0 {
+  bottom: 0px;
+}
+.bottom-12 {
+  bottom: 3rem;
+}
+.left-0 {
+  left: 0px;
+}
+.left-1\/2 {
+  left: 50%;
+}
+.right-12 {
+  right: 3rem;
+}
+.top-0 {
+  top: 0px;
+}
+.top-1\/2 {
+  top: 50%;
+}
+.z-10 {
+  z-index: 10;
+}
+.z-50 {
+  z-index: 50;
+}
+.z-\[100\] {
+  z-index: 100;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.-mt-4 {
+  margin-top: -1rem;
+}
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+.mb-12 {
+  margin-bottom: 3rem;
+}
+.mb-16 {
+  margin-bottom: 4rem;
+}
+.mr-6 {
+  margin-right: 1.5rem;
+}
+.mt-2\.5 {
+  margin-top: 0.625rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.block {
+  display: block;
+}
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+.hidden {
+  display: none;
+}
+.h-1\.5 {
+  height: 0.375rem;
+}
+.h-3 {
+  height: 0.75rem;
+}
+.h-48 {
+  height: 12rem;
+}
+.h-\[1px\] {
+  height: 1px;
+}
+.h-\[350px\] {
+  height: 350px;
+}
+.h-\[500px\] {
+  height: 500px;
+}
+.h-\[600px\] {
+  height: 600px;
+}
+.h-\[900px\] {
+  height: 900px;
+}
+.h-full {
+  height: 100%;
+}
+.h-screen {
+  height: 100vh;
+}
+.w-12 {
+  width: 3rem;
+}
+.w-16 {
+  width: 4rem;
+}
+.w-3 {
+  width: 0.75rem;
+}
+.w-48 {
+  width: 12rem;
+}
+.w-\[350px\] {
+  width: 350px;
+}
+.w-\[500px\] {
+  width: 500px;
+}
+.w-\[600px\] {
+  width: 600px;
+}
+.w-\[900px\] {
+  width: 900px;
+}
+.w-full {
+  width: 100%;
+}
+.max-w-2xl {
+  max-width: 42rem;
+}
+.max-w-3xl {
+  max-width: 48rem;
+}
+.max-w-xl {
+  max-width: 36rem;
+}
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.-translate-y-1\/2 {
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-x-12 {
+  --tw-translate-x: 3rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-start {
+  align-items: flex-start;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.gap-10 {
+  gap: 2.5rem;
+}
+.gap-3 {
+  gap: 0.75rem;
+}
+.gap-4 {
+  gap: 1rem;
+}
+.gap-6 {
+  gap: 1.5rem;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.rounded-full {
+  border-radius: 9999px;
+}
+.border {
+  border-width: 1px;
+}
+.border-2 {
+  border-width: 2px;
+}
+.bg-white\/40 {
+  background-color: rgb(255 255 255 / 0.4);
+}
+.p-10 {
+  padding: 2.5rem;
+}
+.p-20 {
+  padding: 5rem;
+}
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+.text-center {
+  text-align: center;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+.text-\[10px\] {
+  font-size: 10px;
+}
+.text-\[110px\] {
+  font-size: 110px;
+}
+.text-\[11px\] {
+  font-size: 11px;
+}
+.text-\[12px\] {
+  font-size: 12px;
+}
+.text-\[130px\] {
+  font-size: 130px;
+}
+.text-\[84px\] {
+  font-size: 84px;
+}
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.font-black {
+  font-weight: 900;
+}
+.font-bold {
+  font-weight: 700;
+}
+.font-light {
+  font-weight: 300;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.italic {
+  font-style: italic;
+}
+.leading-\[0\.85\] {
+  line-height: 0.85;
+}
+.leading-\[0\.9\] {
+  line-height: 0.9;
+}
+.leading-relaxed {
+  line-height: 1.625;
+}
+.tracking-\[0\.3em\] {
+  letter-spacing: 0.3em;
+}
+.tracking-\[0\.4em\] {
+  letter-spacing: 0.4em;
+}
+.tracking-\[0\.5em\] {
+  letter-spacing: 0.5em;
+}
+.opacity-40 {
+  opacity: 0.4;
+}
+.opacity-60 {
+  opacity: 0.6;
+}
+.opacity-70 {
+  opacity: 0.7;
+}
+.opacity-80 {
+  opacity: 0.8;
+}
+.blur {
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.backdrop-blur-md {
+  --tw-backdrop-blur: blur(12px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-filter {
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.duration-300 {
+  transition-duration: 300ms;
+}
+.duration-700 {
+  transition-duration: 700ms;
+}
+.ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+.hover\:bg-white:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}* {
+      -ms-overflow-style: none !important;
+      scrollbar-width: none !important;
+    }
+
+    *::-webkit-scrollbar {
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+    }
+  </style></head>
+<body class="w-full h-screen relative overflow-hidden" vid="6">
+
+    <nav class="fixed top-0 left-0 w-full p-10 flex justify-between items-center z-50 pointer-events-none" vid="7">
+        <div class="flex items-center gap-3 pointer-events-auto" vid="8">
+            <i class="ph ph-circle-dashed text-2xl" id="nav-logo-icon" vid="9"></i>
+            <span class="font-bold tracking-[0.4em] text-xs" id="nav-logo-text" vid="10">AERIAL</span>
+        </div>
+        <div class="text-[10px] tracking-[0.3em] font-bold uppercase opacity-40 pointer-events-auto" id="nav-tag" vid="11">Strategic Communications Framework</div>
+    </nav>
+
+    <main class="w-full h-full relative" vid="12">
+        
+        
+        <section class="slide active bg-cream grid-bg flex-col items-center justify-center text-center p-20" vid="13">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] orbital-path" vid="14"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] orbital-path" vid="15"></div>
+            
+            <div class="relative z-10" vid="16">
+                <p class="text-[11px] tracking-[0.5em] font-bold uppercase mb-16 text-burgundy" vid="17">Model Presentation</p>
+                <h1 class="text-[130px] leading-[0.85] text-navy mb-12" vid="18">
+                    <span class="serif-italic block font-black" vid="19">Integrated</span>
+                    <span class="serif-italic block text-burgundy font-black italic" vid="20">Communications</span>
+                    <span class="serif-italic block font-black translate-x-12 -mt-4" vid="21">Model</span>
+                </h1>
+                <p class="max-w-2xl mx-auto text-xl font-light leading-relaxed opacity-80" vid="22">
+                    A unified framework aligning media, content, and digital infrastructure for mission-driven organizations. Five integrated services designed to scale influence across every channel.
+                </p>
+            </div>
+        </section>
+
+        
+        <section class="slide bg-cream grid-bg" vid="23">
+            <div class="slide-content-grid" vid="24">
+                <div class="flex flex-col gap-10" vid="25">
+                    <div class="flex items-center gap-6" vid="26">
+                        <span class="text-[11px] tracking-[0.4em] font-bold uppercase text-navy/60" vid="27">Module 01</span>
+                        <div class="w-16 h-[1px] bg-navy/20" vid="28"></div>
+                        <span class="text-[11px] tracking-[0.3em] font-bold text-burgundy uppercase" vid="29">Investment: From $4,500</span>
+                    </div>
+                    <h2 class="serif-italic text-[84px] text-navy leading-[0.9] font-black" vid="30">Message Architecture &amp; Narrative Strategy</h2>
+                    <p class="text-xl opacity-80 leading-relaxed max-w-xl" vid="31">Clarifying the core messaging, positioning, and campaign narrative that guide every channel. We establish the strategic foundation that ensures all communications speak with one voice.</p>
+                    <div class="flex flex-col gap-6 mt-4" vid="32">
+                        <div class="flex items-start gap-6" vid="33">
+                            <div class="w-3 h-3 bg-burgundy rounded-full mt-2.5" vid="34"></div>
+                            <p class="text-lg opacity-70" vid="35">Messaging framework development and positioning guidance</p>
+                        </div>
+                        <div class="flex items-start gap-6" vid="36">
+                            <div class="w-3 h-3 bg-burgundy rounded-full mt-2.5" vid="37"></div>
+                            <p class="text-lg opacity-70" vid="38">Campaign narrative strategy and story architecture</p>
+                        </div>
+                        <div class="flex items-start gap-6" vid="39">
+                            <div class="w-3 h-3 bg-burgundy rounded-full mt-2.5" vid="40"></div>
+                            <p class="text-lg opacity-70" vid="41">Stakeholder alignment and communications planning</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex items-center justify-center" vid="42">
+                    <div class="absolute w-[500px] h-[500px] orbital-path" vid="43"></div>
+                    <div class="absolute w-[350px] h-[350px] orbital-path" vid="44"></div>
+                    <div class="w-48 h-48 rounded-full border-2 border-navy/10 flex items-center justify-center bg-white/40 backdrop-blur-md z-10" vid="45">
+                        <span class="serif-italic text-7xl text-navy font-black" vid="46">01</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="slide bg-navy grid-bg-dark text-cream" vid="47">
+            <div class="slide-content-grid" vid="48">
+                <div class="flex flex-col gap-10" vid="49">
+                    <div class="flex items-center gap-6" vid="50">
+                        <span class="text-[11px] tracking-[0.4em] font-bold uppercase text-cream/50" vid="51">Module 02</span>
+                        <div class="w-16 h-[1px] bg-cream/20" vid="52"></div>
+                        <span class="text-[11px] tracking-[0.3em] font-bold text-burgundy uppercase" vid="53">Investment: From $5,000</span>
+                    </div>
+                    <h2 class="serif-italic text-[84px] text-cream leading-[0.9] font-black" vid="54">Content Creation &amp; Editorial Systems</h2>
+                    <p class="text-xl opacity-70 leading-relaxed max-w-xl" vid="55">Developing articles, newsletters, social content, and campaign assets inside a cohesive system. Content designed to travel across channels while maintaining strategic consistency.</p>
+                    <div class="flex flex-col gap-6 mt-4" vid="56">
+                        <div class="flex items-start gap-6" vid="57">
+                            <div class="w-3 h-3 bg-burgundy rounded-full mt-2.5" vid="58"></div>
+                            <p class="text-lg opacity-60" vid="59">Articles, newsletters, and long-form content development</p>
+                        </div>
+                        <div class="flex items-start gap-6" vid="60">
+                            <div class="w-3 h-3 bg-burgundy rounded-full mt-2.5" vid="61"></div>
+                            <p class="text-lg opacity-60" vid="62">Campaign content and social media asset creation</p>
+                        </div>
+                        <div class="flex items-start gap-6" vid="63">
+                            <div class="w-3 h-3 bg-burgundy rounded-full mt-2.5" vid="64"></div>
+                            <p class="text-lg opacity-60" vid="65">Editorial planning and content calendar management</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex items-center justify-center" vid="66">
+                    <div class="absolute w-[500px] h-[500px] orbital-path orbital-path-light" vid="67"></div>
+                    <div class="absolute w-[350px] h-[350px] orbital-path orbital-path-light" vid="68"></div>
+                    <div class="w-48 h-48 rounded-full border-2 border-cream/10 flex items-center justify-center bg-cream/10 backdrop-blur-md z-10" vid="69">
+                        <span class="serif-italic text-7xl text-cream font-black" vid="70">02</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="slide bg-cream grid-bg" vid="71">
+            <div class="slide-content-grid" vid="72">
+                <div class="flex flex-col gap-10" vid="73">
+                    <div class="flex items-center gap-6" vid="74">
+                        <span class="text-[11px] tracking-[0.4em] font-bold uppercase text-navy/60" vid="75">Module 03</span>
+                        <div class="w-16 h-[1px] bg-navy/20" vid="76"></div>
+                        <span class="text-[11px] tracking-[0.3em] font-bold text-burgundy uppercase" vid="77">Investment: From $6,000</span>
+                    </div>
+                    <h2 class="serif-italic text-[84px] text-navy leading-[0.9] font-black" vid="78">Media Relations &amp; Press Outreach</h2>
+                    <p class="text-xl opacity-80 leading-relaxed max-w-xl" vid="79">Building press lists, managing outreach, and supporting visibility through targeted media engagement. We cultivate reporter relationships that amplify your message beyond owned channels.</p>
+                    <div class="flex flex-col gap-6 mt-4" vid="80">
+                        <div class="flex items-start gap-6" vid="81">
+                            <div class="w-3 h-3 bg-burgundy rounded-full mt-2.5" vid="82"></div>
+                            <p class="text-lg opacity-70" vid="83">Press list development and reporter network management</p>
+                        </div>
+                        <div class="flex items-start gap-6" vid="84">
+                            <div class="w-3 h-3 bg-burgundy rounded-full mt-2.5" vid="85"></div>
+                            <p class="text-lg opacity-70" vid="86">Strategic outreach and media coordination</p>
+                        </div>
+                        <div class="flex items-start gap-6" vid="87">
+                            <div class="w-3 h-3 bg-burgundy rounded-full mt-2.5" vid="88"></div>
+                            <p class="text-lg opacity-70" vid="89">Press releases, media kits, and earned coverage support</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex items-center justify-center" vid="90">
+                    <div class="absolute w-[500px] h-[500px] orbital-path" vid="91"></div>
+                    <div class="absolute w-[350px] h-[350px] orbital-path" vid="92"></div>
+                    <div class="w-48 h-48 rounded-full border-2 border-navy/10 flex items-center justify-center bg-white/40 backdrop-blur-md z-10" vid="93">
+                        <span class="serif-italic text-7xl text-navy font-black" vid="94">03</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="slide bg-navy grid-bg-dark text-cream" vid="95">
+            <div class="slide-content-grid" vid="96">
+                <div class="flex flex-col gap-10" vid="97">
+                    <div class="flex items-center gap-6" vid="98">
+                        <span class="text-[11px] tracking-[0.4em] font-bold uppercase text-cream/50" vid="99">Module 04</span>
+                        <div class="w-16 h-[1px] bg-cream/20" vid="100"></div>
+                        <span class="text-[11px] tracking-[0.3em] font-bold text-burgundy uppercase" vid="101">Investment: From $5,500</span>
+                    </div>
+                    <h2 class="serif-italic text-[84px] text-cream leading-[0.9] font-black" vid="102">Digital Infrastructure &amp; Distribution</h2>
+                    <p class="text-xl opacity-70 leading-relaxed max-w-xl" vid="103">Email systems, web updates, and communications workflows designed to support durable distribution. Building the technical backbone that ensures your message reaches its destination.</p>
+                    <div class="flex flex-col gap-6 mt-4" vid="104">
+                        <div class="flex items-start gap-6" vid="105">
+                            <div class="w-3 h-3 bg-burgundy rounded-full mt-2.5" vid="106"></div>
+                            <p class="text-lg opacity-60" vid="107">Email systems and newsletter infrastructure</p>
+                        </div>
+                        <div class="flex items-start gap-6" vid="108">
+                            <div class="w-3 h-3 bg-burgundy rounded-full mt-2.5" vid="109"></div>
+                            <p class="text-lg opacity-60" vid="110">Website updates and landing page development</p>
+                        </div>
+                        <div class="flex items-start gap-6" vid="111">
+                            <div class="w-3 h-3 bg-burgundy rounded-full mt-2.5" vid="112"></div>
+                            <p class="text-lg opacity-60" vid="113">Channel distribution and workflow automation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex items-center justify-center" vid="114">
+                    <div class="absolute w-[500px] h-[500px] orbital-path orbital-path-light" vid="115"></div>
+                    <div class="absolute w-[350px] h-[350px] orbital-path orbital-path-light" vid="116"></div>
+                    <div class="w-48 h-48 rounded-full border-2 border-cream/10 flex items-center justify-center bg-cream/10 backdrop-blur-md z-10" vid="117">
+                        <span class="serif-italic text-7xl text-cream font-black" vid="118">04</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="slide bg-cream grid-bg" vid="119">
+            <div class="slide-content-grid" vid="120">
+                <div class="flex flex-col gap-10" vid="121">
+                    <div class="flex items-center gap-6" vid="122">
+                        <span class="text-[11px] tracking-[0.4em] font-bold uppercase text-navy/60" vid="123">Module 05</span>
+                        <div class="w-16 h-[1px] bg-navy/20" vid="124"></div>
+                        <span class="text-[11px] tracking-[0.3em] font-bold text-burgundy uppercase" vid="125">Investment: $8,000 / Month</span>
+                    </div>
+                    <h2 class="serif-italic text-[84px] text-navy leading-[0.9] font-black" vid="126">Ongoing Communications Retainer</h2>
+                    <p class="text-xl opacity-80 leading-relaxed max-w-xl" vid="127">Integrated support across messaging, media, content, and digital systems for active campaigns and convenings. Continuous partnership ensuring sustained visibility and strategic momentum.</p>
+                    <div class="flex flex-col gap-6 mt-4" vid="128">
+                        <div class="flex items-start gap-6" vid="129">
+                            <div class="w-3 h-3 bg-burgundy rounded-full mt-2.5" vid="130"></div>
+                            <p class="text-lg opacity-70" vid="131">Ongoing support across all service modules</p>
+                        </div>
+                        <div class="flex items-start gap-6" vid="132">
+                            <div class="w-3 h-3 bg-burgundy rounded-full mt-2.5" vid="133"></div>
+                            <p class="text-lg opacity-70" vid="134">Active campaign and convening communications</p>
+                        </div>
+                        <div class="flex items-start gap-6" vid="135">
+                            <div class="w-3 h-3 bg-burgundy rounded-full mt-2.5" vid="136"></div>
+                            <p class="text-lg opacity-70" vid="137">Priority response and dedicated strategic counsel</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex items-center justify-center" vid="138">
+                    <div class="absolute w-[500px] h-[500px] orbital-path" vid="139"></div>
+                    <div class="absolute w-[350px] h-[350px] orbital-path" vid="140"></div>
+                    <div class="w-48 h-48 rounded-full border-2 border-navy/10 flex items-center justify-center bg-white/40 backdrop-blur-md z-10" vid="141">
+                        <span class="serif-italic text-7xl text-navy font-black" vid="142">05</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="slide bg-navy grid-bg-dark text-cream flex-col items-center justify-center text-center p-20" vid="143">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] orbital-path orbital-path-light" vid="144"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] orbital-path orbital-path-light" vid="145"></div>
+            
+            <div class="relative z-10" vid="146">
+                <p class="text-[11px] tracking-[0.5em] font-bold uppercase mb-12 text-burgundy" vid="147">Presentation Complete</p>
+                <h2 class="serif-italic text-[110px] leading-[0.9] text-cream mb-10 font-black italic" vid="148">Integrated Systems.<br vid="149">Scaled Influence.</h2>
+                <p class="max-w-3xl mx-auto text-xl font-light opacity-60 leading-relaxed mb-16" vid="150">
+                    The Aerial Communications Model unifies messaging, content, media, and distribution into a single strategic framework. Every module designed to work together. Every channel aligned to amplify your mission.
+                </p>
+                <button onclick="goToSlide(0)" class="px-10 py-5 bg-burgundy text-cream font-bold text-[11px] tracking-[0.4em] uppercase hover:bg-white hover:text-navy transition-all duration-300" vid="151">Restart Presentation</button>
+            </div>
+        </section>
+
+    </main>
+
+    
+    <div class="fixed bottom-12 right-12 flex items-center gap-6 z-[100]" vid="152">
+        <div class="flex items-center gap-4 text-[12px] font-bold tracking-[0.3em] text-navy mr-6" id="slide-counter-wrapper" vid="153">
+            <span id="current-slide" vid="154">01</span>
+            <div class="w-12 h-[1px] bg-navy/20" id="counter-divider" vid="155"></div>
+            <span class="opacity-40" vid="156">07</span>
+        </div>
+        
+        <div class="flex gap-4" vid="157">
+            <button onclick="prevSlide()" class="btn-nav" id="btn-prev" vid="158">
+                <i class="ph ph-caret-left-bold text-2xl" vid="159"></i>
+            </button>
+            <button onclick="nextSlide()" class="btn-nav" id="btn-next" vid="160">
+                <i class="ph ph-caret-right-bold text-2xl" vid="161"></i>
+            </button>
+        </div>
+    </div>
+
+    
+    <div class="fixed bottom-0 left-0 h-1.5 bg-navy/10 w-full z-[100]" vid="162">
+        <div id="progress" class="h-full bg-burgundy transition-all duration-700 ease-out" style="width: 14.28%" vid="163"></div>
+    </div>
+
+    <script vid="164">
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progress = document.getElementById('progress');
+        const currentLabel = document.getElementById('current-slide');
+        const navLogoIcon = document.getElementById('nav-logo-icon');
+        const navLogoText = document.getElementById('nav-logo-text');
+        const navTag = document.getElementById('nav-tag');
+        const btnPrev = document.getElementById('btn-prev');
+        const btnNext = document.getElementById('btn-next');
+        const slideCounterWrapper = document.getElementById('slide-counter-wrapper');
+        const counterDivider = document.getElementById('counter-divider');
+
+        const darkSlides = [2, 4, 6]; 
+
+        function updateDisplay() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                }
+            });
+            
+            const percent = ((currentSlide + 1) / slides.length) * 100;
+            progress.style.width = percent + '%';
+            currentLabel.textContent = (currentSlide + 1).toString().padStart(2, '0');
+
+            const isDark = darkSlides.includes(currentSlide);
+            
+            if (isDark) {
+                navLogoIcon.classList.add('text-cream'); navLogoIcon.classList.remove('text-navy');
+                navLogoText.classList.add('text-cream'); navLogoText.classList.remove('text-navy');
+                navTag.classList.add('text-cream'); navTag.classList.remove('text-navy');
+                btnPrev.classList.add('dark-mode');
+                btnNext.classList.add('dark-mode');
+                slideCounterWrapper.classList.add('text-cream'); slideCounterWrapper.classList.remove('text-navy');
+                counterDivider.classList.add('bg-cream/20'); counterDivider.classList.remove('bg-navy/20');
+            } else {
+                navLogoIcon.classList.remove('text-cream'); navLogoIcon.classList.add('text-navy');
+                navLogoText.classList.remove('text-cream'); navLogoText.classList.add('text-navy');
+                navTag.classList.remove('text-cream'); navTag.classList.add('text-navy');
+                btnPrev.classList.remove('dark-mode');
+                btnNext.classList.remove('dark-mode');
+                slideCounterWrapper.classList.remove('text-cream'); slideCounterWrapper.classList.add('text-navy');
+                counterDivider.classList.remove('bg-cream/20'); counterDivider.classList.add('bg-navy/20');
+            }
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateDisplay();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateDisplay();
+            }
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateDisplay();
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                prevSlide();
+            }
+        });
+
+        let lastScroll = 0;
+        window.addEventListener('wheel', (e) => {
+            const now = Date.now();
+            if (now - lastScroll < 1200) return; 
+            
+            if (e.deltaY > 50) {
+                nextSlide();
+                lastScroll = now;
+            } else if (e.deltaY < -50) {
+                prevSlide();
+                lastScroll = now;
+            }
+        }, { passive: true });
+    </script>
+
+
+</body></html>
