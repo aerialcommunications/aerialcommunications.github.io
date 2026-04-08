@@ -125,8 +125,16 @@
             display: none;
             opacity: 0;
         }
+        .experience-panel.hidden {
+            display: none !important;
+            opacity: 0;
+        }
         .experience-module.active .experience-panel {
             display: block;
+            opacity: 1;
+        }
+        .experience-module.active .experience-panel.hidden {
+            display: block !important;
             opacity: 1;
         }
         .experience-panel-inner {
@@ -1671,7 +1679,7 @@ video {
         
         <section class="mb-32 grid grid-cols-12 gap-16" vid="121">
             <div class="col-span-4" vid="122">
-                <h2 class="text-[11px] tracking-[0.5em] font-bold uppercase mb-12" vid="123">05 // Project Investment</h2>
+                <h2 class="text-[11px] tracking-[0.5em] font-bold uppercase mb-12" vid="123">06 // Project Investment</h2>
                 <div class="bg-burgundy text-[#F4E8D9] p-12 text-center" vid="124">
                     <span class="text-[10px] uppercase tracking-widest font-bold opacity-70 mb-4 block" vid="125">Total Investment</span>
                     <h3 class="serif-italic text-6xl italic font-black" vid="126">$28,500</h3>
