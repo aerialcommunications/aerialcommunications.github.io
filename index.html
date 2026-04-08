@@ -243,7 +243,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 130px 30px 70px;
+            padding: 108px 30px 88px;
             text-align: center;
             overflow: clip;
         }
@@ -321,8 +321,9 @@
             z-index: 1;
             max-width: 1060px;
             display: grid;
-            gap: 20px;
+            gap: 12px;
             justify-items: center;
+            transform: translateY(-24px);
         }
 
         .eyebrow {
@@ -349,7 +350,8 @@
             display: inline-flex;
             align-items: center;
             gap: 14px;
-            margin-top: 8px;
+            margin-top: 2px;
+            margin-bottom: -4px;
         }
 
         .hero-logo .brand-mark {
@@ -389,17 +391,20 @@
 
         .hero-subtitle {
             font-family: var(--display);
-            font-size: clamp(2.2rem, 5vw, 5rem);
-            line-height: 0.96;
-            letter-spacing: -0.04em;
+            font-size: clamp(1.5rem, 2.6vw, 2.5rem);
+            line-height: 0.98;
+            letter-spacing: -0.03em;
             font-style: italic;
-            max-width: 13ch;
+            max-width: none;
+            white-space: nowrap;
+            margin-top: -2px;
+            margin-bottom: 6px;
         }
 
         .hero-tagline,
         .hero-copy {
             max-width: 720px;
-            font-size: clamp(1.04rem, 1.7vw, 1.24rem);
+            font-size: clamp(1rem, 1.55vw, 1.16rem);
         }
 
         .hero-tagline {
@@ -407,6 +412,7 @@
             color: var(--purple);
             font-weight: 700;
             letter-spacing: 0.02em;
+            margin-top: 2px;
         }
 
         .hero-copy {
@@ -421,7 +427,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 16px;
-            margin-top: 10px;
+            margin-top: 14px;
         }
 
         .button {
@@ -471,7 +477,7 @@
 
         .descend {
             position: absolute;
-            bottom: 18px;
+            bottom: 6px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1;
@@ -1440,7 +1446,7 @@
             }
 
             .hero {
-                padding: 120px 18px 84px;
+                padding: 108px 18px 90px;
             }
 
             .hero-title {
@@ -1448,7 +1454,12 @@
             }
 
             .hero-subtitle {
-                font-size: clamp(2rem, 10vw, 3.2rem);
+                font-size: clamp(1.45rem, 6vw, 2.1rem);
+                white-space: normal;
+            }
+
+            .descend {
+                bottom: -2px;
             }
 
             .stats-grid,
