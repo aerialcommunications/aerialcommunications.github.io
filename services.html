@@ -1,0 +1,1837 @@
+
+<html vid="0"><head vid="1">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700;1,900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" vid="3">
+    <script src="https://unpkg.com/@phosphor-icons/web" vid="4"></script>
+    <style vid="5">
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F4E8D9;
+            color: #2D1B3F;
+            margin: 0;
+            padding: 0;
+        }
+        .serif-italic {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+        .grid-bg {
+            background-image: 
+                linear-gradient(to right, rgba(45, 27, 63, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(45, 27, 63, 0.05) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+        .orbital-path {
+            border: 1px dashed rgba(217, 114, 123, 0.2);
+            border-radius: 50%;
+            position: absolute;
+            pointer-events: none;
+        }
+        .bg-burgundy { background-color: #D9727B; }
+        .text-burgundy { color: #D9727B; }
+        .border-navy { border-color: #2D1B3F; }
+        
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid rgba(45, 27, 63, 0.2); padding: 1.5rem; text-align: left; }
+        th { font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.6; }
+
+        .line-accent {
+            height: 1px;
+            background: linear-gradient(90deg, #D9727B 0%, transparent 100%);
+        }
+    </style>
+
+  <style type="text/css">
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}/*
+! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com
+*//*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
+*/
+
+html,
+:host {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  tab-size: 4; /* 3 */
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+  font-feature-settings: normal; /* 5 */
+  font-variation-settings: normal; /* 6 */
+  -webkit-tap-highlight-color: transparent; /* 7 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+  margin: 0; /* 1 */
+  line-height: inherit; /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
+  font-feature-settings: normal; /* 2 */
+  font-variation-settings: normal; /* 3 */
+  font-size: 1em; /* 4 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  font-weight: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  letter-spacing: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+dialog {
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+[hidden]:where(:not([hidden="until-found"])) {
+  display: none;
+}
+.collapse {
+  visibility: collapse;
+}
+.fixed {
+  position: fixed;
+}
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+.sticky {
+  position: sticky;
+}
+.bottom-0 {
+  bottom: 0px;
+}
+.bottom-\[-100px\] {
+  bottom: -100px;
+}
+.left-0 {
+  left: 0px;
+}
+.left-\[-150px\] {
+  left: -150px;
+}
+.left-\[-200px\] {
+  left: -200px;
+}
+.right-0 {
+  right: 0px;
+}
+.right-\[-100px\] {
+  right: -100px;
+}
+.top-0 {
+  top: 0px;
+}
+.top-\[-200px\] {
+  top: -200px;
+}
+.top-\[150px\] {
+  top: 150px;
+}
+.z-10 {
+  z-index: 10;
+}
+.z-50 {
+  z-index: 50;
+}
+.z-\[100\] {
+  z-index: 100;
+}
+.col-span-4 {
+  grid-column: span 4 / span 4;
+}
+.col-span-5 {
+  grid-column: span 5 / span 5;
+}
+.col-span-6 {
+  grid-column: span 6 / span 6;
+}
+.col-span-7 {
+  grid-column: span 7 / span 7;
+}
+.col-span-8 {
+  grid-column: span 8 / span 8;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+.mb-12 {
+  margin-bottom: 3rem;
+}
+.mb-16 {
+  margin-bottom: 4rem;
+}
+.mb-24 {
+  margin-bottom: 6rem;
+}
+.mb-32 {
+  margin-bottom: 8rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+.mb-8 {
+  margin-bottom: 2rem;
+}
+.mt-12 {
+  margin-top: 3rem;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.mt-6 {
+  margin-top: 1.5rem;
+}
+.mt-8 {
+  margin-top: 2rem;
+}
+.block {
+  display: block;
+}
+.flex {
+  display: flex;
+}
+.table {
+  display: table;
+}
+.grid {
+  display: grid;
+}
+.hidden {
+  display: none;
+}
+.h-1 {
+  height: 0.25rem;
+}
+.h-1\.5 {
+  height: 0.375rem;
+}
+.h-\[1px\] {
+  height: 1px;
+}
+.h-\[500px\] {
+  height: 500px;
+}
+.h-\[600px\] {
+  height: 600px;
+}
+.h-\[800px\] {
+  height: 800px;
+}
+.h-full {
+  height: 100%;
+}
+.min-h-screen {
+  min-height: 100vh;
+}
+.w-1\.5 {
+  width: 0.375rem;
+}
+.w-24 {
+  width: 6rem;
+}
+.w-48 {
+  width: 12rem;
+}
+.w-\[500px\] {
+  width: 500px;
+}
+.w-\[600px\] {
+  width: 600px;
+}
+.w-\[800px\] {
+  width: 800px;
+}
+.w-full {
+  width: 100%;
+}
+.max-w-5xl {
+  max-width: 64rem;
+}
+.max-w-7xl {
+  max-width: 80rem;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+.flex-grow {
+  flex-grow: 1;
+}
+.border-collapse {
+  border-collapse: collapse;
+}
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.grid-cols-12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-start {
+  align-items: flex-start;
+}
+.items-end {
+  align-items: flex-end;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.gap-10 {
+  gap: 2.5rem;
+}
+.gap-12 {
+  gap: 3rem;
+}
+.gap-16 {
+  gap: 4rem;
+}
+.gap-2 {
+  gap: 0.5rem;
+}
+.gap-20 {
+  gap: 5rem;
+}
+.gap-3 {
+  gap: 0.75rem;
+}
+.gap-4 {
+  gap: 1rem;
+}
+.gap-6 {
+  gap: 1.5rem;
+}
+.gap-8 {
+  gap: 2rem;
+}
+.space-y-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+}
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+.space-y-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.rounded-full {
+  border-radius: 9999px;
+}
+.border {
+  border-width: 1px;
+}
+.border-b {
+  border-bottom-width: 1px;
+}
+.border-l {
+  border-left-width: 1px;
+}
+.border-t {
+  border-top-width: 1px;
+}
+.bg-\[\#F4E8D9\]\/80 {
+  background-color: rgb(244 232 217 / 0.8);
+}
+.bg-white\/20 {
+  background-color: rgb(255 255 255 / 0.2);
+}
+.bg-white\/30 {
+  background-color: rgb(255 255 255 / 0.3);
+}
+.p-10 {
+  padding: 2.5rem;
+}
+.p-12 {
+  padding: 3rem;
+}
+.p-16 {
+  padding: 4rem;
+}
+.p-8 {
+  padding: 2rem;
+}
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+.pb-8 {
+  padding-bottom: 2rem;
+}
+.pl-10 {
+  padding-left: 2.5rem;
+}
+.pl-24 {
+  padding-left: 6rem;
+}
+.pt-24 {
+  padding-top: 6rem;
+}
+.pt-6 {
+  padding-top: 1.5rem;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+.text-\[10px\] {
+  font-size: 10px;
+}
+.text-\[110px\] {
+  font-size: 110px;
+}
+.text-\[11px\] {
+  font-size: 11px;
+}
+.text-\[9px\] {
+  font-size: 9px;
+}
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.font-black {
+  font-weight: 900;
+}
+.font-bold {
+  font-weight: 700;
+}
+.font-light {
+  font-weight: 300;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.italic {
+  font-style: italic;
+}
+.leading-\[0\.9\] {
+  line-height: 0.9;
+}
+.leading-loose {
+  line-height: 2;
+}
+.leading-relaxed {
+  line-height: 1.625;
+}
+.leading-tight {
+  line-height: 1.25;
+}
+.tracking-\[0\.2em\] {
+  letter-spacing: 0.2em;
+}
+.tracking-\[0\.3em\] {
+  letter-spacing: 0.3em;
+}
+.tracking-\[0\.4em\] {
+  letter-spacing: 0.4em;
+}
+.tracking-\[0\.5em\] {
+  letter-spacing: 0.5em;
+}
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+.tracking-widest {
+  letter-spacing: 0.1em;
+}
+.text-\[\#F4E8D9\] {
+  --tw-text-opacity: 1;
+  color: rgb(244 232 217 / var(--tw-text-opacity, 1));
+}
+.opacity-20 {
+  opacity: 0.2;
+}
+.opacity-30 {
+  opacity: 0.3;
+}
+.opacity-40 {
+  opacity: 0.4;
+}
+.opacity-50 {
+  opacity: 0.5;
+}
+.opacity-60 {
+  opacity: 0.6;
+}
+.opacity-70 {
+  opacity: 0.7;
+}
+.opacity-80 {
+  opacity: 0.8;
+}
+.backdrop-blur-md {
+  --tw-backdrop-blur: blur(12px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-blur-sm {
+  --tw-backdrop-blur: blur(4px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.duration-300 {
+  transition-duration: 300ms;
+}
+.hover\:opacity-100:hover {
+  opacity: 1;
+}* {
+      -ms-overflow-style: none !important;
+      scrollbar-width: none !important;
+    }
+
+    *::-webkit-scrollbar {
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+    }
+  </style></head>
+<body class="w-full min-h-screen grid-bg relative" vid="6">
+
+    
+    <div class="fixed top-[-200px] left-[-200px] w-[800px] h-[800px] orbital-path" vid="7"></div>
+    <div class="fixed top-[150px] left-[-150px] w-[500px] h-[500px] orbital-path" vid="8"></div>
+    <div class="fixed bottom-[-100px] right-[-100px] w-[600px] h-[600px] orbital-path" vid="9"></div>
+
+    
+    <nav class="sticky top-0 w-full p-10 flex justify-between items-center z-50 bg-[#F4E8D9]/80 backdrop-blur-md border-b border-navy/5" vid="10">
+        <div class="flex items-center gap-3" vid="11">
+            <i class="ph ph-circle-dashed text-2xl" vid="12"></i>
+            <span class="font-bold tracking-[0.4em] text-xs" vid="13">AERIAL</span>
+        </div>
+        <div class="flex gap-12" vid="14">
+            <div class="text-[10px] tracking-[0.3em] font-bold uppercase opacity-60" vid="15">External Affairs Proposal</div>
+            <div class="text-[10px] tracking-[0.3em] font-bold uppercase opacity-60" vid="16">04 / 08 / 2026</div>
+        </div>
+    </nav>
+
+    
+    <main class="max-w-7xl mx-auto px-10 py-24 relative z-10" vid="17">
+        
+        
+        <section class="mb-32" vid="18">
+            <div class="flex items-center gap-4 mb-8" vid="19">
+                <span class="text-[11px] tracking-[0.5em] font-bold uppercase text-burgundy" vid="20">Project Proposal</span>
+                <div class="h-[1px] w-24 bg-burgundy/30" vid="21"></div>
+            </div>
+            <h1 class="text-[110px] leading-[0.9] serif-italic font-black italic mb-12" vid="22">
+                SEEC Institute: <br vid="23">
+                <span class="text-burgundy" vid="24">External Affairs</span> &amp; <br vid="25">
+                Communications Firm
+            </h1>
+            <div class="grid grid-cols-12 gap-10 items-end" vid="26">
+                <div class="col-span-7" vid="27">
+                    <p class="text-2xl font-light leading-relaxed opacity-80" vid="28">
+                        A boutique communications and public affairs firm with 10 years of experience serving nonprofit, policy, and clean energy organizations at the intersection of Congress and civil society.
+                    </p>
+                </div>
+                <div class="col-span-5 flex flex-col gap-2 border-l border-navy/10 pl-10" vid="29">
+                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase opacity-40" vid="30">Submitted By</span>
+                    <span class="text-lg font-semibold" vid="31">Aerial Communications</span>
+                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase opacity-40 mt-4" vid="32">Contact</span>
+                    <span class="text-lg font-semibold" vid="33">Alyssa Cortes, Partner Co-Founder</span>
+                    <span class="text-sm opacity-60" vid="34">aerialcommsmarketing@gmail.com</span>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="mb-32 grid grid-cols-12 gap-20" vid="35">
+            <div class="col-span-4" vid="36">
+                <h2 class="text-[11px] tracking-[0.5em] font-bold uppercase mb-6" vid="37">01 // Executive Summary</h2>
+                <div class="line-accent mb-8" vid="38"></div>
+            </div>
+            <div class="col-span-8 space-y-8" vid="39">
+                <p class="text-3xl serif-italic italic leading-tight" vid="40">
+                    We specialize in building communications infrastructure for mission-driven organizations and executing high-visibility convenings.
+                </p>
+                <div class="grid grid-cols-2 gap-12 text-lg leading-relaxed opacity-80" vid="41">
+                    <p vid="42">
+                        Our team brings deep familiarity with the congressional and climate policy ecosystems, a proven track record of managing complex multi-stakeholder events, and systems-building expertise to leave SEEC Institute stronger after engagement ends.
+                    </p>
+                    <p vid="43">
+                        We are ready to step in immediately, operate with minimal ramp-up, and deliver polished on-brand communications across every channel from day one, ensuring continuity and professional excellence.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="mb-32 border border-navy/20 p-16 relative" vid="44">
+            <div class="absolute top-0 right-0 p-8 flex flex-col items-end opacity-20" vid="45">
+                <i class="ph ph-target text-6xl" vid="46"></i>
+            </div>
+            <h2 class="text-[11px] tracking-[0.5em] font-bold uppercase mb-12 text-burgundy" vid="47">02 // Key Requirements &amp; Priorities</h2>
+            <div class="grid grid-cols-12 gap-16" vid="48">
+                <div class="col-span-6 space-y-8" vid="49">
+                    <div vid="50">
+                        <h3 class="serif-italic text-4xl mb-4 italic" vid="51">Interim Support &amp; Capacity</h3>
+                        <p class="opacity-70 leading-relaxed" vid="52">Strengthening SEEC Institute's communications systems and capacity. Day-to-day responsibilities span newsletter and email management, LinkedIn content, Squarespace website updates, press list development, and partner outreach. Success requires a partner who can adopt SEEC's voice quickly and operate independently.</p>
+                    </div>
+                    <div vid="53">
+                        <h3 class="serif-italic text-4xl mb-4 italic" vid="54">Systems-Building Dimension</h3>
+                        <p class="opacity-70 leading-relaxed" vid="55">Developing reusable templates, repeatable communications plans, and documented content workflows. We leave behind an organized asset library and clear infrastructure for future convenings.</p>
+                    </div>
+                </div>
+                <div class="col-span-6 bg-navy text-[#F4E8D9] p-10" vid="56">
+                    <h3 class="serif-italic text-4xl mb-6 italic" vid="57">Solutions Summit Focus</h3>
+                    <p class="opacity-80 leading-relaxed mb-8" vid="58">
+                        The Summit represents a time-sensitive priority requiring end-to-end leadershipâ€”from messaging framework and promotional content to on-site execution in Washington D.C.
+                    </p>
+                    <ul class="space-y-4 text-sm tracking-wide uppercase font-bold opacity-60" vid="59">
+                        <li class="flex items-center gap-4" vid="60"><div class="w-1.5 h-1.5 bg-burgundy rounded-full" vid="61"></div> Messaging Framework</li>
+                        <li class="flex items-center gap-4" vid="62"><div class="w-1.5 h-1.5 bg-burgundy rounded-full" vid="63"></div> On-site Execution (DC)</li>
+                        <li class="flex items-center gap-4" vid="64"><div class="w-1.5 h-1.5 bg-burgundy rounded-full" vid="65"></div> Post-Event Distribution</li>
+                        <li class="flex items-center gap-4" vid="66"><div class="w-1.5 h-1.5 bg-burgundy rounded-full" vid="67"></div> Follow-up Communications</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="mb-32" vid="68">
+            <h2 class="text-[11px] tracking-[0.5em] font-bold uppercase mb-16 text-center" vid="69">03 // Scope of Work</h2>
+            <div class="grid grid-cols-3 gap-10" vid="70">
+                
+                <div class="flex flex-col gap-8" vid="71">
+                    <div class="flex items-center gap-4" vid="72">
+                        <span class="serif-italic text-6xl text-burgundy italic font-black" vid="73">01</span>
+                        <div class="h-[1px] flex-grow bg-navy/10" vid="74"></div>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-wider leading-tight" vid="75">Communications &amp; External Affairs Execution</h3>
+                    <p class="opacity-70 leading-relaxed" vid="76">Manage core functions including drafting newsletters, LinkedIn content, and website updates. Build and maintain targeted press lists across climate and policy outlets. Fast ramp-up informed by thorough review of existing materials in week one.</p>
+                </div>
+                
+                <div class="flex flex-col gap-8" vid="77">
+                    <div class="flex items-center gap-4" vid="78">
+                        <span class="serif-italic text-6xl text-burgundy italic font-black" vid="79">02</span>
+                        <div class="h-[1px] flex-grow bg-navy/10" vid="80"></div>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-wider leading-tight" vid="81">Communications Capacity Building</h3>
+                    <p class="opacity-70 leading-relaxed" vid="82">Systematically strengthen infrastructure with reusable templates, review workflows, and performance tracking. Every system is documented and handed off with clear guidance for independent team maintenance post-engagement.</p>
+                </div>
+                
+                <div class="flex flex-col gap-8" vid="83">
+                    <div class="flex items-center gap-4" vid="84">
+                        <span class="serif-italic text-6xl text-burgundy italic font-black" vid="85">03</span>
+                        <div class="h-[1px] flex-grow bg-navy/10" vid="86"></div>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-wider leading-tight" vid="87">Solutions Summit Strategy &amp; Execution</h3>
+                    <div class="space-y-4" vid="88">
+                        <p class="opacity-70 leading-relaxed" vid="89">Lead planning through post-event distribution. Deploy promotional content, coordinate stakeholder communications, and provide hands-on on-site support in D.C.</p>
+                        <p class="text-[10px] font-bold uppercase tracking-widest opacity-40 mt-6" vid="90">Out of Scope: Graphic production, heavy web dev, lobbying.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="mb-32" vid="91">
+            <h2 class="text-[11px] tracking-[0.5em] font-bold uppercase mb-12 text-burgundy" vid="92">04 // Delivery Timeline</h2>
+            <div class="overflow-hidden border border-navy/10" vid="93">
+                <table vid="94">
+                    <thead vid="95">
+                        <tr class="bg-navy/5" vid="96">
+                            <th vid="97">Milestone</th>
+                            <th vid="98">Target Date</th>
+                            <th vid="99">Primary Owner</th>
+                        </tr>
+                    </thead>
+                    <tbody vid="100">
+                        <tr vid="101">
+                            <td class="font-bold" vid="102">Aerial Communications Start Date</td>
+                            <td vid="103">April 13, 2026</td>
+                            <td vid="104">Alyssa Cortes &amp; Cassandre Arkema</td>
+                        </tr>
+                        <tr vid="105">
+                            <td class="font-bold" vid="106">Developing &amp; Finalizing Reusable Templates</td>
+                            <td vid="107">April 27, 2026</td>
+                            <td vid="108">Alyssa Cortes</td>
+                        </tr>
+                        <tr vid="109">
+                            <td class="font-bold" vid="110">Solutions Summit Plan &amp; Full Promotion</td>
+                            <td vid="111">May 18, 2026</td>
+                            <td vid="112">Alyssa Cortes</td>
+                        </tr>
+                        <tr vid="113">
+                            <td class="font-bold" vid="114">Solutions Summit: On-site Support (Washington)</td>
+                            <td vid="115">June 23, 2026</td>
+                            <td vid="116">Alyssa Cortes</td>
+                        </tr>
+                        <tr vid="117">
+                            <td class="font-bold" vid="118">Final Document Delivery &amp; Team Hand-off</td>
+                            <td vid="119">July 3, 2026</td>
+                            <td vid="120">Alyssa Cortes &amp; Cassandre Arkema</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        
+        <section class="mb-32 grid grid-cols-12 gap-16" vid="121">
+            <div class="col-span-4" vid="122">
+                <h2 class="text-[11px] tracking-[0.5em] font-bold uppercase mb-12" vid="123">05 // Project Investment</h2>
+                <div class="bg-burgundy text-[#F4E8D9] p-12 text-center" vid="124">
+                    <span class="text-[10px] uppercase tracking-widest font-bold opacity-70 mb-4 block" vid="125">Total Investment</span>
+                    <h3 class="serif-italic text-6xl italic font-black" vid="126">$28,500</h3>
+                    <div class="h-[1px] bg-white/20 my-6" vid="127"></div>
+                    <p class="text-[11px] uppercase tracking-widest font-bold" vid="128">50% Upfront / 50% Delivery</p>
+                </div>
+                <p class="text-[10px] opacity-40 mt-6 uppercase tracking-widest leading-loose" vid="129">
+                    Valid for 30 days. Taxes not included. Travel for Summit included in travel line item.
+                </p>
+            </div>
+            <div class="col-span-8" vid="130">
+                <div class="border border-navy/10" vid="131">
+                    <table vid="132">
+                        <tbody vid="133">
+                            <tr vid="134">
+                                <td class="font-bold" vid="135">Strategy Development</td>
+                                <td class="text-right" vid="136">$8,000</td>
+                            </tr>
+                            <tr vid="137">
+                                <td class="font-bold" vid="138">Media Outreach &amp; Relations</td>
+                                <td class="text-right" vid="139">$6,000</td>
+                            </tr>
+                            <tr vid="140">
+                                <td class="font-bold" vid="141">Content Creation &amp; Editorial</td>
+                                <td class="text-right" vid="142">$4,000</td>
+                            </tr>
+                            <tr vid="143">
+                                <td class="font-bold" vid="144">Rapid Response Management</td>
+                                <td class="text-right" vid="145">$2,000</td>
+                            </tr>
+                            <tr vid="146">
+                                <td class="font-bold" vid="147">Solutions Summit Execution</td>
+                                <td class="text-right" vid="148">$6,000</td>
+                            </tr>
+                            <tr vid="149">
+                                <td class="font-bold" vid="150">Travel Accommodations (Summit)</td>
+                                <td class="text-right" vid="151">$2,500</td>
+                            </tr>
+                            <tr class="bg-navy/5" vid="152">
+                                <td class="font-black uppercase tracking-widest text-xs" vid="153">Total Engagement Cost</td>
+                                <td class="text-right font-black text-xl" vid="154">$28,500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="border-t border-navy/10 pt-24 text-center" vid="155">
+            <h2 class="serif-italic text-6xl italic font-black mb-12" vid="156">Ready for Takeoff?</h2>
+            <div class="flex justify-center gap-12 mb-24" vid="157">
+                <div class="text-left" vid="158">
+                    <span class="text-[10px] font-bold tracking-[0.3em] uppercase opacity-40 block mb-4" vid="159">Next Steps</span>
+                    <ul class="space-y-3 text-sm font-semibold" vid="160">
+                        <li class="flex items-center gap-3" vid="161"><i class="ph ph-check text-burgundy" vid="162"></i> Brief statement of interest</li>
+                        <li class="flex items-center gap-3" vid="163"><i class="ph ph-check text-burgundy" vid="164"></i> Relevant experience review</li>
+                        <li class="flex items-center gap-3" vid="165"><i class="ph ph-check text-burgundy" vid="166"></i> Proposed rate confirmation</li>
+                    </ul>
+                </div>
+                <div class="text-left" vid="167">
+                    <span class="text-[10px] font-bold tracking-[0.3em] uppercase opacity-40 block mb-4" vid="168">Contact</span>
+                    <p class="text-lg font-bold" vid="169">aerialcommsmarketing@gmail.com</p>
+                    <p class="text-sm opacity-60" vid="170">Albuquerque, NM &amp; Washington, D.C.</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center justify-center gap-6 opacity-20" vid="171">
+                <div class="h-[1px] w-48 bg-navy" vid="172"></div>
+                <i class="ph ph-circle-dashed text-3xl" vid="173"></i>
+                <div class="h-[1px] w-48 bg-navy" vid="174"></div>
+            </div>
+            <p class="text-[9px] font-bold tracking-[0.5em] uppercase mt-12 opacity-30" vid="175">Aerial Communications &amp; Marketing // 2026</p>
+        </section>
+
+    </main>
+
+    
+    <div class="fixed bottom-0 left-0 h-1 bg-burgundy/20 w-full z-[100]" vid="176">
+        <div id="progress" class="h-full bg-burgundy transition-all duration-300" style="width: 0%" vid="177"></div>
+    </div>
+
+    <script vid="178">
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progress").style.width = scrolled + "%";
+        };
+    </script>
+
+
+ vid="0"&gt;
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700;1,900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" vid="180">
+    <script src="https://unpkg.com/@phosphor-icons/web" vid="181"></script>
+    <style vid="182">
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F4E8D9;
+            color: #2D1B3F;
+            margin: 0;
+            padding: 0;
+        }
+        .serif-italic {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+        .grid-bg {
+            background-image: 
+                linear-gradient(to right, rgba(45, 27, 63, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(45, 27, 63, 0.05) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+        .orbital-path {
+            border: 1px dashed rgba(217, 114, 123, 0.2);
+            border-radius: 50%;
+            position: absolute;
+            pointer-events: none;
+        }
+        .bg-burgundy { background-color: #D9727B; }
+        .text-burgundy { color: #D9727B; }
+        .border-navy { border-color: #2D1B3F; }
+        
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid rgba(45, 27, 63, 0.2); padding: 1.5rem; text-align: left; }
+        th { font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.6; }
+
+        .line-accent {
+            height: 1px;
+            background: linear-gradient(90deg, #D9727B 0%, transparent 100%);
+        }
+    </style>
+
+
+
+    
+    <div class="fixed top-[-200px] left-[-200px] w-[800px] h-[800px] orbital-path" vid="183"></div>
+    <div class="fixed top-[150px] left-[-150px] w-[500px] h-[500px] orbital-path" vid="184"></div>
+    <div class="fixed bottom-[-100px] right-[-100px] w-[600px] h-[600px] orbital-path" vid="185"></div>
+
+    
+    <nav class="sticky top-0 w-full p-10 flex justify-between items-center z-50 bg-[#F4E8D9]/80 backdrop-blur-md border-b border-navy/5" vid="186">
+        <div class="flex items-center gap-3" vid="187">
+            <i class="ph ph-circle-dashed text-2xl" vid="188"></i>
+            <span class="font-bold tracking-[0.4em] text-xs" vid="189">AERIAL</span>
+        </div>
+        <div class="flex gap-12" vid="190">
+            <div class="text-[10px] tracking-[0.3em] font-bold uppercase opacity-60" vid="191">External Affairs Proposal</div>
+            <div class="text-[10px] tracking-[0.3em] font-bold uppercase opacity-60" vid="192">04 / 08 / 2026</div>
+        </div>
+    </nav>
+
+    
+    <main class="max-w-7xl mx-auto px-10 py-24 relative z-10" vid="193">
+        
+        
+        <section class="mb-32" vid="194">
+            <div class="flex items-center gap-4 mb-8" vid="195">
+                <span class="text-[11px] tracking-[0.5em] font-bold uppercase text-burgundy" vid="196">Project Proposal</span>
+                <div class="h-[1px] w-24 bg-burgundy/30" vid="197"></div>
+            </div>
+            <h1 class="text-[110px] leading-[0.9] serif-italic font-black italic mb-12" vid="198">
+                SEEC Institute: <br vid="199">
+                <span class="text-burgundy" vid="200">External Affairs</span> &amp; <br vid="201">
+                Communications Firm
+            </h1>
+            <div class="grid grid-cols-12 gap-10 items-end" vid="202">
+                <div class="col-span-7" vid="203">
+                    <p class="text-2xl font-light leading-relaxed opacity-80" vid="204">
+                        A boutique communications and public affairs firm with 10 years of experience serving nonprofit, policy, and clean energy organizations at the intersection of Congress and civil society.
+                    </p>
+                </div>
+                <div class="col-span-5 flex flex-col gap-2 border-l border-navy/10 pl-10" vid="205">
+                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase opacity-40" vid="206">Submitted By</span>
+                    <span class="text-lg font-semibold" vid="207">Aerial Communications</span>
+                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase opacity-40 mt-4" vid="208">Contact</span>
+                    <span class="text-lg font-semibold" vid="209">Alyssa Cortes, Partner Co-Founder</span>
+                    <span class="text-sm opacity-60" vid="210">aerialcommsmarketing@gmail.com</span>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="mb-32 grid grid-cols-12 gap-20" vid="211">
+            <div class="col-span-4" vid="212">
+                <h2 class="text-[11px] tracking-[0.5em] font-bold uppercase mb-6" vid="213">01 // Executive Summary</h2>
+                <div class="line-accent mb-8" vid="214"></div>
+            </div>
+            <div class="col-span-8 space-y-8" vid="215">
+                <p class="text-3xl serif-italic italic leading-tight" vid="216">
+                    We specialize in building communications infrastructure for mission-driven organizations and executing high-visibility convenings.
+                </p>
+                <div class="grid grid-cols-2 gap-12 text-lg leading-relaxed opacity-80" vid="217">
+                    <p vid="218">
+                        Our team brings deep familiarity with the congressional and climate policy ecosystems, a proven track record of managing complex multi-stakeholder events, and systems-building expertise to leave SEEC Institute stronger after engagement ends.
+                    </p>
+                    <p vid="219">
+                        We are ready to step in immediately, operate with minimal ramp-up, and deliver polished on-brand communications across every channel from day one, ensuring continuity and professional excellence.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="mb-32 border border-navy/20 p-16 relative" vid="220">
+            <div class="absolute top-0 right-0 p-8 flex flex-col items-end opacity-20" vid="221">
+                <i class="ph ph-target text-6xl" vid="222"></i>
+            </div>
+            <h2 class="text-[11px] tracking-[0.5em] font-bold uppercase mb-12 text-burgundy" vid="223">02 // Key Requirements &amp; Priorities</h2>
+            <div class="grid grid-cols-12 gap-16" vid="224">
+                <div class="col-span-6 space-y-8" vid="225">
+                    <div vid="226">
+                        <h3 class="serif-italic text-4xl mb-4 italic" vid="227">Interim Support &amp; Capacity</h3>
+                        <p class="opacity-70 leading-relaxed" vid="228">Strengthening SEEC Institute's communications systems and capacity. Day-to-day responsibilities span newsletter and email management, LinkedIn content, Squarespace website updates, press list development, and partner outreach. Success requires a partner who can adopt SEEC's voice quickly and operate independently.</p>
+                    </div>
+                    <div vid="229">
+                        <h3 class="serif-italic text-4xl mb-4 italic" vid="230">Systems-Building Dimension</h3>
+                        <p class="opacity-70 leading-relaxed" vid="231">Developing reusable templates, repeatable communications plans, and documented content workflows. We leave behind an organized asset library and clear infrastructure for future convenings.</p>
+                    </div>
+                </div>
+                <div class="col-span-6 bg-navy text-[#F4E8D9] p-10" vid="232">
+                    <h3 class="serif-italic text-4xl mb-6 italic" vid="233">Solutions Summit Focus</h3>
+                    <p class="opacity-80 leading-relaxed mb-8" vid="234">
+                        The Summit represents a time-sensitive priority requiring end-to-end leadershipâ€”from messaging framework and promotional content to on-site execution in Washington D.C.
+                    </p>
+                    <ul class="space-y-4 text-sm tracking-wide uppercase font-bold opacity-60" vid="235">
+                        <li class="flex items-center gap-4" vid="236"><div class="w-1.5 h-1.5 bg-burgundy rounded-full" vid="237"></div> Messaging Framework</li>
+                        <li class="flex items-center gap-4" vid="238"><div class="w-1.5 h-1.5 bg-burgundy rounded-full" vid="239"></div> On-site Execution (DC)</li>
+                        <li class="flex items-center gap-4" vid="240"><div class="w-1.5 h-1.5 bg-burgundy rounded-full" vid="241"></div> Post-Event Distribution</li>
+                        <li class="flex items-center gap-4" vid="242"><div class="w-1.5 h-1.5 bg-burgundy rounded-full" vid="243"></div> Follow-up Communications</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="mb-32" vid="244">
+            <h2 class="text-[11px] tracking-[0.5em] font-bold uppercase mb-16 text-center" vid="245">03 // Scope of Work</h2>
+            <div class="grid grid-cols-3 gap-10" vid="246">
+                
+                <div class="flex flex-col gap-8" vid="247">
+                    <div class="flex items-center gap-4" vid="248">
+                        <span class="serif-italic text-6xl text-burgundy italic font-black" vid="249">01</span>
+                        <div class="h-[1px] flex-grow bg-navy/10" vid="250"></div>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-wider leading-tight" vid="251">Communications &amp; External Affairs Execution</h3>
+                    <p class="opacity-70 leading-relaxed" vid="252">Manage core functions including drafting newsletters, LinkedIn content, and website updates. Build and maintain targeted press lists across climate and policy outlets. Fast ramp-up informed by thorough review of existing materials in week one.</p>
+                </div>
+                
+                <div class="flex flex-col gap-8" vid="253">
+                    <div class="flex items-center gap-4" vid="254">
+                        <span class="serif-italic text-6xl text-burgundy italic font-black" vid="255">02</span>
+                        <div class="h-[1px] flex-grow bg-navy/10" vid="256"></div>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-wider leading-tight" vid="257">Communications Capacity Building</h3>
+                    <p class="opacity-70 leading-relaxed" vid="258">Systematically strengthen infrastructure with reusable templates, review workflows, and performance tracking. Every system is documented and handed off with clear guidance for independent team maintenance post-engagement.</p>
+                </div>
+                
+                <div class="flex flex-col gap-8" vid="259">
+                    <div class="flex items-center gap-4" vid="260">
+                        <span class="serif-italic text-6xl text-burgundy italic font-black" vid="261">03</span>
+                        <div class="h-[1px] flex-grow bg-navy/10" vid="262"></div>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-wider leading-tight" vid="263">Solutions Summit Strategy &amp; Execution</h3>
+                    <div class="space-y-4" vid="264">
+                        <p class="opacity-70 leading-relaxed" vid="265">Lead planning through post-event distribution. Deploy promotional content, coordinate stakeholder communications, and provide hands-on on-site support in D.C.</p>
+                        <p class="text-[10px] font-bold uppercase tracking-widest opacity-40 mt-6" vid="266">Out of Scope: Graphic production, heavy web dev, lobbying.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="mb-32" vid="267">
+            <div class="flex items-center gap-4 mb-12" vid="268">
+                <span class="text-[11px] tracking-[0.5em] font-bold uppercase text-burgundy" vid="269">04 // Experience</span>
+                <div class="h-[1px] flex-grow bg-navy/10" vid="270"></div>
+            </div>
+            
+            <div class="max-w-5xl mb-16" vid="271">
+                <p class="text-lg leading-relaxed mb-6" vid="272">
+                    <strong vid="273">Aerial Communications brings a decade of demonstrated experience supporting mission-driven organizations at the intersection of policy, communications, and clean energy advocacy.</strong>
+                </p>
+                <p class="text-base opacity-80 leading-relaxed mb-4" vid="274">
+                    Our principals have served as trusted communications advisors to nonprofit coalitions, clean energy industry associations, and congressional offices, delivering across the full spectrum of external affairs functions.
+                </p>
+                <p class="text-sm font-bold uppercase tracking-widest opacity-60 mt-8" vid="275">Selected experience includes:</p>
+            </div>
+
+            <div class="space-y-4" id="experience-modules" vid="276">
+                
+                <div class="module-card border border-navy/10 bg-white/30 backdrop-blur-sm cursor-pointer transition-all" data-module="1" vid="277">
+                    <div class="p-8 flex items-center justify-between" vid="278">
+                        <div class="flex items-center gap-8" vid="279">
+                            <span class="serif-italic text-4xl text-burgundy italic font-black" vid="280">01</span>
+                            <div vid="281">
+                                <h3 class="text-lg font-bold mb-1" vid="282">Convenings &amp; Stakeholder Coordination</h3>
+                                <p class="text-sm opacity-60" vid="283">Communications strategy and execution for multi-day convenings and policy events.</p>
+                            </div>
+                        </div>
+                        <i class="ph ph-caret-down text-xl opacity-40 transition-transform" vid="284"></i>
+                    </div>
+                    <div class="module-content hidden px-8 pb-8 pl-24" vid="285">
+                        <div class="border-t border-navy/10 pt-6" vid="286">
+                            <ul class="space-y-3 text-sm opacity-80 mb-8" vid="287">
+                                <li class="flex items-start gap-3" vid="288"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0" vid="289"></div>End-to-end communications planning for multi-day convenings in Washington, DC</li>
+                                <li class="flex items-start gap-3" vid="290"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0" vid="291"></div>Stakeholder coordination with Members of Congress, federal agencies, and NGO partners</li>
+                                <li class="flex items-start gap-3" vid="292"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0" vid="293"></div>Speaker communications, run-of-show alignment, and internal coordination</li>
+                                <li class="flex items-start gap-3" vid="294"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0" vid="295"></div>Pre-event promotion and post-event recap content</li>
+                            </ul>
+                            <div class="flex gap-6" vid="296">
+                                <a href="#" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2" vid="297">View Event Communications <i class="ph ph-arrow-right" vid="298"></i></a>
+                                <a href="#" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2" vid="299">View Stakeholder Materials <i class="ph ph-arrow-right" vid="300"></i></a>
+                                <a href="#" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2" vid="301">View Event Recap <i class="ph ph-arrow-right" vid="302"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-card border border-navy/10 bg-white/30 backdrop-blur-sm cursor-pointer transition-all" data-module="2" vid="303">
+                    <div class="p-8 flex items-center justify-between" vid="304">
+                        <div class="flex items-center gap-8" vid="305">
+                            <span class="serif-italic text-4xl text-burgundy italic font-black" vid="306">02</span>
+                            <div vid="307">
+                                <h3 class="text-lg font-bold mb-1" vid="308">Media Relations &amp; Press Systems</h3>
+                                <p class="text-sm opacity-60" vid="309">Press infrastructure, outreach strategy, and national media coverage.</p>
+                            </div>
+                        </div>
+                        <i class="ph ph-caret-down text-xl opacity-40 transition-transform" vid="310"></i>
+                    </div>
+                    <div class="module-content hidden px-8 pb-8 pl-24" vid="311">
+                        <div class="border-t border-navy/10 pt-6" vid="312">
+                            <ul class="space-y-3 text-sm opacity-80 mb-8" vid="313">
+                                <li class="flex items-start gap-3" vid="314"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0" vid="315"></div>Built and managed targeted press lists across climate, energy, and policy media</li>
+                                <li class="flex items-start gap-3" vid="316"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0" vid="317"></div>Developed media outreach strategies tied to policy and legislative moments</li>
+                                <li class="flex items-start gap-3" vid="318"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0" vid="319"></div>Secured coverage in national and trade publications</li>
+                                <li class="flex items-start gap-3" vid="320"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0" vid="321"></div>Maintained ongoing journalist relationships and media coordination</li>
+                            </ul>
+                            <div class="flex gap-6" vid="322">
+                                <a href="#" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2" vid="323">View Press Coverage <i class="ph ph-arrow-right" vid="324"></i></a>
+                                <a href="#" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2" vid="325">View Press List Structure <i class="ph ph-arrow-right" vid="326"></i></a>
+                                <a href="#" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2" vid="327">View Outreach Materials <i class="ph ph-arrow-right" vid="328"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-card border border-navy/10 bg-white/30 backdrop-blur-sm cursor-pointer transition-all" data-module="3" vid="329">
+                    <div class="p-8 flex items-center justify-between" vid="330">
+                        <div class="flex items-center gap-8" vid="331">
+                            <span class="serif-italic text-4xl text-burgundy italic font-black" vid="332">03</span>
+                            <div vid="333">
+                                <h3 class="text-lg font-bold mb-1" vid="334">Digital &amp; Email Communications</h3>
+                                <p class="text-sm opacity-60" vid="335">Content systems across newsletters, LinkedIn, and digital channels.</p>
+                            </div>
+                        </div>
+                        <i class="ph ph-caret-down text-xl opacity-40 transition-transform" vid="336"></i>
+                    </div>
+                    <div class="module-content hidden px-8 pb-8 pl-24" vid="337">
+                        <div class="border-t border-navy/10 pt-6" vid="338">
+                            <ul class="space-y-3 text-sm opacity-80 mb-8" vid="339">
+                                <li class="flex items-start gap-3" vid="340"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0" vid="341"></div>Developed and managed newsletter systems and recurring email programs</li>
+                                <li class="flex items-start gap-3" vid="342"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0" vid="343"></div>Built LinkedIn content strategy aligned to policy and organizational priorities</li>
+                                <li class="flex items-start gap-3" vid="344"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0" vid="345"></div>Coordinated messaging across large and diverse stakeholder audiences</li>
+                                <li class="flex items-start gap-3" vid="346"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0" vid="347"></div>Maintained consistency across email, digital, and web channels</li>
+                            </ul>
+                            <div class="flex gap-6" vid="348">
+                                <a href="#" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2" vid="349">View Newsletter System <i class="ph ph-arrow-right" vid="350"></i></a>
+                                <a href="#" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2" vid="351">View LinkedIn Content <i class="ph ph-arrow-right" vid="352"></i></a>
+                                <a href="#" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2" vid="353">View Campaign Content <i class="ph ph-arrow-right" vid="354"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-card border border-navy/10 bg-white/30 backdrop-blur-sm cursor-pointer transition-all" data-module="4" vid="355">
+                    <div class="p-8 flex items-center justify-between" vid="356">
+                        <div class="flex items-center gap-8" vid="357">
+                            <span class="serif-italic text-4xl text-burgundy italic font-black" vid="358">04</span>
+                            <div vid="359">
+                                <h3 class="text-lg font-bold mb-1" vid="360">Communications Infrastructure &amp; Systems</h3>
+                                <p class="text-sm opacity-60" vid="361">Internal systems that support scalable, ongoing communications work.</p>
+                            </div>
+                        </div>
+                        <i class="ph ph-caret-down text-xl opacity-40 transition-transform" vid="362"></i>
+                    </div>
+                    <div class="module-content hidden px-8 pb-8 pl-24" vid="363">
+                        <div class="border-t border-navy/10 pt-6" vid="364">
+                            <ul class="space-y-3 text-sm opacity-80 mb-8" vid="365">
+                                <li class="flex items-start gap-3" vid="366"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0" vid="367"></div>Created reusable templates for press, email, and digital communications</li>
+                                <li class="flex items-start gap-3" vid="368"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0" vid="369"></div>Built workflows for publishing, approvals, and content coordination</li>
+                                <li class="flex items-start gap-3" vid="370"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0" vid="371"></div>Organized asset libraries for communications teams</li>
+                                <li class="flex items-start gap-3" vid="372"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0" vid="373"></div>Supported lean teams with systems designed for long-term use</li>
+                            </ul>
+                            <div class="flex gap-6" vid="374">
+                                <a href="#" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2" vid="375">View Content System <i class="ph ph-arrow-right" vid="376"></i></a>
+                                <a href="#" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2" vid="377">View Workflow Structure <i class="ph ph-arrow-right" vid="378"></i></a>
+                                <a href="#" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2" vid="379">View Asset Library <i class="ph ph-arrow-right" vid="380"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-card border border-navy/10 bg-white/30 backdrop-blur-sm cursor-pointer transition-all" data-module="5" vid="381">
+                    <div class="p-8 flex items-center justify-between" vid="382">
+                        <div class="flex items-center gap-8" vid="383">
+                            <span class="serif-italic text-4xl text-burgundy italic font-black" vid="384">05</span>
+                            <div vid="385">
+                                <h3 class="text-lg font-bold mb-1" vid="386">Rapid Response &amp; Policy Communications</h3>
+                                <p class="text-sm opacity-60" vid="387">Communications support during high-stakes legislative and policy moments.</p>
+                            </div>
+                        </div>
+                        <i class="ph ph-caret-down text-xl opacity-40 transition-transform" vid="388"></i>
+                    </div>
+                    <div class="module-content hidden px-8 pb-8 pl-24" vid="389">
+                        <div class="border-t border-navy/10 pt-6" vid="390">
+                            <ul class="space-y-3 text-sm opacity-80 mb-8" vid="391">
+                                <li class="flex items-start gap-3" vid="392"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0" vid="393"></div>Developed messaging under tight timelines during active policy moments</li>
+                                <li class="flex items-start gap-3" vid="394"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0" vid="395"></div>Coordinated communications across internal and external stakeholders</li>
+                                <li class="flex items-start gap-3" vid="396"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0" vid="397"></div>Supported real-time media and digital response</li>
+                                <li class="flex items-start gap-3" vid="398"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0" vid="399"></div>Maintained message consistency during fast-moving developments</li>
+                            </ul>
+                            <div class="flex gap-6" vid="400">
+                                <a href="#" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2" vid="401">View Rapid Response Example <i class="ph ph-arrow-right" vid="402"></i></a>
+                                <a href="#" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2" vid="403">View Policy Communications <i class="ph ph-arrow-right" vid="404"></i></a>
+                                <a href="#" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2" vid="405">View Media Response <i class="ph ph-arrow-right" vid="406"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <style vid="407">
+                .module-card { transition: all 0.3s ease; }
+                .module-card:hover { background-color: rgba(255,255,255,0.5); }
+                .module-card.active { background-color: rgba(255,255,255,0.6); border-color: rgba(45,27,63,0.3); }
+                .module-card.active .ph-caret-down { transform: rotate(180deg); }
+                .module-content { transition: all 0.3s ease; }
+            </style>
+
+            <script vid="408">
+                document.querySelectorAll('.module-card').forEach(card => {
+                    card.addEventListener('click', function() {
+                        const isActive = this.classList.contains('active');
+                        const content = this.querySelector('.module-content');
+                        const icon = this.querySelector('.ph-caret-down');
+                        
+                        document.querySelectorAll('.module-card').forEach(c => {
+                            c.classList.remove('active');
+                            c.querySelector('.module-content').classList.add('hidden');
+                        });
+                        
+                        if (!isActive) {
+                            this.classList.add('active');
+                            content.classList.remove('hidden');
+                        }
+                    });
+                });
+            </script>
+        </section>
+
+        <section class="mb-32" vid="409">
+            <h2 class="text-[11px] tracking-[0.5em] font-bold uppercase mb-12 text-burgundy" vid="410">05 // Delivery Timeline</h2>
+            <div class="overflow-hidden border border-navy/10" vid="411">
+                <table vid="412">
+                    <thead vid="413">
+                        <tr class="bg-navy/5" vid="414">
+                            <th vid="415">Milestone</th>
+                            <th vid="416">Target Date</th>
+                            <th vid="417">Primary Owner</th>
+                        </tr>
+                    </thead>
+                    <tbody vid="418">
+                        <tr vid="419">
+                            <td class="font-bold" vid="420">Aerial Communications Start Date</td>
+                            <td vid="421">April 13, 2026</td>
+                            <td vid="422">Alyssa Cortes &amp; Cassandre Arkema</td>
+                        </tr>
+                        <tr vid="423">
+                            <td class="font-bold" vid="424">Developing &amp; Finalizing Reusable Templates</td>
+                            <td vid="425">April 27, 2026</td>
+                            <td vid="426">Alyssa Cortes</td>
+                        </tr>
+                        <tr vid="427">
+                            <td class="font-bold" vid="428">Solutions Summit Plan &amp; Full Promotion</td>
+                            <td vid="429">May 18, 2026</td>
+                            <td vid="430">Alyssa Cortes</td>
+                        </tr>
+                        <tr vid="431">
+                            <td class="font-bold" vid="432">Solutions Summit: On-site Support (Washington)</td>
+                            <td vid="433">June 23, 2026</td>
+                            <td vid="434">Alyssa Cortes</td>
+                        </tr>
+                        <tr vid="435">
+                            <td class="font-bold" vid="436">Final Document Delivery &amp; Team Hand-off</td>
+                            <td vid="437">July 3, 2026</td>
+                            <td vid="438">Alyssa Cortes &amp; Cassandre Arkema</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        
+        <section class="mb-32 grid grid-cols-12 gap-16" vid="439">
+            <div class="col-span-4" vid="440">
+                <h2 class="text-[11px] tracking-[0.5em] font-bold uppercase mb-12" vid="441">05 // Project Investment</h2>
+                <div class="bg-burgundy text-[#F4E8D9] p-12 text-center" vid="442">
+                    <span class="text-[10px] uppercase tracking-widest font-bold opacity-70 mb-4 block" vid="443">Total Investment</span>
+                    <h3 class="serif-italic text-6xl italic font-black" vid="444">$28,500</h3>
+                    <div class="h-[1px] bg-white/20 my-6" vid="445"></div>
+                    <p class="text-[11px] uppercase tracking-widest font-bold" vid="446">50% Upfront / 50% Delivery</p>
+                </div>
+                <p class="text-[10px] opacity-40 mt-6 uppercase tracking-widest leading-loose" vid="447">
+                    Valid for 30 days. Taxes not included. Travel for Summit included in travel line item.
+                </p>
+            </div>
+            <div class="col-span-8" vid="448">
+                <div class="border border-navy/10" vid="449">
+                    <table vid="450">
+                        <tbody vid="451">
+                            <tr vid="452">
+                                <td class="font-bold" vid="453">Strategy Development</td>
+                                <td class="text-right" vid="454">$8,000</td>
+                            </tr>
+                            <tr vid="455">
+                                <td class="font-bold" vid="456">Media Outreach &amp; Relations</td>
+                                <td class="text-right" vid="457">$6,000</td>
+                            </tr>
+                            <tr vid="458">
+                                <td class="font-bold" vid="459">Content Creation &amp; Editorial</td>
+                                <td class="text-right" vid="460">$4,000</td>
+                            </tr>
+                            <tr vid="461">
+                                <td class="font-bold" vid="462">Rapid Response Management</td>
+                                <td class="text-right" vid="463">$2,000</td>
+                            </tr>
+                            <tr vid="464">
+                                <td class="font-bold" vid="465">Solutions Summit Execution</td>
+                                <td class="text-right" vid="466">$6,000</td>
+                            </tr>
+                            <tr vid="467">
+                                <td class="font-bold" vid="468">Travel Accommodations (Summit)</td>
+                                <td class="text-right" vid="469">$2,500</td>
+                            </tr>
+                            <tr class="bg-navy/5" vid="470">
+                                <td class="font-black uppercase tracking-widest text-xs" vid="471">Total Engagement Cost</td>
+                                <td class="text-right font-black text-xl" vid="472">$28,500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="border-t border-navy/10 pt-24 text-center" vid="473">
+            <h2 class="serif-italic text-6xl italic font-black mb-12" vid="474">Ready for Takeoff?</h2>
+            <div class="flex justify-center gap-12 mb-24" vid="475">
+                <div class="text-left" vid="476">
+                    <span class="text-[10px] font-bold tracking-[0.3em] uppercase opacity-40 block mb-4" vid="477">Next Steps</span>
+                    <ul class="space-y-3 text-sm font-semibold" vid="478">
+                        <li class="flex items-center gap-3" vid="479"><i class="ph ph-check text-burgundy" vid="480"></i> Brief statement of interest</li>
+                        <li class="flex items-center gap-3" vid="481"><i class="ph ph-check text-burgundy" vid="482"></i> Relevant experience review</li>
+                        <li class="flex items-center gap-3" vid="483"><i class="ph ph-check text-burgundy" vid="484"></i> Proposed rate confirmation</li>
+                    </ul>
+                </div>
+                <div class="text-left" vid="485">
+                    <span class="text-[10px] font-bold tracking-[0.3em] uppercase opacity-40 block mb-4" vid="486">Contact</span>
+                    <p class="text-lg font-bold" vid="487">aerialcommsmarketing@gmail.com</p>
+                    <p class="text-sm opacity-60" vid="488">Albuquerque, NM &amp; Washington, D.C.</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center justify-center gap-6 opacity-20" vid="489">
+                <div class="h-[1px] w-48 bg-navy" vid="490"></div>
+                <i class="ph ph-circle-dashed text-3xl" vid="491"></i>
+                <div class="h-[1px] w-48 bg-navy" vid="492"></div>
+            </div>
+            <p class="text-[9px] font-bold tracking-[0.5em] uppercase mt-12 opacity-30" vid="493">Aerial Communications &amp; Marketing // 2026</p>
+        </section>
+
+    </main>
+
+    
+    <div class="fixed bottom-0 left-0 h-1 bg-burgundy/20 w-full z-[100]" vid="494">
+        <div id="progress" class="h-full bg-burgundy transition-all duration-300" style="width: 0%" vid="495"></div>
+    </div>
+
+    <script vid="496">
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progress").style.width = scrolled + "%";
+        };
+    </script>
+
+
+</body></html>
