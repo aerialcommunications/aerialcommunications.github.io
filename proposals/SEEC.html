@@ -99,6 +99,10 @@
         }
         .experience-module {
             transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+            overflow: hidden;
+        }
+        .experience-module + .experience-module {
+            margin-top: 1.25rem;
         }
         .experience-module:hover {
             background-color: rgba(255, 255, 255, 0.42);
@@ -107,7 +111,10 @@
             background-color: rgba(255, 255, 255, 0.55);
             border-color: rgba(45, 27, 63, 0.28);
         }
-        .experience-module .ph-caret-down {
+        .experience-trigger {
+            padding: 2.25rem 2.5rem;
+        }
+        .experience-trigger .ph-caret-down {
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
         .experience-module.active .ph-caret-down {
@@ -115,30 +122,41 @@
             opacity: 0.7;
         }
         .experience-panel {
-            transition: opacity 0.3s ease;
+            display: none;
+            opacity: 0;
+        }
+        .experience-module.active .experience-panel {
+            display: block;
+            opacity: 1;
+        }
+        .experience-panel-inner {
+            padding: 1.75rem 2.5rem 2.25rem 6rem;
         }
         .experience-links a {
             white-space: nowrap;
         }
         @media (max-width: 1024px) {
-            .experience-panel {
-                padding-left: 2rem;
-                padding-right: 2rem;
+            .experience-trigger {
+                padding: 2rem;
+            }
+            .experience-panel-inner {
+                padding: 1.5rem 2rem 2rem 2rem;
             }
         }
         @media (max-width: 767px) {
-            #experience-modules .experience-trigger {
+            .experience-module + .experience-module {
+                margin-top: 1rem;
+            }
+            .experience-trigger {
                 padding: 1.5rem;
                 align-items: flex-start;
             }
-            #experience-modules .experience-trigger > div {
+            .experience-trigger > div {
                 gap: 1rem;
                 align-items: flex-start;
             }
-            .experience-panel {
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
-                padding-bottom: 1.5rem;
+            .experience-panel-inner {
+                padding: 1.25rem 1.5rem 1.5rem 1.5rem;
             }
             .experience-links a {
                 white-space: normal;
@@ -1479,8 +1497,8 @@ video {
                 <i class="ph ph-caret-down text-xl opacity-40 transition-transform duration-300 flex-shrink-0"></i>
               </button>
 
-              <div class="experience-panel hidden px-8 pb-8 pl-24">
-                <div class="border-t border-navy/10 pt-6">
+              <div class="experience-panel hidden">
+                <div class="experience-panel-inner border-t border-navy/10">
                   <ul class="space-y-3 text-sm opacity-80 mb-8">
                     <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>End-to-end communications planning for multi-day convenings in Washington, DC</li>
                     <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Stakeholder coordination with Members of Congress, federal agencies, and NGO partners</li>
@@ -1515,8 +1533,8 @@ video {
                 <i class="ph ph-caret-down text-xl opacity-40 transition-transform duration-300 flex-shrink-0"></i>
               </button>
 
-              <div class="experience-panel hidden px-8 pb-8 pl-24">
-                <div class="border-t border-navy/10 pt-6">
+              <div class="experience-panel hidden">
+                <div class="experience-panel-inner border-t border-navy/10">
                   <ul class="space-y-3 text-sm opacity-80 mb-8">
                     <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Built and managed targeted press lists across climate, energy, and policy media</li>
                     <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Developed media outreach strategies tied to policy and legislative moments</li>
@@ -1551,8 +1569,8 @@ video {
                 <i class="ph ph-caret-down text-xl opacity-40 transition-transform duration-300 flex-shrink-0"></i>
               </button>
 
-              <div class="experience-panel hidden px-8 pb-8 pl-24">
-                <div class="border-t border-navy/10 pt-6">
+              <div class="experience-panel hidden">
+                <div class="experience-panel-inner border-t border-navy/10">
                   <ul class="space-y-3 text-sm opacity-80 mb-8">
                     <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Developed and managed newsletter systems and recurring email programs</li>
                     <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Built LinkedIn content strategy aligned to policy and organizational priorities</li>
@@ -1587,8 +1605,8 @@ video {
                 <i class="ph ph-caret-down text-xl opacity-40 transition-transform duration-300 flex-shrink-0"></i>
               </button>
 
-              <div class="experience-panel hidden px-8 pb-8 pl-24">
-                <div class="border-t border-navy/10 pt-6">
+              <div class="experience-panel hidden">
+                <div class="experience-panel-inner border-t border-navy/10">
                   <ul class="space-y-3 text-sm opacity-80 mb-8">
                     <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Created reusable templates for press, email, and digital communications</li>
                     <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Built workflows for publishing, approvals, and content coordination</li>
@@ -1623,8 +1641,8 @@ video {
                 <i class="ph ph-caret-down text-xl opacity-40 transition-transform duration-300 flex-shrink-0"></i>
               </button>
 
-              <div class="experience-panel hidden px-8 pb-8 pl-24">
-                <div class="border-t border-navy/10 pt-6">
+              <div class="experience-panel hidden">
+                <div class="experience-panel-inner border-t border-navy/10">
                   <ul class="space-y-3 text-sm opacity-80 mb-8">
                     <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Developed messaging under tight timelines during active policy moments</li>
                     <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Coordinated communications across internal and external stakeholders</li>
@@ -1751,9 +1769,8 @@ video {
 
         modules.forEach((module) => {
           const trigger = module.querySelector('.experience-trigger');
-          const panel = module.querySelector('.experience-panel');
 
-          if (!trigger || !panel) return;
+          if (!trigger) return;
 
           trigger.addEventListener('click', function () {
             const isOpen = module.classList.contains('active');
@@ -1769,7 +1786,8 @@ video {
             if (!isOpen) {
               module.classList.add('active');
               trigger.setAttribute('aria-expanded', 'true');
-              panel.classList.remove('hidden');
+              const panel = module.querySelector('.experience-panel');
+              if (panel) panel.classList.remove('hidden');
             }
           });
         });
