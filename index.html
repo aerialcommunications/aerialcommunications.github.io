@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Aerial | Integrated Strategy</title>
-    <meta name="description" content="Integrated communications for climate, clean energy, and policy.">
+    <title>Aerial | Communications & Marketing</title>
+    <meta name="description" content="Integrated communications for climate, clean energy, policy, and mission-driven organizations.">
     <link rel="icon" href="../assets/aerial.png" type="image/png">
     <meta property="og:image" content="../assets/aerial.png">
     <meta name="twitter:image" content="../assets/aerial.png">
@@ -646,49 +646,102 @@
         }
 
         .orbital-ring-outer {
-            animation: orbital-spin 34s linear infinite;
+            animation: none;
             transform-origin: 400px 400px;
         }
 
         .orbital-ring-mid {
-            animation: orbital-spin-reverse 26s linear infinite;
+            animation: none;
             transform-origin: 400px 400px;
         }
 
         .orbital-ring-inner {
-            animation: orbital-spin 18s linear infinite;
+            animation: none;
             transform-origin: 400px 400px;
         }
 
         .orbital-node {
-            animation: orbital-counter 34s linear infinite;
+            animation: none;
             transform-box: fill-box;
             transform-origin: center;
         }
 
         .orbital-node.medium {
-            animation-duration: 26s;
+            animation: none;
         }
 
         .orbital-node.fast {
-            animation-duration: 18s;
+            animation: none;
         }
 
         .orbital-scanner {
-            animation: orbital-spin 10s linear infinite;
+            animation: none;
             transform-origin: 400px 400px;
         }
 
-        @keyframes orbital-spin {
-            to { transform: rotate(360deg); }
+        .orbital-ring-outer {
+            animation: ringFloatOuter 7s ease-in-out infinite alternate;
         }
 
-        @keyframes orbital-spin-reverse {
-            to { transform: rotate(-360deg); }
+        .orbital-ring-mid {
+            animation: ringFloatMid 6s ease-in-out infinite alternate;
         }
 
-        @keyframes orbital-counter {
-            to { transform: rotate(-360deg); }
+        .orbital-ring-inner {
+            animation: ringFloatInner 5s ease-in-out infinite alternate;
+        }
+
+        .orbital-node {
+            animation: nodeBounce 4.2s ease-in-out infinite alternate;
+            transform-box: fill-box;
+            transform-origin: center;
+        }
+
+        .orbital-node.medium {
+            animation: nodeBounceMedium 5s ease-in-out infinite alternate;
+        }
+
+        .orbital-node.fast {
+            animation: nodeBounceFast 3.6s ease-in-out infinite alternate;
+        }
+
+        .orbital-scanner {
+            animation: scannerSweep 4.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes ringFloatOuter {
+            0%   { transform: translate(0px, 0px) rotate(-1.5deg) scale(1); }
+            100% { transform: translate(8px, -6px) rotate(1.5deg) scale(1.01); }
+        }
+
+        @keyframes ringFloatMid {
+            0%   { transform: translate(0px, 0px) rotate(1deg) scale(1); }
+            100% { transform: translate(-6px, 8px) rotate(-1deg) scale(0.995); }
+        }
+
+        @keyframes ringFloatInner {
+            0%   { transform: translate(0px, 0px) rotate(-1deg) scale(1); }
+            100% { transform: translate(5px, 5px) rotate(1deg) scale(1.01); }
+        }
+
+        @keyframes nodeBounce {
+            0%   { transform: translate(0px, 0px) rotate(0deg) scale(1); }
+            100% { transform: translate(8px, -10px) rotate(-4deg) scale(1.03); }
+        }
+
+        @keyframes nodeBounceMedium {
+            0%   { transform: translate(0px, 0px) rotate(0deg) scale(1); }
+            100% { transform: translate(-10px, 8px) rotate(4deg) scale(1.04); }
+        }
+
+        @keyframes nodeBounceFast {
+            0%   { transform: translate(0px, 0px) rotate(0deg) scale(1); }
+            100% { transform: translate(6px, 12px) rotate(-5deg) scale(1.05); }
+        }
+
+        @keyframes scannerSweep {
+            0%   { transform: rotate(-8deg) scaleY(1); opacity: 0.24; }
+            100% { transform: rotate(10deg) scaleY(1.02); opacity: 0.42; }
         }
 
         .services {
@@ -1275,6 +1328,82 @@
         }
 
         @media (max-width: 767px) {
+            .orbital-panel {
+                aspect-ratio: 1 / 1;
+                padding: 10px;
+                overflow: hidden;
+            }
+
+            .orbital-graphic {
+                width: min(100%, 420px);
+                margin-inline: auto;
+                transform: scale(0.82);
+                transform-origin: center;
+            }
+
+            .orbital-ring-outer {
+                animation: ringFloatOuterMobile 6s ease-in-out infinite alternate;
+            }
+
+            .orbital-ring-mid {
+                animation: ringFloatMidMobile 5.5s ease-in-out infinite alternate;
+            }
+
+            .orbital-ring-inner {
+                animation: ringFloatInnerMobile 5s ease-in-out infinite alternate;
+            }
+
+            .orbital-node {
+                animation: nodeBounceMobile 3.8s ease-in-out infinite alternate;
+            }
+
+            .orbital-node.medium {
+                animation: nodeBounceMediumMobile 4.4s ease-in-out infinite alternate;
+            }
+
+            .orbital-node.fast {
+                animation: nodeBounceFastMobile 3.2s ease-in-out infinite alternate;
+            }
+
+            .orbital-scanner {
+                animation: scannerSweepMobile 4s ease-in-out infinite alternate;
+            }
+
+            @keyframes ringFloatOuterMobile {
+                0%   { transform: translate(0px, 0px) rotate(-0.8deg) scale(1); }
+                100% { transform: translate(3px, -3px) rotate(0.8deg) scale(1.005); }
+            }
+
+            @keyframes ringFloatMidMobile {
+                0%   { transform: translate(0px, 0px) rotate(0.6deg) scale(1); }
+                100% { transform: translate(-3px, 3px) rotate(-0.6deg) scale(1); }
+            }
+
+            @keyframes ringFloatInnerMobile {
+                0%   { transform: translate(0px, 0px) rotate(-0.5deg) scale(1); }
+                100% { transform: translate(2px, 2px) rotate(0.5deg) scale(1.005); }
+            }
+
+            @keyframes nodeBounceMobile {
+                0%   { transform: translate(0px, 0px) rotate(0deg) scale(1); }
+                100% { transform: translate(3px, -4px) rotate(-2deg) scale(1.02); }
+            }
+
+            @keyframes nodeBounceMediumMobile {
+                0%   { transform: translate(0px, 0px) rotate(0deg) scale(1); }
+                100% { transform: translate(-4px, 3px) rotate(2deg) scale(1.02); }
+            }
+
+            @keyframes nodeBounceFastMobile {
+                0%   { transform: translate(0px, 0px) rotate(0deg) scale(1); }
+                100% { transform: translate(2px, 4px) rotate(-2deg) scale(1.02); }
+            }
+
+            @keyframes scannerSweepMobile {
+                0%   { transform: rotate(-4deg); opacity: 0.2; }
+                100% { transform: rotate(5deg); opacity: 0.32; }
+            }
+
             .site-header {
                 padding: 18px 18px 0;
             }
@@ -1384,7 +1513,7 @@
                 <div class="hero-title" aria-label="AERIAL"><span class="brand-letter">A</span><span class="brand-letter">E</span><span class="brand-letter">R</span><span class="brand-letter">I</span><span class="brand-letter">A</span><span class="brand-letter">L</span></div>
             </div>
             <h1 class="hero-subtitle">Communications &amp; Marketing</h1>
-            <p class="hero-tagline">Navigating the complex atmosphere of ESG, policy, and social impact through high-altitude strategic communication. We translate global data into grounded human narratives.</p>
+            <p class="hero-tagline">Integrated communications for climate, clean energy, policy, and mission-driven organizations. We connect media, messaging, and distribution so visibility holds after the moment passes.</p>
             <div class="hero-actions">
                 <a href="#contact-form" class="button button-primary">Initiate Sequence ↗</a>
                 <a href="#architecture" class="button button-secondary">View Architecture</a>
@@ -1405,22 +1534,22 @@
             <div class="stat-item">
                 <span class="stat-label">Total Visibility</span>
                 <span class="stat-value">2M+</span>
-                <p>Strategic impressions delivered across ESG, climate, and policy media ecosystems.</p>
+                <p>Strategic impressions delivered across climate, clean energy, and policy communications ecosystems.</p>
             </div>
             <div class="stat-item">
                 <span class="stat-label">Network Growth</span>
                 <span class="stat-value">20k+</span>
-                <p>Engaged followers across verified distribution channels and platform ecosystems, creating a captive distribution network.</p>
+                <p>Engaged followers across digital channels, building sustained visibility beyond single campaign moments.</p>
             </div>
             <div class="stat-item">
                 <span class="stat-label">Domain Traffic</span>
                 <span class="stat-value">30k+</span>
-                <p>Annual website visits driven through high-intent policy and advocacy funnels from targeted signal distribution.</p>
+                <p>Annual website visits driven through integrated content, email, and digital distribution systems.</p>
             </div>
             <div class="stat-item">
                 <span class="stat-label">Reporter Network</span>
                 <span class="stat-value">450+</span>
-                <p>High-tier media relationships across climate, ESG, policy, and social impact ecosystems.</p>
+                <p>Media relationships across climate, clean energy, policy, and public affairs reporting ecosystems.</p>
             </div>
         </div>
     </section>
@@ -1469,16 +1598,16 @@
             </div>
             <div class="architecture-copy">
                 <span class="section-kicker">Unified Architecture</span>
-                <h2 class="section-title">The Orbital Node Influence.</h2>
-                <p class="section-text">We operate at the nexus of capital flows and atmospheric policy. Our communications architecture isn't just a message—it's a flight path towards a measurable future.</p>
+                <h2 class="section-title">The Orbital Node of Influence.</h2>
+                <p class="section-text">Aerial operates at the intersection of media and digital systems. We build communications that travel across channels, support high-visibility moments, and leave stronger infrastructure behind.</p>
                 <div class="orbital-steps">
                     <div class="orbital-step">
-                        <strong>ST-01: STRATEGIC LIFT</strong>
-                        <p>Building foundational narrative trust for high-stakes transitions.</p>
+                        <strong>ST-01: EXECUTION</strong>
+                        <p>Managing media, email, web, and partner communications in a clear shared system.</p>
                     </div>
                     <div class="orbital-step">
-                        <strong>ST-02: MOMENTUM</strong>
-                        <p>Scaling grassroots advocacy through high-fidelity visual storytelling.</p>
+                        <strong>ST-02: INFRASTRUCTURE</strong>
+                        <p>Building repeatable workflows, templates, and distribution pathways that last beyond the engagement.</p>
                     </div>
                 </div>
             </div>
@@ -1489,54 +1618,54 @@
         <div class="service-header">
             <div>
                 <div class="stat-label">Service Stack // 024</div>
-                <h2 class="section-title" style="color: var(--bg); margin-top: 14px;">Integrated Modules for Visibility</h2>
+                <h2 class="section-title" style="color: var(--bg); margin-top: 14px;">Integrated Communications Modules</h2>
             </div>
-            <div class="stat-label">Arizona — High Desert Division</div>
+            <div class="stat-label">Media + Digital Systems</div>
         </div>
         <div class="service-grid">
             <button type="button" class="service-card" data-service="message-architecture">
                 <div>
                     <div class="service-card-header">
-                        <span class="service-index">01 // Architecture</span>
+                        <span class="service-index">01 // Messaging</span>
                         <span class="service-price">From $4,500</span>
                     </div>
-                    <h3>Message Architecture &amp; Campaign Narrative</h3>
-                    <p>Defining the core story that drives policy change and public perception across all vectors.</p>
+                    <h3>Message Architecture &amp; Narrative Strategy</h3>
+                    <p>Clarifying the core messaging, positioning, and campaign narrative that guide every channel.</p>
                 </div>
-                <small>Messaging framework, campaign narrative, positioning guidance.</small>
+                <small>Messaging framework, positioning guidance, campaign narrative.</small>
             </button>
             <button type="button" class="service-card" data-service="content-creation">
                 <div>
                     <div class="service-card-header">
-                        <span class="service-index">02 // Editorial</span>
+                        <span class="service-index">02 // Content</span>
                         <span class="service-price">From $5,000</span>
                     </div>
                     <h3>Content Creation &amp; Editorial Systems</h3>
-                    <p>Building articles, op-eds, newsletters, and campaign assets that reinforce a coherent message architecture.</p>
+                    <p>Developing articles, newsletters, social content, and campaign assets inside a cohesive editorial system.</p>
                 </div>
-                <small>Articles, op-eds, newsletters, editorial planning.</small>
+                <small>Articles, newsletters, campaign content, editorial planning.</small>
             </button>
             <button type="button" class="service-card" data-service="media-relations">
                 <div>
                     <div class="service-card-header">
-                        <span class="service-index">03 // Amplification</span>
+                        <span class="service-index">03 // Media</span>
                         <span class="service-price">From $6,000</span>
                     </div>
-                    <h3>Media Relations &amp; Amplification</h3>
-                    <p>Press releases, outreach, and visibility programs routed through a high-trust media network.</p>
+                    <h3>Media Relations &amp; Press Outreach</h3>
+                    <p>Building press lists, managing outreach, and supporting visibility through targeted media engagement.</p>
                 </div>
-                <small>Press strategy, reporter pitching, releases, amplification.</small>
+                <small>Press lists, reporter outreach, releases, media coordination.</small>
             </button>
             <button type="button" class="service-card" data-service="digital-distribution">
                 <div>
                     <div class="service-card-header">
-                        <span class="service-index">04 // Infrastructure</span>
+                        <span class="service-index">04 // Distribution</span>
                         <span class="service-price">From $5,500</span>
                     </div>
-                    <h3>Digital Distribution Infrastructure</h3>
-                    <p>Email systems, websites, and communications pathways designed for durable distribution and signal control.</p>
+                    <h3>Digital Infrastructure &amp; Distribution</h3>
+                    <p>Email systems, web updates, and communications workflows designed to support durable distribution.</p>
                 </div>
-                <small>Email systems, digital channels, distribution workflows.</small>
+                <small>Email systems, website support, workflows, channel distribution.</small>
             </button>
             <button type="button" class="service-card" data-service="ongoing-retainer">
                 <div>
@@ -1545,9 +1674,9 @@
                         <span class="service-price">$8,000 / mo</span>
                     </div>
                     <h3>Ongoing Communications Retainer</h3>
-                    <p>Integrated monthly support across messaging, media, content, and digital systems, aligned to live campaigns and long-term shifts.</p>
+                    <p>Integrated support across messaging, media, content, and digital systems for active campaigns and convenings.</p>
                 </div>
-                <small>Integrated monthly support across strategy, media, content, and systems.</small>
+                <small>Ongoing support across strategy, media, content, and communications systems.</small>
             </button>
         </div>
     </section>
@@ -1563,7 +1692,7 @@
                 <div class="member-info">
                     <h4>Alyssa Cortes</h4>
                     <div class="member-role">External Affairs</div>
-                    <p>Media relations, narrative strategy, and crisis communications. Operates a mapped network of 450+ high-tier reporter contacts across climate and policy sectors.</p>
+                    <p>Media relations, external affairs, and crisis communications. Leads journalist engagement, narrative development, and stakeholder coordination across climate and policy work.</p>
                     <div class="member-links">
                         <a href="https://www.linkedin.com/in/alyssa-cortes" class="member-link" aria-label="Alyssa Cortes LinkedIn">
                             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 0 0 3.25 5c0 1.1.88 2 1.97 2h.03c1.13 0 2-.9 2-2A1.98 1.98 0 0 0 5.25 3ZM20.75 13.04c0-3.47-1.85-5.08-4.33-5.08-2 0-2.89 1.1-3.39 1.87V8.5H9.66c.04.88 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.9-1.38 1.95-1.38 1.38 0 1.93 1.04 1.93 2.57V20h3.37v-6.96Z"></path></svg>
@@ -1577,7 +1706,7 @@
                 <div class="member-info">
                     <h4>Cassandre Arkema</h4>
                     <div class="member-role">Digital Systems</div>
-                    <p>Digital strategy, content systems, email infrastructure, and algorithm wizardry. Architects the unseen frameworks that drive measurable engagement.</p>
+                    <p>Digital strategy, content systems, and distribution infrastructure. Aligns web, email, and content workflows so communications stay legible, strategic, and effective across platforms.</p>
                     <div class="member-links">
                         <a href="https://www.linkedin.com/in/cassandrearkema" class="member-link" aria-label="Cassandre Arkema LinkedIn">
                             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 0 0 3.25 5c0 1.1.88 2 1.97 2h.03c1.13 0 2-.9 2-2A1.98 1.98 0 0 0 5.25 3ZM20.75 13.04c0-3.47-1.85-5.08-4.33-5.08-2 0-2.89 1.1-3.39 1.87V8.5H9.66c.04.88 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.9-1.38 1.95-1.38 1.38 0 1.93 1.04 1.93 2.57V20h3.37v-6.96Z"></path></svg>
@@ -1606,7 +1735,7 @@
                         <span>+</span>
                     </button>
                     <div class="faq-answer">
-                        We do not separate media, content, messaging, email, and digital systems. They are treated as a singular operational unit to maximize impact and reduce friction. A message is useless without the infrastructure to distribute it.
+                        We do not separate media from digital systems. Messaging, content, distribution, and infrastructure are built together so communications can travel across channels and remain useful after the initial moment.
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1615,7 +1744,7 @@
                         <span>+</span>
                     </button>
                     <div class="faq-answer">
-                        Yes, but inherently tied to distribution architecture and broader narrative strategy alignment. We do not blast releases in a vacuum; they are part of a targeted, sequenced deployment.
+                        Yes. Press releases sit inside a broader communications strategy that includes outreach, partner coordination, digital distribution, and follow-up visibility.
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1624,7 +1753,7 @@
                         <span>+</span>
                     </button>
                     <div class="faq-answer">
-                        Both, seamlessly integrated across all channels. We design the map and we fly the route. High-level policy strategy combined with the tactical execution required to ship the work.
+                        Both. We manage day-to-day communications execution while also building the templates, workflows, and systems that make future work easier to sustain.
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1633,7 +1762,7 @@
                         <span>+</span>
                     </button>
                     <div class="faq-answer">
-                        Climate organizations, clean energy campaigns, advocacy groups, policy coalitions, and mission-driven teams navigating high-visibility moments or long-term narrative shifts.
+                        Climate organizations, clean energy groups, policy teams, nonprofits, and mission-driven organizations navigating active campaigns, convenings, or high-visibility communications needs.
                     </div>
                 </div>
             </div>
@@ -1646,7 +1775,7 @@
                 <div class="decor-circle" aria-hidden="true"></div>
                 <span class="stat-label">Sequence 00:00:00</span>
                 <h2 class="section-title">Ready for Takeoff?</h2>
-                <p class="section-text">Chart the route below. Share as much or as little as you have today and we will return with a grounded recommendation within 24 hours.</p>
+                <p class="section-text">Chart the route below. Share as much or as little as you have today and we will follow up with a grounded recommendation shaped around your goals, channels, and communications needs.</p>
             </div>
 
             <form class="intake-form" id="contact-form" novalidate>
@@ -1784,7 +1913,7 @@
                             <span>
                                 <span class="service-option-title">Ongoing Communications Retainer</span>
                                 <span class="service-option-price">$8,000/mo</span>
-                                <span class="service-option-copy">Integrated strategy, media, content, and systems support.</span>
+                                <span class="service-option-copy">Integrated support across messaging, media, content, and communications systems.</span>
                             </span>
                         </label>
                         <label class="service-option">
@@ -1792,7 +1921,7 @@
                             <span>
                                 <span class="service-option-title">Media Relations / Press Outreach</span>
                                 <span class="service-option-price">$6,000+</span>
-                                <span class="service-option-copy">Press strategy, reporter pitching, releases, and amplification.</span>
+                                <span class="service-option-copy">Press lists, reporter outreach, releases, and coordinated visibility support.</span>
                             </span>
                         </label>
                         <label class="service-option">
@@ -1800,7 +1929,7 @@
                             <span>
                                 <span class="service-option-title">Content Creation</span>
                                 <span class="service-option-price">$5,000+</span>
-                                <span class="service-option-copy">Editorial systems, articles, op-eds, and high-value assets.</span>
+                                <span class="service-option-copy">Newsletters, campaign content, articles, and editorial systems.</span>
                             </span>
                         </label>
                         <label class="service-option">
@@ -1808,7 +1937,7 @@
                             <span>
                                 <span class="service-option-title">Content + Media Amplification</span>
                                 <span class="service-option-price">$7,500+</span>
-                                <span class="service-option-copy">Editorial development paired with distribution and media lift.</span>
+                                <span class="service-option-copy">Content development paired with outreach, distribution, and partner amplification.</span>
                             </span>
                         </label>
                         <label class="service-option">
@@ -1816,7 +1945,7 @@
                             <span>
                                 <span class="service-option-title">Website / Digital Infrastructure</span>
                                 <span class="service-option-price">$5,500+</span>
-                                <span class="service-option-copy">Website systems, email infrastructure, and digital routing.</span>
+                                <span class="service-option-copy">Website updates, email systems, workflows, and communications routing.</span>
                             </span>
                         </label>
                         <label class="service-option">
@@ -1824,7 +1953,7 @@
                             <span>
                                 <span class="service-option-title">Messaging / Narrative Strategy</span>
                                 <span class="service-option-price">$4,500+</span>
-                                <span class="service-option-copy">Clarified positioning, campaign narrative, and core message architecture.</span>
+                                <span class="service-option-copy">Positioning, message architecture, and campaign narrative development.</span>
                             </span>
                         </label>
                         <label class="service-option">
@@ -1832,7 +1961,7 @@
                             <span>
                                 <span class="service-option-title">Launch or Campaign Support</span>
                                 <span class="service-option-price">$6,500+</span>
-                                <span class="service-option-copy">A structured rollout for announcements, launches, and narrative moments.</span>
+                                <span class="service-option-copy">Communications support for launches, announcements, and high-visibility moments.</span>
                             </span>
                         </label>
                         <label class="service-option">
@@ -1840,7 +1969,7 @@
                             <span>
                                 <span class="service-option-title">Event / Summit Communications</span>
                                 <span class="service-option-price">$6,000+</span>
-                                <span class="service-option-copy">Speaker narratives, press coordination, and communications around live moments.</span>
+                                <span class="service-option-copy">Promotional content, stakeholder coordination, real-time capture, and recap communications.</span>
                             </span>
                         </label>
                         <label class="service-option field-span-2">
@@ -1848,7 +1977,7 @@
                             <span>
                                 <span class="service-option-title">Custom Scope</span>
                                 <span class="service-option-price">Custom quote</span>
-                                <span class="service-option-copy">A tailored communications build shaped around the mission, moment, and constraints.</span>
+                                <span class="service-option-copy">A tailored communications engagement shaped around your goals, timeline, and internal capacity.</span>
                             </span>
                         </label>
                     </div>
@@ -1866,7 +1995,7 @@
                             <dt>Estimated Investment</dt>
                             <dd id="summary-investment">Choose one or more services to generate an estimated range.</dd>
                             <dt>Notes</dt>
-                            <dd id="summary-notes">Add details, timing, and budget context to help shape the response.</dd>
+                            <dd id="summary-notes">Add goals, timing, and budget context to help shape the response.</dd>
                         </dl>
                     </div>
                 </div>
@@ -1901,7 +2030,7 @@
             </a>
             <a href="mailto:aerialcommsmarketing@gmail.com">Contact</a>
         </div>
-        <div>Lat: 33.4484° N, Long: 112.0740° W</div>
+        <div>Integrated Communications for Climate, Clean Energy, and Policy</div>
     </footer>
 
     <script>
