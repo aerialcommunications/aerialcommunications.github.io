@@ -36,6 +36,55 @@
                 linear-gradient(to bottom, rgba(244, 232, 217, 0.03) 1px, transparent 1px);
             background-size: 80px 80px;
         }
+        .brand-lockup {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: inherit;
+            text-decoration: none;
+            line-height: 1;
+        }
+        .brand-mark {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.7;
+            flex-shrink: 0;
+        }
+        .brand-word {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.01em;
+            font-family: var(--display, "Playfair Display", serif);
+            font-size: 1.65rem;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
+            text-transform: uppercase;
+            font-style: italic;
+            font-weight: 900;
+        }
+        .brand-letter {
+            display: inline-block;
+            transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), color 0.25s ease;
+            will-change: transform;
+        }
+        .brand-word .brand-letter:hover {
+            transform: translateY(-0.22em) rotate(-6deg) scale(1.06);
+        }
+        .brand-word .brand-letter:nth-child(odd):hover {
+            transform: translateY(-0.26em) rotate(-7deg) scale(1.07);
+        }
+        .brand-word .brand-letter:nth-child(even):hover {
+            transform: translateY(0.18em) rotate(5deg) scale(1.05);
+        }
+        @media (max-width: 767px) {
+            .brand-word .brand-letter:hover,
+            .brand-word .brand-letter:nth-child(odd):hover,
+            .brand-word .brand-letter:nth-child(even):hover {
+                transform: none;
+            }
+        }
         .slide {
             position: absolute;
             top: 0;
@@ -950,14 +999,224 @@ video {
       width: 0 !important;
       height: 0 !important;
     }
+  </style>
+  <style id="responsive-overrides">
+    :root {
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-right: env(safe-area-inset-right, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+      --safe-left: env(safe-area-inset-left, 0px);
+    }
+
+    html, body {
+      max-width: 100%;
+      overflow-x: clip;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    img,
+    svg,
+    video,
+    canvas {
+      max-width: 100%;
+      height: auto;
+    }
+
+    body {
+      overflow-x: clip;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    @supports not (overflow: clip) {
+      html, body {
+        overflow-x: hidden;
+      }
+    }
+
+    @media (max-width: 767px) {
+      body {
+        height: auto !important;
+        min-height: 100%;
+        overflow-y: auto !important;
+        overflow-x: clip !important;
+      }
+
+      nav.fixed.top-0.left-0.w-full {
+        position: sticky !important;
+        top: 0 !important;
+        padding:
+          calc(16px + var(--safe-top))
+          calc(20px + var(--safe-right))
+          14px
+          calc(20px + var(--safe-left)) !important;
+        background: rgba(244, 232, 217, 0.92);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(45, 27, 63, 0.08);
+      }
+
+      nav.fixed.top-0.left-0.w-full > div:last-child {
+        max-width: 48vw;
+        text-align: right;
+        line-height: 1.35;
+      }
+
+      main {
+        display: block !important;
+        min-height: auto !important;
+        height: auto !important;
+        padding-bottom: calc(24px + var(--safe-bottom));
+      }
+
+      .slide,
+      section.slide {
+        position: relative !important;
+        inset: auto !important;
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        padding:
+          calc(24px + var(--safe-top))
+          calc(20px + var(--safe-right))
+          24px
+          calc(20px + var(--safe-left)) !important;
+      }
+
+      .slide.active {
+        display: block !important;
+        opacity: 1 !important;
+      }
+
+      .fixed.bottom-12.right-12,
+      .fixed.bottom-0.left-0,
+      #slide-counter-wrapper,
+      #btn-prev,
+      #btn-next,
+      #progress {
+        display: none !important;
+      }
+
+      .grid,
+      [class*="grid-cols"],
+      .slide-content-grid,
+      .content-grid,
+      .two-panel,
+      .split-layout {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+        align-items: start !important;
+      }
+
+      h1 {
+        font-size: clamp(1.9rem, 9vw, 3rem) !important;
+        line-height: 0.98 !important;
+      }
+
+      h2 {
+        font-size: clamp(1.35rem, 6vw, 1.9rem) !important;
+        line-height: 1.08 !important;
+      }
+
+      p,
+      li,
+      button,
+      a {
+        word-break: normal;
+        overflow-wrap: anywhere;
+      }
+
+      .px-10,
+      .px-12,
+      .px-16 {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+      }
+
+      .py-5,
+      .py-6,
+      .py-8 {
+        padding-top: 0.95rem !important;
+        padding-bottom: 0.95rem !important;
+      }
+
+      .p-12,
+      .p-16,
+      .p-20 {
+        padding: 1.25rem !important;
+      }
+
+      .pl-10 {
+        padding-left: 1.25rem !important;
+      }
+
+      .tracking-\[0\.3em\],
+      .tracking-\[0\.4em\],
+      .tracking-\[0\.5em\] {
+        letter-spacing: 0.18em !important;
+      }
+
+      .rounded-full {
+        border-radius: 9999px;
+      }
+
+      .orbital-path,
+      .orbital-path-light {
+        max-width: 100% !important;
+        transform: scale(0.72);
+        transform-origin: center;
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      .absolute,
+      .fixed {
+        max-width: 100%;
+      }
+
+      .whitespace-nowrap {
+        white-space: normal !important;
+      }
+
+      .button-row,
+      .cta-row,
+      .actions,
+      .hero-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.75rem !important;
+      }
+
+      .button-row > *,
+      .cta-row > *,
+      .actions > *,
+      .hero-actions > * {
+        width: 100% !important;
+        justify-content: center !important;
+      }
+    }
   </style></head>
 <body class="w-full h-screen relative overflow-hidden" vid="6">
 
     <nav class="fixed top-0 left-0 w-full p-10 flex justify-between items-center z-50 pointer-events-none" vid="7">
-        <div class="flex items-center gap-3 pointer-events-auto" vid="8">
-            <i class="ph ph-circle-dashed text-2xl" id="nav-logo-icon" vid="9"></i>
-            <span class="font-bold tracking-[0.4em] text-xs" id="nav-logo-text" vid="10">AERIAL</span>
-        </div>
+        <a href="#" class="brand-lockup text-navy pointer-events-auto" id="nav-brand" aria-label="AERIAL home" vid="8">
+            <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" vid="9">
+                <circle cx="12" cy="12" r="8"></circle>
+                <path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path>
+            </svg>
+            <span class="brand-word" aria-label="AERIAL" vid="10">
+                <span class="brand-letter">A</span><span class="brand-letter">E</span><span class="brand-letter">R</span><span class="brand-letter">I</span><span class="brand-letter">A</span><span class="brand-letter">L</span>
+            </span>
+        </a>
         <div class="text-[10px] tracking-[0.3em] font-bold uppercase opacity-40 pointer-events-auto" id="nav-tag" vid="11">Strategic Communications Framework</div>
     </nav>
 
@@ -1202,12 +1461,12 @@ video {
     </div>
 
     <script vid="164">
+        const isMobile = window.matchMedia('(max-width: 767px)').matches;
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         const progress = document.getElementById('progress');
         const currentLabel = document.getElementById('current-slide');
-        const navLogoIcon = document.getElementById('nav-logo-icon');
-        const navLogoText = document.getElementById('nav-logo-text');
+        const navBrand = document.getElementById('nav-brand');
         const navTag = document.getElementById('nav-tag');
         const btnPrev = document.getElementById('btn-prev');
         const btnNext = document.getElementById('btn-next');
@@ -1231,16 +1490,14 @@ video {
             const isDark = darkSlides.includes(currentSlide);
             
             if (isDark) {
-                navLogoIcon.classList.add('text-cream'); navLogoIcon.classList.remove('text-navy');
-                navLogoText.classList.add('text-cream'); navLogoText.classList.remove('text-navy');
+                navBrand.classList.add('text-cream'); navBrand.classList.remove('text-navy');
                 navTag.classList.add('text-cream'); navTag.classList.remove('text-navy');
                 btnPrev.classList.add('dark-mode');
                 btnNext.classList.add('dark-mode');
                 slideCounterWrapper.classList.add('text-cream'); slideCounterWrapper.classList.remove('text-navy');
                 counterDivider.classList.add('bg-cream/20'); counterDivider.classList.remove('bg-navy/20');
             } else {
-                navLogoIcon.classList.remove('text-cream'); navLogoIcon.classList.add('text-navy');
-                navLogoText.classList.remove('text-cream'); navLogoText.classList.add('text-navy');
+                navBrand.classList.remove('text-cream'); navBrand.classList.add('text-navy');
                 navTag.classList.remove('text-cream'); navTag.classList.add('text-navy');
                 btnPrev.classList.remove('dark-mode');
                 btnNext.classList.remove('dark-mode');
@@ -1250,6 +1507,7 @@ video {
         }
 
         function nextSlide() {
+            if (isMobile) return;
             if (currentSlide < slides.length - 1) {
                 currentSlide++;
                 updateDisplay();
@@ -1257,6 +1515,7 @@ video {
         }
 
         function prevSlide() {
+            if (isMobile) return;
             if (currentSlide > 0) {
                 currentSlide--;
                 updateDisplay();
@@ -1264,31 +1523,42 @@ video {
         }
 
         function goToSlide(index) {
+            if (isMobile) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
+            }
             currentSlide = index;
             updateDisplay();
         }
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
-                nextSlide();
-            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-                prevSlide();
-            }
-        });
+        if (!isMobile) {
+            updateDisplay();
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                    prevSlide();
+                }
+            });
 
-        let lastScroll = 0;
-        window.addEventListener('wheel', (e) => {
-            const now = Date.now();
-            if (now - lastScroll < 1200) return; 
-            
-            if (e.deltaY > 50) {
-                nextSlide();
-                lastScroll = now;
-            } else if (e.deltaY < -50) {
-                prevSlide();
-                lastScroll = now;
-            }
-        }, { passive: true });
+            let lastScroll = 0;
+            window.addEventListener('wheel', (e) => {
+                const now = Date.now();
+                if (now - lastScroll < 1200) return;
+
+                if (e.deltaY > 50) {
+                    nextSlide();
+                    lastScroll = now;
+                } else if (e.deltaY < -50) {
+                    prevSlide();
+                    lastScroll = now;
+                }
+            }, { passive: true });
+        } else {
+            slides.forEach((slide) => {
+                slide.classList.add('active');
+            });
+        }
     </script>
 
 
