@@ -162,28 +162,16 @@
 
         .brand-letter {
             display: inline-block;
-            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), color 0.25s ease;
+            transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), color 0.25s ease;
             will-change: transform;
         }
 
         .brand-lockup:hover .brand-letter,
-        .brand-lockup:focus-visible .brand-letter {
-            transform: translateY(-0.08em);
-        }
-
-        .brand-lockup:hover .brand-letter:nth-child(2),
-        .brand-lockup:focus-visible .brand-letter:nth-child(2) {
-            transform: translateY(0.08em);
-        }
-
-        .brand-lockup:hover .brand-letter:nth-child(4),
-        .brand-lockup:focus-visible .brand-letter:nth-child(4) {
-            transform: translateY(0.08em);
-        }
-
-        .brand-lockup:hover .brand-letter:nth-child(5),
-        .brand-lockup:focus-visible .brand-letter:nth-child(5) {
-            transform: translateY(-0.08em);
+        .brand-lockup:focus-visible .brand-letter,
+        .hero-title:hover .brand-letter,
+        .hero-title:focus-visible .brand-letter {
+            transform: none;
+            color: inherit;
         }
 
         .header-links {
@@ -381,36 +369,20 @@
             font-weight: 900;
         }
 
-        .hero-title .brand-letter {
-            display: inline-block;
-            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), color 0.28s ease;
-            will-change: transform;
-        }
-
-        .hero-title:hover .brand-letter,
-        .hero-title:focus-visible .brand-letter {
-            color: var(--orange);
-            transform: translateY(-0.08em);
-        }
-
-        .hero-title:hover .brand-letter:nth-child(2),
-        .hero-title:hover .brand-letter:nth-child(4),
-        .hero-title:focus-visible .brand-letter:nth-child(2),
-        .hero-title:focus-visible .brand-letter:nth-child(4) {
-            color: var(--pink);
-            transform: translateY(0.08em);
-        }
-
-        .hero-title:hover .brand-letter:nth-child(3),
-        .hero-title:hover .brand-letter:nth-child(6),
-        .hero-title:focus-visible .brand-letter:nth-child(3),
-        .hero-title:focus-visible .brand-letter:nth-child(6) {
-            color: var(--gold);
-        }
-
+        .brand-word .brand-letter:hover,
         .hero-title .brand-letter:hover {
             color: var(--gold);
-            transform: translateY(-0.12em) scale(1.02);
+            transform: translateY(-0.12em) rotate(-3deg) scale(1.04);
+        }
+
+        .brand-word .brand-letter:nth-child(odd):hover,
+        .hero-title .brand-letter:nth-child(odd):hover {
+            color: var(--orange);
+        }
+
+        .brand-word .brand-letter:nth-child(even):hover,
+        .hero-title .brand-letter:nth-child(even):hover {
+            color: var(--pink);
         }
 
         .hero-subtitle {
