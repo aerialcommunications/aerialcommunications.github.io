@@ -1252,8 +1252,9 @@
         }
 
         .footer {
+            position: relative;
+            z-index: 10;
             padding: 34px 30px 44px;
-            border-top: 0.5px solid rgba(244, 232, 209, 0.18);
             display: flex;
             justify-content: space-between;
             gap: 24px;
@@ -1263,11 +1264,26 @@
             font-size: 10px;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: rgba(244, 232, 209, 0.58);
+            background: linear-gradient(135deg, var(--purple) 0%, var(--ink) 100%);
+            border-top: 1px solid rgba(244, 232, 209, 0.2);
+            color: rgba(244, 232, 209, 0.85);
         }
 
         .footer .brand-lockup {
             color: var(--bg);
+        }
+
+        .footer-links a {
+            color: rgba(244, 232, 209, 0.85);
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer > div:last-child {
+            color: rgba(244, 232, 209, 0.65);
         }
 
         .footer-links {
