@@ -35,7 +35,7 @@
 
         html {
             scroll-behavior: smooth;
-            overflow-x: clip;
+            overflow-x: hidden;
         }
 
         body {
@@ -48,7 +48,6 @@
             font-family: var(--body);
             font-size: 16px;
             line-height: 1.55;
-            overflow-x: clip;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -75,6 +74,7 @@
             inset: 0;
             pointer-events: none;
             z-index: 5;
+            will-change: opacity;
             background-image:
                 linear-gradient(to right, rgba(44, 27, 51, 0.08) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(44, 27, 51, 0.08) 1px, transparent 1px);
@@ -258,7 +258,7 @@
                 linear-gradient(to bottom, rgba(212, 163, 115, 0.07) 1px, transparent 1px);
             background-size: 84px 84px;
             opacity: 0.34;
-            filter: blur(0.2px);
+            filter: none;
         }
 
         .hero::before,
@@ -266,7 +266,7 @@
             content: "";
             position: absolute;
             border-radius: 999px;
-            filter: blur(110px);
+            filter: blur(70px);
             pointer-events: none;
             z-index: 0;
         }
@@ -471,7 +471,9 @@
 
         .descend {
             position: absolute;
-            bottom: 34px;
+            bottom: 18px;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 1;
             display: flex;
             flex-direction: column;
@@ -1328,15 +1330,100 @@
         @media (max-width: 767px) {
             .orbital-panel {
                 aspect-ratio: 1 / 1;
-                padding: 10px;
+                padding: 8px;
                 overflow: hidden;
             }
 
             .orbital-graphic {
-                width: min(100%, 420px);
+                width: min(100%, 380px);
                 margin-inline: auto;
-                transform: scale(0.82);
+                transform: scale(0.8);
                 transform-origin: center;
+            }
+
+            .orbital-ring-outer {
+                animation-duration: 40s;
+            }
+
+            .orbital-ring-mid {
+                animation-duration: 30s;
+            }
+
+            .orbital-ring-inner {
+                animation-duration: 22s;
+            }
+
+            .orbital-scanner {
+                animation-duration: 12s;
+            }
+
+            .orbital-node > * {
+                animation: nodeFloatMobile 4.8s ease-in-out infinite alternate;
+            }
+
+            .orbital-node.medium > * {
+                animation: nodeFloatMediumMobile 5.4s ease-in-out infinite alternate;
+            }
+
+            .orbital-node.fast > * {
+                animation: nodeFloatFastMobile 4s ease-in-out infinite alternate;
+            }
+
+            @keyframes nodeFloatMobile {
+                0% {
+                    transform: translate(0px, 0px) rotate(0deg) scale(1);
+                }
+                100% {
+                    transform: translate(2px, -3px) rotate(-1.5deg) scale(1.02);
+                }
+            }
+
+            @keyframes nodeFloatMediumMobile {
+                0% {
+                    transform: translate(0px, 0px) rotate(0deg) scale(1);
+                }
+                100% {
+                    transform: translate(-3px, 2px) rotate(1.5deg) scale(1.02);
+                }
+            }
+
+            @keyframes nodeFloatFastMobile {
+                0% {
+                    transform: translate(0px, 0px) rotate(0deg) scale(1);
+                }
+                100% {
+                    transform: translate(2px, 3px) rotate(-1.5deg) scale(1.02);
+                }
+            }
+
+            .descend {
+                bottom: 10px;
+            }
+
+            .flight-grid {
+                display: none;
+            }
+
+            .hero::before,
+            .hero::after {
+                filter: blur(48px);
+                opacity: 0.8;
+            }
+
+            .hero-grid {
+                opacity: 0.18;
+            }
+
+            .hero-path {
+                width: min(92vw, 520px);
+                opacity: 0.55;
+            }
+
+            .orbital-ring-outer,
+            .orbital-ring-mid,
+            .orbital-ring-inner,
+            .orbital-scanner {
+                animation-play-state: paused;
             }
 
             .site-header {
