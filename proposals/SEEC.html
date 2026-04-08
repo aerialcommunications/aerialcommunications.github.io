@@ -97,6 +97,53 @@
             height: 1px;
             background: linear-gradient(90deg, #D9727B 0%, transparent 100%);
         }
+        .experience-module {
+            transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+        }
+        .experience-module:hover {
+            background-color: rgba(255, 255, 255, 0.42);
+        }
+        .experience-module.active {
+            background-color: rgba(255, 255, 255, 0.55);
+            border-color: rgba(45, 27, 63, 0.28);
+        }
+        .experience-module .ph-caret-down {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .experience-module.active .ph-caret-down {
+            transform: rotate(180deg);
+            opacity: 0.7;
+        }
+        .experience-panel {
+            transition: opacity 0.3s ease;
+        }
+        .experience-links a {
+            white-space: nowrap;
+        }
+        @media (max-width: 1024px) {
+            .experience-panel {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+        @media (max-width: 767px) {
+            #experience-modules .experience-trigger {
+                padding: 1.5rem;
+                align-items: flex-start;
+            }
+            #experience-modules .experience-trigger > div {
+                gap: 1rem;
+                align-items: flex-start;
+            }
+            .experience-panel {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                padding-bottom: 1.5rem;
+            }
+            .experience-links a {
+                white-space: normal;
+            }
+        }
     </style>
 
   <style type="text/css">
@@ -1402,6 +1449,207 @@ video {
             </div>
         </section>
 
+        <section class="mb-32" id="experience">
+          <div class="flex items-center gap-4 mb-12">
+            <span class="text-[11px] tracking-[0.5em] font-bold uppercase text-burgundy">05 // Experience</span>
+            <div class="h-[1px] flex-grow bg-navy/10"></div>
+          </div>
+
+          <div class="max-w-5xl mb-16">
+            <p class="text-lg leading-relaxed mb-6">
+              <strong>Aerial Communications brings a decade of demonstrated experience supporting mission-driven organizations at the intersection of policy, communications, and clean energy advocacy.</strong>
+            </p>
+            <p class="text-base opacity-80 leading-relaxed mb-4">
+              Our principals have served as trusted communications advisors to nonprofit coalitions, clean energy industry associations, and congressional offices, delivering across the full spectrum of external affairs functions.
+            </p>
+            <p class="text-sm font-bold uppercase tracking-widest opacity-60 mt-8">Selected experience includes:</p>
+          </div>
+
+          <div class="space-y-4" id="experience-modules">
+
+            <article class="experience-module border border-navy/10 bg-white/30 backdrop-blur-sm transition-all duration-300" data-module="1">
+              <button type="button" class="experience-trigger w-full text-left p-8 flex items-center justify-between gap-6" aria-expanded="false">
+                <div class="flex items-center gap-8">
+                  <span class="serif-italic text-4xl text-burgundy italic font-black flex-shrink-0">01</span>
+                  <div>
+                    <h3 class="text-lg font-bold mb-1">Convenings &amp; Stakeholder Coordination</h3>
+                    <p class="text-sm opacity-60">Communications strategy and execution for multi-day convenings and policy events.</p>
+                  </div>
+                </div>
+                <i class="ph ph-caret-down text-xl opacity-40 transition-transform duration-300 flex-shrink-0"></i>
+              </button>
+
+              <div class="experience-panel hidden px-8 pb-8 pl-24">
+                <div class="border-t border-navy/10 pt-6">
+                  <ul class="space-y-3 text-sm opacity-80 mb-8">
+                    <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>End-to-end communications planning for multi-day convenings in Washington, DC</li>
+                    <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Stakeholder coordination with Members of Congress, federal agencies, and NGO partners</li>
+                    <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Speaker communications, run-of-show alignment, and internal coordination</li>
+                    <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Pre-event promotion and post-event recap content</li>
+                  </ul>
+
+                  <div class="experience-links flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-6">
+                    <a href="https://ceforamerica.org/news-post/watch-tribal-clean-energy-voices-call-out-the-devastating-impact-of-trumps-budget-on-tribal-communities/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2">
+                      View Event Communications <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1A59GbJe5bHfcSBUlMOnkOBNSJ84LDgzW/view" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2">
+                      View Stakeholder Materials <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                    <a href="https://youtu.be/ugzZIDvhHV0?si=K3gLKRU1f_cbfq-K" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2">
+                      View Event Video <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="experience-module border border-navy/10 bg-white/30 backdrop-blur-sm transition-all duration-300" data-module="2">
+              <button type="button" class="experience-trigger w-full text-left p-8 flex items-center justify-between gap-6" aria-expanded="false">
+                <div class="flex items-center gap-8">
+                  <span class="serif-italic text-4xl text-burgundy italic font-black flex-shrink-0">02</span>
+                  <div>
+                    <h3 class="text-lg font-bold mb-1">Media Relations &amp; Press Systems</h3>
+                    <p class="text-sm opacity-60">Press infrastructure, outreach strategy, and national media coverage.</p>
+                  </div>
+                </div>
+                <i class="ph ph-caret-down text-xl opacity-40 transition-transform duration-300 flex-shrink-0"></i>
+              </button>
+
+              <div class="experience-panel hidden px-8 pb-8 pl-24">
+                <div class="border-t border-navy/10 pt-6">
+                  <ul class="space-y-3 text-sm opacity-80 mb-8">
+                    <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Built and managed targeted press lists across climate, energy, and policy media</li>
+                    <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Developed media outreach strategies tied to policy and legislative moments</li>
+                    <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Secured coverage in national and trade publications</li>
+                    <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Maintained ongoing journalist relationships and media coordination</li>
+                  </ul>
+
+                  <div class="experience-links flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-6">
+                    <a href="https://www.reuters.com/business/energy/clean-energy-companies-press-us-lawmakers-protect-subsidies-2025-02-05/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2">
+                      View Reuters Coverage <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                    <a href="https://www.washingtonpost.com/climate-environment/2025/02/05/solar-clean-energy-dominance-trump/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2">
+                      View Washington Post Coverage <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                    <a href="https://www.utilitydive.com/news/clean-energy-solar-storage-capitol-congress-inflation-reduction-tax-credits/739280/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2">
+                      View Utility Dive Coverage <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="experience-module border border-navy/10 bg-white/30 backdrop-blur-sm transition-all duration-300" data-module="3">
+              <button type="button" class="experience-trigger w-full text-left p-8 flex items-center justify-between gap-6" aria-expanded="false">
+                <div class="flex items-center gap-8">
+                  <span class="serif-italic text-4xl text-burgundy italic font-black flex-shrink-0">03</span>
+                  <div>
+                    <h3 class="text-lg font-bold mb-1">Digital &amp; Email Communications</h3>
+                    <p class="text-sm opacity-60">Content systems across newsletters, LinkedIn, and digital channels.</p>
+                  </div>
+                </div>
+                <i class="ph ph-caret-down text-xl opacity-40 transition-transform duration-300 flex-shrink-0"></i>
+              </button>
+
+              <div class="experience-panel hidden px-8 pb-8 pl-24">
+                <div class="border-t border-navy/10 pt-6">
+                  <ul class="space-y-3 text-sm opacity-80 mb-8">
+                    <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Developed and managed newsletter systems and recurring email programs</li>
+                    <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Built LinkedIn content strategy aligned to policy and organizational priorities</li>
+                    <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Coordinated messaging across large and diverse stakeholder audiences</li>
+                    <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Maintained consistency across email, digital, and web channels</li>
+                  </ul>
+
+                  <div class="experience-links flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-6">
+                    <a href="https://facesofcleanenergy.org/workforce/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2">
+                      View Job Board <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                    <a href="https://thealgorithmwitch.com/grimoire.html" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2">
+                      View Portfolio <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                    <a href="https://thealgorithmwitch.com/blog/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2">
+                      View Blog / Editorial System <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="experience-module border border-navy/10 bg-white/30 backdrop-blur-sm transition-all duration-300" data-module="4">
+              <button type="button" class="experience-trigger w-full text-left p-8 flex items-center justify-between gap-6" aria-expanded="false">
+                <div class="flex items-center gap-8">
+                  <span class="serif-italic text-4xl text-burgundy italic font-black flex-shrink-0">04</span>
+                  <div>
+                    <h3 class="text-lg font-bold mb-1">Communications Infrastructure &amp; Systems</h3>
+                    <p class="text-sm opacity-60">Internal systems that support scalable, ongoing communications work.</p>
+                  </div>
+                </div>
+                <i class="ph ph-caret-down text-xl opacity-40 transition-transform duration-300 flex-shrink-0"></i>
+              </button>
+
+              <div class="experience-panel hidden px-8 pb-8 pl-24">
+                <div class="border-t border-navy/10 pt-6">
+                  <ul class="space-y-3 text-sm opacity-80 mb-8">
+                    <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Created reusable templates for press, email, and digital communications</li>
+                    <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Built workflows for publishing, approvals, and content coordination</li>
+                    <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Organized asset libraries for communications teams</li>
+                    <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Supported lean teams with systems designed for long-term use</li>
+                  </ul>
+
+                  <div class="experience-links flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-6">
+                    <a href="https://thealgorithmwitch.com/grimoire.html" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2">
+                      View Strategy Portfolio <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                    <a href="https://thealgorithmwitch.com/blog/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2">
+                      View Publishing System <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                    <a href="https://facesofcleanenergy.org/workforce/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2">
+                      View Web Product <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="experience-module border border-navy/10 bg-white/30 backdrop-blur-sm transition-all duration-300" data-module="5">
+              <button type="button" class="experience-trigger w-full text-left p-8 flex items-center justify-between gap-6" aria-expanded="false">
+                <div class="flex items-center gap-8">
+                  <span class="serif-italic text-4xl text-burgundy italic font-black flex-shrink-0">05</span>
+                  <div>
+                    <h3 class="text-lg font-bold mb-1">Rapid Response &amp; Policy Communications</h3>
+                    <p class="text-sm opacity-60">Communications support during high-stakes legislative and policy moments.</p>
+                  </div>
+                </div>
+                <i class="ph ph-caret-down text-xl opacity-40 transition-transform duration-300 flex-shrink-0"></i>
+              </button>
+
+              <div class="experience-panel hidden px-8 pb-8 pl-24">
+                <div class="border-t border-navy/10 pt-6">
+                  <ul class="space-y-3 text-sm opacity-80 mb-8">
+                    <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Developed messaging under tight timelines during active policy moments</li>
+                    <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Coordinated communications across internal and external stakeholders</li>
+                    <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Supported real-time media and digital response</li>
+                    <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-burgundy rounded-full mt-2 flex-shrink-0"></div>Maintained message consistency during fast-moving developments</li>
+                  </ul>
+
+                  <div class="experience-links flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-6">
+                    <a href="https://www.reuters.com/business/energy/clean-energy-companies-press-us-lawmakers-protect-subsidies-2025-02-05/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2">
+                      View Reuters Coverage <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                    <a href="https://www.cnbc.com/video/2025/03/26/gop-is-divided-over-protection-of-green-energy-tax-credits.html" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2">
+                      View CNBC Segment <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                    <a href="https://heatmap.news/politics/clean-energy-tax-budget" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-opacity flex items-center gap-2">
+                      View Heatmap Coverage <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
         
         <section class="mb-32 grid grid-cols-12 gap-16" vid="121">
             <div class="col-span-4" vid="122">
@@ -1495,6 +1743,37 @@ video {
             let scrolled = (winScroll / height) * 100;
             document.getElementById("progress").style.width = scrolled + "%";
         };
+    </script>
+
+    <script>
+      (function () {
+        const modules = document.querySelectorAll('.experience-module');
+
+        modules.forEach((module) => {
+          const trigger = module.querySelector('.experience-trigger');
+          const panel = module.querySelector('.experience-panel');
+
+          if (!trigger || !panel) return;
+
+          trigger.addEventListener('click', function () {
+            const isOpen = module.classList.contains('active');
+
+            modules.forEach((item) => {
+              item.classList.remove('active');
+              const itemTrigger = item.querySelector('.experience-trigger');
+              const itemPanel = item.querySelector('.experience-panel');
+              if (itemTrigger) itemTrigger.setAttribute('aria-expanded', 'false');
+              if (itemPanel) itemPanel.classList.add('hidden');
+            });
+
+            if (!isOpen) {
+              module.classList.add('active');
+              trigger.setAttribute('aria-expanded', 'true');
+              panel.classList.remove('hidden');
+            }
+          });
+        });
+      })();
     </script>
 
 </body></html>
