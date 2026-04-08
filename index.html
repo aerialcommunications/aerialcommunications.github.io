@@ -646,102 +646,84 @@
         }
 
         .orbital-ring-outer {
-            animation: none;
+            animation: orbital-spin 34s linear infinite;
             transform-origin: 400px 400px;
         }
 
         .orbital-ring-mid {
-            animation: none;
+            animation: orbital-spin-reverse 26s linear infinite;
             transform-origin: 400px 400px;
         }
 
         .orbital-ring-inner {
-            animation: none;
+            animation: orbital-spin 18s linear infinite;
             transform-origin: 400px 400px;
         }
 
-        .orbital-node {
-            animation: none;
+        .orbital-scanner {
+            animation: orbital-spin 10s linear infinite;
+            transform-origin: 400px 400px;
+        }
+
+        .orbital-node,
+        .orbital-node.medium,
+        .orbital-node.fast {
             transform-box: fill-box;
             transform-origin: center;
         }
 
-        .orbital-node.medium {
-            animation: none;
-        }
-
-        .orbital-node.fast {
-            animation: none;
-        }
-
-        .orbital-scanner {
-            animation: none;
-            transform-origin: 400px 400px;
-        }
-
-        .orbital-ring-outer {
-            animation: ringFloatOuter 7s ease-in-out infinite alternate;
-        }
-
-        .orbital-ring-mid {
-            animation: ringFloatMid 6s ease-in-out infinite alternate;
-        }
-
-        .orbital-ring-inner {
-            animation: ringFloatInner 5s ease-in-out infinite alternate;
-        }
-
-        .orbital-node {
-            animation: nodeBounce 4.2s ease-in-out infinite alternate;
-            transform-box: fill-box;
+        .orbital-node > *,
+        .orbital-node.medium > *,
+        .orbital-node.fast > * {
             transform-origin: center;
+            transform-box: fill-box;
         }
 
-        .orbital-node.medium {
-            animation: nodeBounceMedium 5s ease-in-out infinite alternate;
+        .orbital-node > * {
+            animation: nodeFloat 4.6s ease-in-out infinite alternate;
         }
 
-        .orbital-node.fast {
-            animation: nodeBounceFast 3.6s ease-in-out infinite alternate;
+        .orbital-node.medium > * {
+            animation: nodeFloatMedium 5.2s ease-in-out infinite alternate;
         }
 
-        .orbital-scanner {
-            animation: scannerSweep 4.5s ease-in-out infinite alternate;
+        .orbital-node.fast > * {
+            animation: nodeFloatFast 3.8s ease-in-out infinite alternate;
         }
 
-        @keyframes ringFloatOuter {
-            0%   { transform: translate(0px, 0px) rotate(-1.5deg) scale(1); }
-            100% { transform: translate(8px, -6px) rotate(1.5deg) scale(1.01); }
+        @keyframes orbital-spin {
+            to { transform: rotate(360deg); }
         }
 
-        @keyframes ringFloatMid {
-            0%   { transform: translate(0px, 0px) rotate(1deg) scale(1); }
-            100% { transform: translate(-6px, 8px) rotate(-1deg) scale(0.995); }
+        @keyframes orbital-spin-reverse {
+            to { transform: rotate(-360deg); }
         }
 
-        @keyframes ringFloatInner {
-            0%   { transform: translate(0px, 0px) rotate(-1deg) scale(1); }
-            100% { transform: translate(5px, 5px) rotate(1deg) scale(1.01); }
+        @keyframes nodeFloat {
+            0% {
+                transform: translate(0px, 0px) rotate(0deg) scale(1);
+            }
+            100% {
+                transform: translate(6px, -8px) rotate(-3deg) scale(1.03);
+            }
         }
 
-        @keyframes nodeBounce {
-            0%   { transform: translate(0px, 0px) rotate(0deg) scale(1); }
-            100% { transform: translate(8px, -10px) rotate(-4deg) scale(1.03); }
+        @keyframes nodeFloatMedium {
+            0% {
+                transform: translate(0px, 0px) rotate(0deg) scale(1);
+            }
+            100% {
+                transform: translate(-8px, 6px) rotate(3deg) scale(1.04);
+            }
         }
 
-        @keyframes nodeBounceMedium {
-            0%   { transform: translate(0px, 0px) rotate(0deg) scale(1); }
-            100% { transform: translate(-10px, 8px) rotate(4deg) scale(1.04); }
-        }
-
-        @keyframes nodeBounceFast {
-            0%   { transform: translate(0px, 0px) rotate(0deg) scale(1); }
-            100% { transform: translate(6px, 12px) rotate(-5deg) scale(1.05); }
-        }
-
-        @keyframes scannerSweep {
-            0%   { transform: rotate(-8deg) scaleY(1); opacity: 0.24; }
-            100% { transform: rotate(10deg) scaleY(1.02); opacity: 0.42; }
+        @keyframes nodeFloatFast {
+            0% {
+                transform: translate(0px, 0px) rotate(0deg) scale(1);
+            }
+            100% {
+                transform: translate(5px, 9px) rotate(-4deg) scale(1.05);
+            }
         }
 
         .services {
@@ -1355,69 +1337,6 @@
                 margin-inline: auto;
                 transform: scale(0.82);
                 transform-origin: center;
-            }
-
-            .orbital-ring-outer {
-                animation: ringFloatOuterMobile 6s ease-in-out infinite alternate;
-            }
-
-            .orbital-ring-mid {
-                animation: ringFloatMidMobile 5.5s ease-in-out infinite alternate;
-            }
-
-            .orbital-ring-inner {
-                animation: ringFloatInnerMobile 5s ease-in-out infinite alternate;
-            }
-
-            .orbital-node {
-                animation: nodeBounceMobile 3.8s ease-in-out infinite alternate;
-            }
-
-            .orbital-node.medium {
-                animation: nodeBounceMediumMobile 4.4s ease-in-out infinite alternate;
-            }
-
-            .orbital-node.fast {
-                animation: nodeBounceFastMobile 3.2s ease-in-out infinite alternate;
-            }
-
-            .orbital-scanner {
-                animation: scannerSweepMobile 4s ease-in-out infinite alternate;
-            }
-
-            @keyframes ringFloatOuterMobile {
-                0%   { transform: translate(0px, 0px) rotate(-0.8deg) scale(1); }
-                100% { transform: translate(3px, -3px) rotate(0.8deg) scale(1.005); }
-            }
-
-            @keyframes ringFloatMidMobile {
-                0%   { transform: translate(0px, 0px) rotate(0.6deg) scale(1); }
-                100% { transform: translate(-3px, 3px) rotate(-0.6deg) scale(1); }
-            }
-
-            @keyframes ringFloatInnerMobile {
-                0%   { transform: translate(0px, 0px) rotate(-0.5deg) scale(1); }
-                100% { transform: translate(2px, 2px) rotate(0.5deg) scale(1.005); }
-            }
-
-            @keyframes nodeBounceMobile {
-                0%   { transform: translate(0px, 0px) rotate(0deg) scale(1); }
-                100% { transform: translate(3px, -4px) rotate(-2deg) scale(1.02); }
-            }
-
-            @keyframes nodeBounceMediumMobile {
-                0%   { transform: translate(0px, 0px) rotate(0deg) scale(1); }
-                100% { transform: translate(-4px, 3px) rotate(2deg) scale(1.02); }
-            }
-
-            @keyframes nodeBounceFastMobile {
-                0%   { transform: translate(0px, 0px) rotate(0deg) scale(1); }
-                100% { transform: translate(2px, 4px) rotate(-2deg) scale(1.02); }
-            }
-
-            @keyframes scannerSweepMobile {
-                0%   { transform: rotate(-4deg); opacity: 0.2; }
-                100% { transform: rotate(5deg); opacity: 0.32; }
             }
 
             .site-header {
